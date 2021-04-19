@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>项目配置说明 | 大前端 - 前端高级进阶</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="大前端课程电子书">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+    <link rel="preload" href="/notes-page/assets/css/0.styles.47f53f58.css" as="style"><link rel="preload" href="/notes-page/assets/js/app.ad1ef192.js" as="script"><link rel="preload" href="/notes-page/assets/js/2.c0610f04.js" as="script"><link rel="preload" href="/notes-page/assets/js/7.ae56fbc6.js" as="script"><link rel="prefetch" href="/notes-page/assets/js/10.b72d30f3.js"><link rel="prefetch" href="/notes-page/assets/js/11.eb2e0f70.js"><link rel="prefetch" href="/notes-page/assets/js/12.4dacbfbd.js"><link rel="prefetch" href="/notes-page/assets/js/13.ed6a1bc1.js"><link rel="prefetch" href="/notes-page/assets/js/14.c5ac22bc.js"><link rel="prefetch" href="/notes-page/assets/js/15.f62b3b97.js"><link rel="prefetch" href="/notes-page/assets/js/16.3c5e6f7f.js"><link rel="prefetch" href="/notes-page/assets/js/17.52b4ba3b.js"><link rel="prefetch" href="/notes-page/assets/js/18.ef130e8c.js"><link rel="prefetch" href="/notes-page/assets/js/19.43048ade.js"><link rel="prefetch" href="/notes-page/assets/js/20.1acd420d.js"><link rel="prefetch" href="/notes-page/assets/js/21.21610d1e.js"><link rel="prefetch" href="/notes-page/assets/js/22.a006bf55.js"><link rel="prefetch" href="/notes-page/assets/js/23.834acc85.js"><link rel="prefetch" href="/notes-page/assets/js/24.d45db67a.js"><link rel="prefetch" href="/notes-page/assets/js/25.2ae3b23a.js"><link rel="prefetch" href="/notes-page/assets/js/26.88878f2c.js"><link rel="prefetch" href="/notes-page/assets/js/27.8b72c2cf.js"><link rel="prefetch" href="/notes-page/assets/js/28.a1beba0a.js"><link rel="prefetch" href="/notes-page/assets/js/29.8f9f9558.js"><link rel="prefetch" href="/notes-page/assets/js/3.3df1b53d.js"><link rel="prefetch" href="/notes-page/assets/js/30.d7cabced.js"><link rel="prefetch" href="/notes-page/assets/js/31.943e0231.js"><link rel="prefetch" href="/notes-page/assets/js/32.2d9c3cbd.js"><link rel="prefetch" href="/notes-page/assets/js/33.49fffc5a.js"><link rel="prefetch" href="/notes-page/assets/js/34.f7c2501a.js"><link rel="prefetch" href="/notes-page/assets/js/35.1c9bae34.js"><link rel="prefetch" href="/notes-page/assets/js/36.bda3d413.js"><link rel="prefetch" href="/notes-page/assets/js/37.73e6baa0.js"><link rel="prefetch" href="/notes-page/assets/js/38.02e04e21.js"><link rel="prefetch" href="/notes-page/assets/js/39.cd32fa74.js"><link rel="prefetch" href="/notes-page/assets/js/4.28087151.js"><link rel="prefetch" href="/notes-page/assets/js/40.e612c13d.js"><link rel="prefetch" href="/notes-page/assets/js/41.3602be97.js"><link rel="prefetch" href="/notes-page/assets/js/42.d51b485d.js"><link rel="prefetch" href="/notes-page/assets/js/43.7bd198bb.js"><link rel="prefetch" href="/notes-page/assets/js/44.7694e0eb.js"><link rel="prefetch" href="/notes-page/assets/js/45.dd1570ec.js"><link rel="prefetch" href="/notes-page/assets/js/46.ad5f1d4f.js"><link rel="prefetch" href="/notes-page/assets/js/5.ce32c0d0.js"><link rel="prefetch" href="/notes-page/assets/js/6.093e8766.js"><link rel="prefetch" href="/notes-page/assets/js/8.cdb370cc.js"><link rel="prefetch" href="/notes-page/assets/js/9.10f1cd48.js">
+    <link rel="stylesheet" href="/notes-page/assets/css/0.styles.47f53f58.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/notes-page/" class="home-link router-link-active"><!----> <span class="site-name">大前端 - 前端高级进阶</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/notes-page/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="基础强化" class="dropdown-title"><span class="title">基础强化</span> <span class="arrow down"></span></button> <button type="button" aria-label="基础强化" class="mobile-dropdown-title"><span class="title">基础强化</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          环境搭建
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/basic/vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-subitem"><a href="/notes-page/basic/node/" class="nav-link">
+  Node.js
+</a></li><li class="dropdown-subitem"><a href="/notes-page/basic/debug/" class="nav-link">
+  调试技巧
+</a></li><li class="dropdown-subitem"><a href="/notes-page/basic/docker/" class="nav-link">
+  Docker
+</a></li></ul></li><li class="dropdown-item"><h4>
+          语言基础
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/basic/ts/" class="nav-link">
+  TypeScript
+</a></li><li class="dropdown-subitem"><a href="/notes-page/basic/dart/" class="nav-link">
+  Dart
+</a></li></ul></li><li class="dropdown-item"><h4>
+          数据库
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/basic/nosql/" class="nav-link">
+  NoSQL
+</a></li><li class="dropdown-subitem"><a href="/notes-page/basic/mongo/" class="nav-link">
+  mongoDB
+</a></li><li class="dropdown-subitem"><a href="/notes-page/basic/redis/" class="nav-link">
+  Redis
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="DevOps" class="dropdown-title"><span class="title">DevOps</span> <span class="arrow down"></span></button> <button type="button" aria-label="DevOps" class="mobile-dropdown-title"><span class="title">DevOps</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          效率工具
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/devops/jenkins/" class="nav-link">
+  Jenkins
+</a></li></ul></li><li class="dropdown-item"><h4>
+          团队协同
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/devops/gitlab/" class="nav-link">
+  gitlab
+</a></li><li class="dropdown-subitem"><a href="/notes-page/devops/showdoc/" class="nav-link">
+  showDoc
+</a></li><li class="dropdown-subitem"><a href="/notes-page/devops/doclever/" class="nav-link">
+  DOClever
+</a></li></ul></li><li class="dropdown-item"><h4>
+          容器化
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/devops/docker-advance/" class="nav-link">
+  Docker进阶
+</a></li><li class="dropdown-subitem"><a href="/notes-page/devops/k8s/" class="nav-link">
+  Kubernetes
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="全端项目" class="dropdown-title"><span class="title">全端项目</span> <span class="arrow down"></span></button> <button type="button" aria-label="全端项目" class="mobile-dropdown-title"><span class="title">全端项目</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          社区项目
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/project/community-pc/" class="nav-link">
+  社区PC
+</a></li><li class="dropdown-subitem"><a href="/notes-page/project/community-admin/" class="nav-link">
+  管理后台
+</a></li><li class="dropdown-subitem"><a href="/notes-page/project/community-webapp/" class="nav-link">
+  WebApp
+</a></li></ul></li><li class="dropdown-item"><h4>
+          多平台+跨端
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/project/community-miniapp/" class="nav-link">
+  微信小程序
+</a></li><li class="dropdown-subitem"><a href="/notes-page/project/community-flutter/" class="nav-link">
+  Flutter 2.0
+</a></li><li class="dropdown-subitem"><a href="/notes-page/project/community-electron/" class="nav-link">
+  Electron桌面端
+</a></li></ul></li><li class="dropdown-item"><h4>
+          React世界
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/project/react/" class="nav-link">
+  React
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端面试" class="dropdown-title"><span class="title">前端面试</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端面试" class="mobile-dropdown-title"><span class="title">前端面试</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          笔试
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/interview/types/" class="nav-link">
+  分类笔试题
+</a></li><li class="dropdown-subitem"><a href="/notes-page/interview/techs/" class="nav-link">
+  笔记技巧
+</a></li></ul></li><li class="dropdown-item"><h4>
+          面试技巧
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/interview/basic/" class="nav-link">
+  技术面
+</a></li><li class="dropdown-subitem"><a href="/notes-page/interview/projects/" class="nav-link">
+  项目面
+</a></li><li class="dropdown-subitem"><a href="/notes-page/interview/boss/" class="nav-link">
+  BOSS面
+</a></li><li class="dropdown-subitem"><a href="/notes-page/interview/hr/" class="nav-link">
+  HR面
+</a></li></ul></li><li class="dropdown-item"><h4>
+          简历
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/interview/writor/" class="nav-link">
+  写好简历
+</a></li><li class="dropdown-subitem"><a href="/notes-page/interview/templates/" class="nav-link">
+  简历模板
+</a></li></ul></li><li class="dropdown-item"><h4>
+          公司行业
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/interview/company/" class="nav-link">
+  选择公司
+</a></li><li class="dropdown-subitem"><a href="/notes-page/interview/industry/" class="nav-link">
+  行业洞悉
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="关于" class="dropdown-title"><span class="title">关于</span> <span class="arrow down"></span></button> <button type="button" aria-label="关于" class="mobile-dropdown-title"><span class="title">关于</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          日志
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/course/update-logs/" class="nav-link">
+  更新日志
+</a></li><li class="dropdown-subitem"><a href="https://github.com/toimc-team/front-end-notes" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github源码
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://gitee.com/toimc/front-end-notes" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  gitee源码
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>
+          参与贡献
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/course/notes/" class="nav-link">
+  博文规范
+</a></li></ul></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/notes-page/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="基础强化" class="dropdown-title"><span class="title">基础强化</span> <span class="arrow down"></span></button> <button type="button" aria-label="基础强化" class="mobile-dropdown-title"><span class="title">基础强化</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          环境搭建
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/basic/vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-subitem"><a href="/notes-page/basic/node/" class="nav-link">
+  Node.js
+</a></li><li class="dropdown-subitem"><a href="/notes-page/basic/debug/" class="nav-link">
+  调试技巧
+</a></li><li class="dropdown-subitem"><a href="/notes-page/basic/docker/" class="nav-link">
+  Docker
+</a></li></ul></li><li class="dropdown-item"><h4>
+          语言基础
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/basic/ts/" class="nav-link">
+  TypeScript
+</a></li><li class="dropdown-subitem"><a href="/notes-page/basic/dart/" class="nav-link">
+  Dart
+</a></li></ul></li><li class="dropdown-item"><h4>
+          数据库
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/basic/nosql/" class="nav-link">
+  NoSQL
+</a></li><li class="dropdown-subitem"><a href="/notes-page/basic/mongo/" class="nav-link">
+  mongoDB
+</a></li><li class="dropdown-subitem"><a href="/notes-page/basic/redis/" class="nav-link">
+  Redis
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="DevOps" class="dropdown-title"><span class="title">DevOps</span> <span class="arrow down"></span></button> <button type="button" aria-label="DevOps" class="mobile-dropdown-title"><span class="title">DevOps</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          效率工具
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/devops/jenkins/" class="nav-link">
+  Jenkins
+</a></li></ul></li><li class="dropdown-item"><h4>
+          团队协同
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/devops/gitlab/" class="nav-link">
+  gitlab
+</a></li><li class="dropdown-subitem"><a href="/notes-page/devops/showdoc/" class="nav-link">
+  showDoc
+</a></li><li class="dropdown-subitem"><a href="/notes-page/devops/doclever/" class="nav-link">
+  DOClever
+</a></li></ul></li><li class="dropdown-item"><h4>
+          容器化
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/devops/docker-advance/" class="nav-link">
+  Docker进阶
+</a></li><li class="dropdown-subitem"><a href="/notes-page/devops/k8s/" class="nav-link">
+  Kubernetes
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="全端项目" class="dropdown-title"><span class="title">全端项目</span> <span class="arrow down"></span></button> <button type="button" aria-label="全端项目" class="mobile-dropdown-title"><span class="title">全端项目</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          社区项目
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/project/community-pc/" class="nav-link">
+  社区PC
+</a></li><li class="dropdown-subitem"><a href="/notes-page/project/community-admin/" class="nav-link">
+  管理后台
+</a></li><li class="dropdown-subitem"><a href="/notes-page/project/community-webapp/" class="nav-link">
+  WebApp
+</a></li></ul></li><li class="dropdown-item"><h4>
+          多平台+跨端
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/project/community-miniapp/" class="nav-link">
+  微信小程序
+</a></li><li class="dropdown-subitem"><a href="/notes-page/project/community-flutter/" class="nav-link">
+  Flutter 2.0
+</a></li><li class="dropdown-subitem"><a href="/notes-page/project/community-electron/" class="nav-link">
+  Electron桌面端
+</a></li></ul></li><li class="dropdown-item"><h4>
+          React世界
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/project/react/" class="nav-link">
+  React
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端面试" class="dropdown-title"><span class="title">前端面试</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端面试" class="mobile-dropdown-title"><span class="title">前端面试</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          笔试
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/interview/types/" class="nav-link">
+  分类笔试题
+</a></li><li class="dropdown-subitem"><a href="/notes-page/interview/techs/" class="nav-link">
+  笔记技巧
+</a></li></ul></li><li class="dropdown-item"><h4>
+          面试技巧
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/interview/basic/" class="nav-link">
+  技术面
+</a></li><li class="dropdown-subitem"><a href="/notes-page/interview/projects/" class="nav-link">
+  项目面
+</a></li><li class="dropdown-subitem"><a href="/notes-page/interview/boss/" class="nav-link">
+  BOSS面
+</a></li><li class="dropdown-subitem"><a href="/notes-page/interview/hr/" class="nav-link">
+  HR面
+</a></li></ul></li><li class="dropdown-item"><h4>
+          简历
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/interview/writor/" class="nav-link">
+  写好简历
+</a></li><li class="dropdown-subitem"><a href="/notes-page/interview/templates/" class="nav-link">
+  简历模板
+</a></li></ul></li><li class="dropdown-item"><h4>
+          公司行业
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/interview/company/" class="nav-link">
+  选择公司
+</a></li><li class="dropdown-subitem"><a href="/notes-page/interview/industry/" class="nav-link">
+  行业洞悉
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="关于" class="dropdown-title"><span class="title">关于</span> <span class="arrow down"></span></button> <button type="button" aria-label="关于" class="mobile-dropdown-title"><span class="title">关于</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          日志
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/course/update-logs/" class="nav-link">
+  更新日志
+</a></li><li class="dropdown-subitem"><a href="https://github.com/toimc-team/front-end-notes" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github源码
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://gitee.com/toimc/front-end-notes" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  gitee源码
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>
+          参与贡献
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/course/notes/" class="nav-link">
+  博文规范
+</a></li></ul></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>vuepress使用规范</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/notes-page/course/vuepress/" aria-current="page" class="sidebar-link">VuePress文档</a></li><li><a href="/notes-page/course/vuepress/01-配置说明.html" class="active sidebar-link">项目配置说明</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/notes-page/course/vuepress/01-配置说明.html#config-js配置文件" class="sidebar-link">config.js配置文件</a></li><li class="sidebar-sub-header"><a href="/notes-page/course/vuepress/01-配置说明.html#关于打包与部署" class="sidebar-link">关于打包与部署</a></li></ul></li><li><a href="/notes-page/course/vuepress/02-使用规范.html" class="sidebar-link">使用规范</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>博文规范</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/notes-page/course/notes/" class="sidebar-link">编写规范</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="项目配置说明"><a href="#项目配置说明" class="header-anchor">#</a> 项目配置说明</h1> <h2 id="config-js配置文件"><a href="#config-js配置文件" class="header-anchor">#</a> <code>config.js</code>配置文件</h2> <ol><li><p>nav顶部导航</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token punctuation">[</span>
+  <span class="token punctuation">{</span>
+    text<span class="token operator">:</span> <span class="token string">'首页'</span><span class="token punctuation">,</span>
+    link<span class="token operator">:</span> <span class="token string">'/'</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    text<span class="token operator">:</span> <span class="token string">'基础强化'</span><span class="token punctuation">,</span>
+    items<span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        text<span class="token operator">:</span> <span class="token string">'环境搭建'</span><span class="token punctuation">,</span>
+        items<span class="token operator">:</span> <span class="token punctuation">[</span>
+          <span class="token punctuation">{</span>
+            text<span class="token operator">:</span> <span class="token string">'Vue'</span><span class="token punctuation">,</span>
+            link<span class="token operator">:</span> <span class="token string">'/basic/vue/'</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">{</span>
+            text<span class="token operator">:</span> <span class="token string">'Node.js'</span><span class="token punctuation">,</span>
+            link<span class="token operator">:</span> <span class="token string">'/basic/node/'</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token comment">// ...</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token comment">//....</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token comment">// ...</span>
+<span class="token punctuation">]</span>
+</code></pre></div><p><strong>说明：</strong></p> <ul><li><code>text</code>为标题文字</li> <li><code>items</code>为子项</li> <li><code>link</code>为链接，可以为<code>markdown</code>文件，也可以为<code>http(s)</code>链接</li></ul></li> <li><p>sidebar侧栏</p> <div class="language- extra-class"><pre class="language-text"><code>const sidebar = {
+  '/project/': [
+    {
+      title: '小程序',
+      collapsable: false,
+      children: genSidebarConfig('project/community-miniapp', siderBarOptions)
+    },
+    {
+      title: 'React',
+      collapsable: false,
+      children: [
+        'react/'
+      ]
+    }
+  ],
+  '/course/': [
+    {
+      title: 'vuepress使用规范',
+      collapsable: false,
+      children: genSidebarConfig('course/vuepress', siderBarOptions)
+    },
+    {
+      title: '博文规范',
+      collapsable: false,
+      children: genSidebarConfig('course/notes', siderBarOptions)
+    }
+  ],
+  '/': [
+    {
+      title: '首页',
+      collapsable: false
+    }
+  ]
+}
+</code></pre></div><p><strong>说明：</strong></p> <ul><li><p>首页一定要放在最后；</p></li> <li><p><code>genSidebarConfig</code>是一个自动解析目录的函数，目录要求：</p> <p><img src="/notes-page/assets/img/image-20210419111401429.434f74c5.png" alt="image-20210419111401429"></p> <p>参数说明，第一个参数是<code>一级目录/二级目录</code>，第二个参数是过滤条件 + 是否是二级目录的标记位<code>hasSub</code>：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> siderBarOptions <span class="token operator">=</span> <span class="token punctuation">{</span> hasSub<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> exclude<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'README.md'</span><span class="token punctuation">,</span> <span class="token string">'assets'</span><span class="token punctuation">,</span> <span class="token string">'.DS_Store'</span><span class="token punctuation">,</span> <span class="token string">'docs'</span><span class="token punctuation">,</span> <span class="token string">'images'</span><span class="token punctuation">]</span> <span class="token punctuation">}</span>
+</code></pre></div><p>情况一：</p> <p>如果添加了一些非Markdown的文件，可以在上面这个目录中添加，相当于是ignore目录；</p> <p>情况二：</p> <p>如果是一级目录，可以添加一个属性<code>hasSub：false</code>，来覆盖默认的配置：</p> <div class="language- extra-class"><pre class="language-text"><code>genSidebarConfig('course', {...siderBarOptions, hasSub: false})
+</code></pre></div></li></ul></li></ol> <h2 id="关于打包与部署"><a href="#关于打包与部署" class="header-anchor">#</a> 关于打包与部署</h2> <p>项目开启了github actions，只需要推送到github，会自动：</p> <ul><li>完成项目的打包 -&gt; 部署github pages</li> <li>同步gitee仓库代码</li> <li>同步gitee pages，并发布</li></ul> <p>github actions<code>.github/workflows/master.yml</code>:</p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">name</span><span class="token punctuation">:</span> Build Vuepress and Sync Gitee
+<span class="token key atrule">on</span><span class="token punctuation">:</span>
+  <span class="token key atrule">push</span><span class="token punctuation">:</span>
+    <span class="token key atrule">branches</span><span class="token punctuation">:</span> <span class="token punctuation">[</span> master <span class="token punctuation">]</span>
+  <span class="token comment"># Allows you to run this workflow manually from the Actions tab</span>
+  <span class="token key atrule">workflow_dispatch</span><span class="token punctuation">:</span>
+    
+<span class="token key atrule">jobs</span><span class="token punctuation">:</span>
+  <span class="token key atrule">build</span><span class="token punctuation">:</span>
+    <span class="token key atrule">runs-on</span><span class="token punctuation">:</span> ubuntu<span class="token punctuation">-</span>latest
+    <span class="token key atrule">steps</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> <span class="token key atrule">uses</span><span class="token punctuation">:</span> actions/checkout@v2
+    <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Use Node.js
+      <span class="token key atrule">uses</span><span class="token punctuation">:</span> actions/setup<span class="token punctuation">-</span>node@v1
+      <span class="token key atrule">with</span><span class="token punctuation">:</span>
+        <span class="token key atrule">node-version</span><span class="token punctuation">:</span> <span class="token string">'14.x'</span>
+
+    <span class="token comment"># Caching dependencies to speed up workflows. (GitHub will remove any cache entries that have not been accessed in over 7 days.)</span>
+    <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Cache node modules
+      <span class="token key atrule">uses</span><span class="token punctuation">:</span> actions/cache@v1
+      <span class="token key atrule">id</span><span class="token punctuation">:</span> cache
+      <span class="token key atrule">with</span><span class="token punctuation">:</span>
+        <span class="token key atrule">path</span><span class="token punctuation">:</span> node_modules
+        <span class="token key atrule">key</span><span class="token punctuation">:</span> $<span class="token punctuation">{</span><span class="token punctuation">{</span> runner.os <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">-</span>node<span class="token punctuation">-</span>$<span class="token punctuation">{</span><span class="token punctuation">{</span> hashFiles('<span class="token important">**/package-lock.json')</span> <span class="token punctuation">}</span><span class="token punctuation">}</span>
+        <span class="token key atrule">restore-keys</span><span class="token punctuation">:</span> <span class="token punctuation">|</span><span class="token scalar string">
+          ${{ runner.os }}-node-</span>
+    <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Install Dependencies
+      <span class="token key atrule">if</span><span class="token punctuation">:</span> steps.cache.outputs.cache<span class="token punctuation">-</span>hit <span class="token tag">!=</span> 'true'
+      <span class="token key atrule">run</span><span class="token punctuation">:</span> npm i
+
+    <span class="token comment"># Vuepress Build.</span>
+    <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Generates Pages
+      <span class="token key atrule">run</span><span class="token punctuation">:</span> <span class="token punctuation">|</span><span class="token scalar string">
+        npm run build</span>
+
+    <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Deploy Github Pages🚀
+      <span class="token key atrule">uses</span><span class="token punctuation">:</span> JamesIves/github<span class="token punctuation">-</span>pages<span class="token punctuation">-</span>deploy<span class="token punctuation">-</span>action@4.1.0
+      <span class="token key atrule">with</span><span class="token punctuation">:</span>
+        <span class="token key atrule">repository-name</span><span class="token punctuation">:</span> toimc<span class="token punctuation">-</span>team/notes<span class="token punctuation">-</span>page <span class="token comment"># The branch the action should deploy to.</span>
+        <span class="token key atrule">branch</span><span class="token punctuation">:</span> master
+        <span class="token key atrule">folder</span><span class="token punctuation">:</span> ./src/.vuepress/dist <span class="token comment"># The folder the action should deploy.</span>
+        <span class="token key atrule">ssh-key</span><span class="token punctuation">:</span> $<span class="token punctuation">{</span><span class="token punctuation">{</span> secrets.DEPLOY_KEY <span class="token punctuation">}</span><span class="token punctuation">}</span>
+
+    <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Sync to Gitee Page
+      <span class="token key atrule">uses</span><span class="token punctuation">:</span> wearerequired/git<span class="token punctuation">-</span>mirror<span class="token punctuation">-</span>action@master
+      <span class="token key atrule">env</span><span class="token punctuation">:</span>
+        <span class="token comment"># 注意在 Settings-&gt;Secrets 配置 GITEE_PRIVATE_KEY</span>
+        <span class="token key atrule">SSH_PRIVATE_KEY</span><span class="token punctuation">:</span> $<span class="token punctuation">{</span><span class="token punctuation">{</span> secrets.GITEE_PRIVATE_KEY <span class="token punctuation">}</span><span class="token punctuation">}</span>
+      <span class="token key atrule">with</span><span class="token punctuation">:</span>
+        <span class="token comment"># 注意替换为你的 GitHub 源仓库地址</span>
+        <span class="token key atrule">source-repo</span><span class="token punctuation">:</span> git@github.com<span class="token punctuation">:</span>toimc<span class="token punctuation">-</span>team/notes<span class="token punctuation">-</span>page.git
+        <span class="token comment"># 注意替换为你的 Gitee 目标仓库地址</span>
+        <span class="token key atrule">destination-repo</span><span class="token punctuation">:</span> git@gitee.com<span class="token punctuation">:</span>toimc/notes<span class="token punctuation">-</span>page.git
+
+    <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Trigger Gitee Pages Auto Reload
+      <span class="token key atrule">uses</span><span class="token punctuation">:</span> yanglbme/gitee<span class="token punctuation">-</span>pages<span class="token punctuation">-</span>action@master
+      <span class="token key atrule">with</span><span class="token punctuation">:</span>
+        <span class="token comment"># 注意替换为你的 Gitee 用户名</span>
+        <span class="token key atrule">gitee-username</span><span class="token punctuation">:</span> toimc
+        <span class="token comment"># 注意在 Settings-&gt;Secrets 配置 GITEE_PASSWORD</span>
+        <span class="token key atrule">gitee-password</span><span class="token punctuation">:</span> $<span class="token punctuation">{</span><span class="token punctuation">{</span> secrets.GITEE_PASSWORD <span class="token punctuation">}</span><span class="token punctuation">}</span>
+        <span class="token comment"># 注意替换为你的 Gitee 仓库，仓库名严格区分大小写，请准确填写，否则会出错</span>
+        <span class="token key atrule">gitee-repo</span><span class="token punctuation">:</span> toimc/notes<span class="token punctuation">-</span>page
+</code></pre></div><p>同时在项目的<code>package.json</code>文件中，提供了本地的打包命令<code>npm run build</code>，需要注意线上的public路径，即<code>config.js</code>中的<code>base</code>属性：</p> <div class="language- extra-class"><pre class="language-text"><code>base: process.env.NODE_ENV === 'development' ? '/' : '/notes-page/',
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/notes-page/course/vuepress/" class="prev router-link-active">
+        VuePress文档
+      </a></span> <span class="next"><a href="/notes-page/course/vuepress/02-使用规范.html">
+        使用规范
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/notes-page/assets/js/app.ad1ef192.js" defer></script><script src="/notes-page/assets/js/2.c0610f04.js" defer></script><script src="/notes-page/assets/js/7.ae56fbc6.js" defer></script>
+  </body>
+</html>
