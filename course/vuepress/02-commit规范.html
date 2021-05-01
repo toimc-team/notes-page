@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>代码Commit规范 | 大前端 - 前端高级进阶</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="大前端课程电子书">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+    <link rel="preload" href="/notes-page/assets/css/0.styles.101403b5.css" as="style"><link rel="preload" href="/notes-page/assets/js/app.09fb6155.js" as="script"><link rel="preload" href="/notes-page/assets/js/2.947160e8.js" as="script"><link rel="preload" href="/notes-page/assets/js/30.18cbfa47.js" as="script"><link rel="prefetch" href="/notes-page/assets/js/10.b71cc88e.js"><link rel="prefetch" href="/notes-page/assets/js/11.d5ac207d.js"><link rel="prefetch" href="/notes-page/assets/js/12.50f1964d.js"><link rel="prefetch" href="/notes-page/assets/js/13.ab6f76bc.js"><link rel="prefetch" href="/notes-page/assets/js/14.fdd18290.js"><link rel="prefetch" href="/notes-page/assets/js/15.fdfff7b5.js"><link rel="prefetch" href="/notes-page/assets/js/16.78b949f3.js"><link rel="prefetch" href="/notes-page/assets/js/17.0906e41a.js"><link rel="prefetch" href="/notes-page/assets/js/18.2024ec93.js"><link rel="prefetch" href="/notes-page/assets/js/19.4c82ec4e.js"><link rel="prefetch" href="/notes-page/assets/js/20.d0ff2393.js"><link rel="prefetch" href="/notes-page/assets/js/21.5efdc827.js"><link rel="prefetch" href="/notes-page/assets/js/22.99d51677.js"><link rel="prefetch" href="/notes-page/assets/js/23.5e885fcf.js"><link rel="prefetch" href="/notes-page/assets/js/24.3746705c.js"><link rel="prefetch" href="/notes-page/assets/js/25.e1b00b2f.js"><link rel="prefetch" href="/notes-page/assets/js/26.61d0e528.js"><link rel="prefetch" href="/notes-page/assets/js/27.6986a87a.js"><link rel="prefetch" href="/notes-page/assets/js/28.3f0447df.js"><link rel="prefetch" href="/notes-page/assets/js/29.f6292698.js"><link rel="prefetch" href="/notes-page/assets/js/3.3a08a2cc.js"><link rel="prefetch" href="/notes-page/assets/js/31.ee6629b1.js"><link rel="prefetch" href="/notes-page/assets/js/32.e0859ab9.js"><link rel="prefetch" href="/notes-page/assets/js/33.f77f4e87.js"><link rel="prefetch" href="/notes-page/assets/js/34.c48aca17.js"><link rel="prefetch" href="/notes-page/assets/js/35.127373d1.js"><link rel="prefetch" href="/notes-page/assets/js/36.83d64731.js"><link rel="prefetch" href="/notes-page/assets/js/37.f30bccd4.js"><link rel="prefetch" href="/notes-page/assets/js/38.a7cb9ade.js"><link rel="prefetch" href="/notes-page/assets/js/39.30d6b3b3.js"><link rel="prefetch" href="/notes-page/assets/js/4.11fbeb60.js"><link rel="prefetch" href="/notes-page/assets/js/40.edd3d81b.js"><link rel="prefetch" href="/notes-page/assets/js/41.242a0361.js"><link rel="prefetch" href="/notes-page/assets/js/42.9dec50a0.js"><link rel="prefetch" href="/notes-page/assets/js/43.84a6e5d9.js"><link rel="prefetch" href="/notes-page/assets/js/44.7b798e54.js"><link rel="prefetch" href="/notes-page/assets/js/45.9aa75857.js"><link rel="prefetch" href="/notes-page/assets/js/46.d48b7279.js"><link rel="prefetch" href="/notes-page/assets/js/47.d5ba604c.js"><link rel="prefetch" href="/notes-page/assets/js/48.4f918d7e.js"><link rel="prefetch" href="/notes-page/assets/js/49.c6caf4c5.js"><link rel="prefetch" href="/notes-page/assets/js/5.0c8a5df6.js"><link rel="prefetch" href="/notes-page/assets/js/50.eb70c29e.js"><link rel="prefetch" href="/notes-page/assets/js/51.7369fe8f.js"><link rel="prefetch" href="/notes-page/assets/js/52.dfff0fa4.js"><link rel="prefetch" href="/notes-page/assets/js/53.3a270045.js"><link rel="prefetch" href="/notes-page/assets/js/54.266e2ae4.js"><link rel="prefetch" href="/notes-page/assets/js/55.eaf7ac51.js"><link rel="prefetch" href="/notes-page/assets/js/56.2afbda44.js"><link rel="prefetch" href="/notes-page/assets/js/57.6c6dc7b8.js"><link rel="prefetch" href="/notes-page/assets/js/58.2202e056.js"><link rel="prefetch" href="/notes-page/assets/js/59.e48118e9.js"><link rel="prefetch" href="/notes-page/assets/js/6.b9bfdc95.js"><link rel="prefetch" href="/notes-page/assets/js/7.447c9a12.js"><link rel="prefetch" href="/notes-page/assets/js/8.eb31802f.js"><link rel="prefetch" href="/notes-page/assets/js/9.3a511028.js">
+    <link rel="stylesheet" href="/notes-page/assets/css/0.styles.101403b5.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/notes-page/" class="home-link router-link-active"><!----> <span class="site-name">大前端 - 前端高级进阶</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/notes-page/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="基础强化" class="dropdown-title"><span class="title">基础强化</span> <span class="arrow down"></span></button> <button type="button" aria-label="基础强化" class="mobile-dropdown-title"><span class="title">基础强化</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          环境搭建
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/basic/vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-subitem"><a href="/notes-page/basic/node/" class="nav-link">
+  Node.js
+</a></li><li class="dropdown-subitem"><a href="/notes-page/basic/debug/" class="nav-link">
+  调试技巧
+</a></li><li class="dropdown-subitem"><a href="/notes-page/basic/docker/" class="nav-link">
+  Docker
+</a></li></ul></li><li class="dropdown-item"><h4>
+          语言基础
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/basic/ts/" class="nav-link">
+  TypeScript
+</a></li><li class="dropdown-subitem"><a href="/notes-page/basic/dart/" class="nav-link">
+  Dart
+</a></li></ul></li><li class="dropdown-item"><h4>
+          数据库
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/basic/nosql/" class="nav-link">
+  NoSQL
+</a></li><li class="dropdown-subitem"><a href="/notes-page/basic/mongo/" class="nav-link">
+  mongoDB
+</a></li><li class="dropdown-subitem"><a href="/notes-page/basic/redis/" class="nav-link">
+  Redis
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="DevOps" class="dropdown-title"><span class="title">DevOps</span> <span class="arrow down"></span></button> <button type="button" aria-label="DevOps" class="mobile-dropdown-title"><span class="title">DevOps</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          效率工具
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/devops/jenkins/" class="nav-link">
+  Jenkins
+</a></li></ul></li><li class="dropdown-item"><h4>
+          团队协同
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/devops/gitlab/" class="nav-link">
+  gitlab
+</a></li><li class="dropdown-subitem"><a href="/notes-page/devops/showdoc/" class="nav-link">
+  showDoc
+</a></li><li class="dropdown-subitem"><a href="/notes-page/devops/doclever/" class="nav-link">
+  DOClever
+</a></li></ul></li><li class="dropdown-item"><h4>
+          容器化
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/devops/docker-advance/" class="nav-link">
+  Docker进阶
+</a></li><li class="dropdown-subitem"><a href="/notes-page/devops/k8s/" class="nav-link">
+  Kubernetes
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="全端项目" class="dropdown-title"><span class="title">全端项目</span> <span class="arrow down"></span></button> <button type="button" aria-label="全端项目" class="mobile-dropdown-title"><span class="title">全端项目</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          社区项目
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/project/community-pc/" class="nav-link">
+  社区PC
+</a></li><li class="dropdown-subitem"><a href="/notes-page/project/community-admin/" class="nav-link">
+  管理后台
+</a></li><li class="dropdown-subitem"><a href="/notes-page/project/community-webapp/" class="nav-link">
+  WebApp
+</a></li></ul></li><li class="dropdown-item"><h4>
+          多平台+跨端
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/project/community-miniapp/" class="nav-link">
+  微信小程序
+</a></li><li class="dropdown-subitem"><a href="/notes-page/project/community-flutter/" class="nav-link">
+  Flutter 2.0
+</a></li><li class="dropdown-subitem"><a href="/notes-page/project/community-electron/" class="nav-link">
+  Electron桌面端
+</a></li></ul></li><li class="dropdown-item"><h4>
+          React世界
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/project/react/" class="nav-link">
+  React
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端面试" class="dropdown-title"><span class="title">前端面试</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端面试" class="mobile-dropdown-title"><span class="title">前端面试</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          笔试
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/interview/types/" class="nav-link">
+  分类笔试题
+</a></li><li class="dropdown-subitem"><a href="/notes-page/interview/techs/" class="nav-link">
+  笔记技巧
+</a></li></ul></li><li class="dropdown-item"><h4>
+          面试技巧
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/interview/basic/" class="nav-link">
+  技术面
+</a></li><li class="dropdown-subitem"><a href="/notes-page/interview/projects/" class="nav-link">
+  项目面
+</a></li><li class="dropdown-subitem"><a href="/notes-page/interview/boss/" class="nav-link">
+  BOSS面
+</a></li><li class="dropdown-subitem"><a href="/notes-page/interview/hr/" class="nav-link">
+  HR面
+</a></li></ul></li><li class="dropdown-item"><h4>
+          简历
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/interview/writor/" class="nav-link">
+  写好简历
+</a></li><li class="dropdown-subitem"><a href="/notes-page/interview/templates/" class="nav-link">
+  简历模板
+</a></li></ul></li><li class="dropdown-item"><h4>
+          公司行业
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/interview/company/" class="nav-link">
+  选择公司
+</a></li><li class="dropdown-subitem"><a href="/notes-page/interview/industry/" class="nav-link">
+  行业洞悉
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="课程" class="dropdown-title"><span class="title">课程</span> <span class="arrow down"></span></button> <button type="button" aria-label="课程" class="mobile-dropdown-title"><span class="title">课程</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://class.imooc.com/sale/webfullstack" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  大前端课程
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://www.imooc.com/learn/1245" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  快速了解新版Vue3.0 + Vite开发
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://www.imooc.com/learn/1091" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  3小时速成 Vue2.x 核心技术
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="关于" class="dropdown-title"><span class="title">关于</span> <span class="arrow down"></span></button> <button type="button" aria-label="关于" class="mobile-dropdown-title"><span class="title">关于</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          日志
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/course/update-logs/" class="nav-link">
+  更新日志
+</a></li><li class="dropdown-subitem"><a href="https://github.com/toimc-team/front-end-notes" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github源码
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://gitee.com/toimc/front-end-notes" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  gitee源码
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>
+          参与贡献
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/course/notes/" class="nav-link">
+  贡献指南
+</a></li><li class="dropdown-subitem"><a href="/notes-page/course/vuepress/" class="nav-link router-link-active">
+  项目说明
+</a></li></ul></li><li class="dropdown-item"><h4>
+          社交媒介
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://www.toimc.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  官方博客
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://weibo.com/wayearn" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  微博
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="/notes-page/about/" class="nav-link">
+  团队介绍
+</a></li></ul></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/notes-page/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="基础强化" class="dropdown-title"><span class="title">基础强化</span> <span class="arrow down"></span></button> <button type="button" aria-label="基础强化" class="mobile-dropdown-title"><span class="title">基础强化</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          环境搭建
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/basic/vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-subitem"><a href="/notes-page/basic/node/" class="nav-link">
+  Node.js
+</a></li><li class="dropdown-subitem"><a href="/notes-page/basic/debug/" class="nav-link">
+  调试技巧
+</a></li><li class="dropdown-subitem"><a href="/notes-page/basic/docker/" class="nav-link">
+  Docker
+</a></li></ul></li><li class="dropdown-item"><h4>
+          语言基础
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/basic/ts/" class="nav-link">
+  TypeScript
+</a></li><li class="dropdown-subitem"><a href="/notes-page/basic/dart/" class="nav-link">
+  Dart
+</a></li></ul></li><li class="dropdown-item"><h4>
+          数据库
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/basic/nosql/" class="nav-link">
+  NoSQL
+</a></li><li class="dropdown-subitem"><a href="/notes-page/basic/mongo/" class="nav-link">
+  mongoDB
+</a></li><li class="dropdown-subitem"><a href="/notes-page/basic/redis/" class="nav-link">
+  Redis
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="DevOps" class="dropdown-title"><span class="title">DevOps</span> <span class="arrow down"></span></button> <button type="button" aria-label="DevOps" class="mobile-dropdown-title"><span class="title">DevOps</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          效率工具
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/devops/jenkins/" class="nav-link">
+  Jenkins
+</a></li></ul></li><li class="dropdown-item"><h4>
+          团队协同
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/devops/gitlab/" class="nav-link">
+  gitlab
+</a></li><li class="dropdown-subitem"><a href="/notes-page/devops/showdoc/" class="nav-link">
+  showDoc
+</a></li><li class="dropdown-subitem"><a href="/notes-page/devops/doclever/" class="nav-link">
+  DOClever
+</a></li></ul></li><li class="dropdown-item"><h4>
+          容器化
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/devops/docker-advance/" class="nav-link">
+  Docker进阶
+</a></li><li class="dropdown-subitem"><a href="/notes-page/devops/k8s/" class="nav-link">
+  Kubernetes
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="全端项目" class="dropdown-title"><span class="title">全端项目</span> <span class="arrow down"></span></button> <button type="button" aria-label="全端项目" class="mobile-dropdown-title"><span class="title">全端项目</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          社区项目
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/project/community-pc/" class="nav-link">
+  社区PC
+</a></li><li class="dropdown-subitem"><a href="/notes-page/project/community-admin/" class="nav-link">
+  管理后台
+</a></li><li class="dropdown-subitem"><a href="/notes-page/project/community-webapp/" class="nav-link">
+  WebApp
+</a></li></ul></li><li class="dropdown-item"><h4>
+          多平台+跨端
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/project/community-miniapp/" class="nav-link">
+  微信小程序
+</a></li><li class="dropdown-subitem"><a href="/notes-page/project/community-flutter/" class="nav-link">
+  Flutter 2.0
+</a></li><li class="dropdown-subitem"><a href="/notes-page/project/community-electron/" class="nav-link">
+  Electron桌面端
+</a></li></ul></li><li class="dropdown-item"><h4>
+          React世界
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/project/react/" class="nav-link">
+  React
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端面试" class="dropdown-title"><span class="title">前端面试</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端面试" class="mobile-dropdown-title"><span class="title">前端面试</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          笔试
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/interview/types/" class="nav-link">
+  分类笔试题
+</a></li><li class="dropdown-subitem"><a href="/notes-page/interview/techs/" class="nav-link">
+  笔记技巧
+</a></li></ul></li><li class="dropdown-item"><h4>
+          面试技巧
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/interview/basic/" class="nav-link">
+  技术面
+</a></li><li class="dropdown-subitem"><a href="/notes-page/interview/projects/" class="nav-link">
+  项目面
+</a></li><li class="dropdown-subitem"><a href="/notes-page/interview/boss/" class="nav-link">
+  BOSS面
+</a></li><li class="dropdown-subitem"><a href="/notes-page/interview/hr/" class="nav-link">
+  HR面
+</a></li></ul></li><li class="dropdown-item"><h4>
+          简历
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/interview/writor/" class="nav-link">
+  写好简历
+</a></li><li class="dropdown-subitem"><a href="/notes-page/interview/templates/" class="nav-link">
+  简历模板
+</a></li></ul></li><li class="dropdown-item"><h4>
+          公司行业
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/interview/company/" class="nav-link">
+  选择公司
+</a></li><li class="dropdown-subitem"><a href="/notes-page/interview/industry/" class="nav-link">
+  行业洞悉
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="课程" class="dropdown-title"><span class="title">课程</span> <span class="arrow down"></span></button> <button type="button" aria-label="课程" class="mobile-dropdown-title"><span class="title">课程</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://class.imooc.com/sale/webfullstack" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  大前端课程
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://www.imooc.com/learn/1245" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  快速了解新版Vue3.0 + Vite开发
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://www.imooc.com/learn/1091" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  3小时速成 Vue2.x 核心技术
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="关于" class="dropdown-title"><span class="title">关于</span> <span class="arrow down"></span></button> <button type="button" aria-label="关于" class="mobile-dropdown-title"><span class="title">关于</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          日志
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/course/update-logs/" class="nav-link">
+  更新日志
+</a></li><li class="dropdown-subitem"><a href="https://github.com/toimc-team/front-end-notes" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github源码
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://gitee.com/toimc/front-end-notes" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  gitee源码
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>
+          参与贡献
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/course/notes/" class="nav-link">
+  贡献指南
+</a></li><li class="dropdown-subitem"><a href="/notes-page/course/vuepress/" class="nav-link router-link-active">
+  项目说明
+</a></li></ul></li><li class="dropdown-item"><h4>
+          社交媒介
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://www.toimc.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  官方博客
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://weibo.com/wayearn" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  微博
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="/notes-page/about/" class="nav-link">
+  团队介绍
+</a></li></ul></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>参与贡献</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/notes-page/course/notes/" class="sidebar-link">贡献规范</a></li><li><a href="/notes-page/course/notes/01-编写规范.html" class="sidebar-link">编写规范</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>项目说明</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/notes-page/course/vuepress/" aria-current="page" class="sidebar-link">VuePress文档</a></li><li><a href="/notes-page/course/vuepress/01-配置说明.html" class="sidebar-link">项目配置</a></li><li><a href="/notes-page/course/vuepress/02-commit规范.html" class="active sidebar-link">代码Commit规范</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/notes-page/course/vuepress/02-commit规范.html#格式" class="sidebar-link">格式</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/notes-page/course/vuepress/02-commit规范.html#type-规则-必填" class="sidebar-link">type 规则（必填）</a></li><li class="sidebar-sub-header"><a href="/notes-page/course/vuepress/02-commit规范.html#scope-规则-必填" class="sidebar-link">scope 规则（必填）</a></li><li class="sidebar-sub-header"><a href="/notes-page/course/vuepress/02-commit规范.html#subject-规则-必填" class="sidebar-link">subject 规则（必填）</a></li><li class="sidebar-sub-header"><a href="/notes-page/course/vuepress/02-commit规范.html#body-规则-选填" class="sidebar-link">body 规则（选填）</a></li><li class="sidebar-sub-header"><a href="/notes-page/course/vuepress/02-commit规范.html#footer-规则-选填" class="sidebar-link">footer 规则（选填）</a></li></ul></li><li class="sidebar-sub-header"><a href="/notes-page/course/vuepress/02-commit规范.html#示例" class="sidebar-link">示例</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/notes-page/course/vuepress/02-commit规范.html#错误示例" class="sidebar-link">错误示例</a></li></ul></li><li class="sidebar-sub-header"><a href="/notes-page/course/vuepress/02-commit规范.html#其他事项" class="sidebar-link">其他事项</a></li></ul></li><li><a href="/notes-page/course/vuepress/03-PR规范.html" class="sidebar-link">Pull Request规范</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="代码commit规范"><a href="#代码commit规范" class="header-anchor">#</a> 代码Commit规范</h1> <h2 id="格式"><a href="#格式" class="header-anchor">#</a> 格式</h2> <p>Commit 规范采用常用的 <a href="https://github.com/angular/angular" target="_blank" rel="noopener noreferrer">Angular<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> 团队所使用的规范，具体如下：</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;type&gt;&lt;scope&gt;: &lt;subject&gt;
+&lt;空行&gt;
+&lt;body&gt;
+&lt;空行&gt;
+&lt;footer&gt;
+</code></pre></div><h3 id="type-规则-必填"><a href="#type-规则-必填" class="header-anchor">#</a> type 规则（必填）</h3> <p>type 代表本次 commit 的类型，有且仅有如下几种：</p> <ul><li><strong>feat</strong> - 功能性更新</li> <li><strong>fix</strong> - bug 修复</li> <li><strong>style</strong> - 改变代码格式（如删除空行、格式化代码、去除不必要的分号等等）</li> <li><strong>refactor</strong> - 既不是功能更新也不是 bug 修复的更改（建议对代码进行重构的时候使用）</li> <li><strong>perf</strong> - 代码改变提高了性能</li> <li><strong>test</strong> - 添加测试用例或者修改测试用例</li> <li><strong>build</strong> - 由打包工具造成的改变（如gulp、webpack编译文件）</li> <li><strong>chore</strong> - 既不是源码的修改，也不是测试用例的修改（修改项目相关配置时可以使用）</li> <li><strong>revert</strong> - 撤销之前的提交</li></ul> <h3 id="scope-规则-必填"><a href="#scope-规则-必填" class="header-anchor">#</a> scope 规则（必填）</h3> <p>scope 代表本次 commit 的影响范围，暂定规则如下：</p> <ul><li>本次 commit 修改的<strong>组件</strong></li> <li>本次 commit 修改的<strong>文件</strong></li> <li>本次 commit 修改的<strong>文件夹</strong></li></ul> <blockquote><p>注意：</p> <ul><li>选取时从上往下匹配</li> <li>组件名称应使用大写字母开头，多个单词每个单词都以大写开头</li> <li>文件名应包含完整后缀，如<code>index.js</code>、<code>.eslintrc.json</code></li></ul></blockquote> <h3 id="subject-规则-必填"><a href="#subject-规则-必填" class="header-anchor">#</a> subject 规则（必填）</h3> <p>用一句简短的话描述本次修改的内容，<strong>不要超过30个汉字</strong>，<strong>以动词开头</strong></p> <p>建议选用如下动词：</p> <ul><li>新增（组件、属性、事件、API）</li> <li>删除</li> <li>修正</li> <li>修复</li> <li>修改</li></ul> <p>正确示例：</p> <ul><li>新增 Collapse 组件</li> <li>新增 top 属性</li> <li>删除 color 属性</li> <li>修复 direction 属性不生效的问题</li> <li>修正 column 属性拼写</li></ul> <blockquote><p>注意：</p> <ul><li><p>subject 应该仔细斟酌，fix 和 feat 类型的 commit 的 subject 将会出现在更新日志中，</p> <p>所以书写时应考虑这句话出现在更新日志中是否合适</p></li> <li><p>subject 中不要包含组件名或者文件名，因为 scope 中已有对应名称</p></li></ul></blockquote> <h3 id="body-规则-选填"><a href="#body-规则-选填" class="header-anchor">#</a> body 规则（选填）</h3> <p>如果 subject 无法对本次 commit 进行清楚的阐释，则在 body 中进行补充说明。</p> <p>建议填写以下内容：</p> <ul><li>为什么进行本次修改</li> <li>本次修改了哪些内容</li> <li>修改后的影响有哪些</li></ul> <blockquote><p>body 需要注意换行问题，不要写在一行不换行，建议在50个字以内进行断句换行。</p></blockquote> <h3 id="footer-规则-选填"><a href="#footer-规则-选填" class="header-anchor">#</a> footer 规则（选填）</h3> <p>footer 中只填写两种内容：</p> <ol><li><p>这次 commit 和某个 issue 相关联，提交后能关闭该 issue，则填写：</p> <div class="language- extra-class"><pre class="language-text"><code>close #748
+</code></pre></div><p>或者</p> <div class="language- extra-class"><pre class="language-text"><code>fix #745
+</code></pre></div></li> <li><p>这次 commit 有不兼容上个版本的代码，则以<code>BREAKING CHANGE:</code>开头填写不兼容信息，如下：</p> <div class="language- extra-class"><pre class="language-text"><code>BREAKING CHANGE: Message组件top属性单位由px改为rpx
+</code></pre></div></li></ol> <h2 id="示例"><a href="#示例" class="header-anchor">#</a> 示例</h2> <p>一个<strong>完整规范且正确</strong>的 Commit 示例如下：</p> <div class="language- extra-class"><pre class="language-text"><code>fix(NoticeBar)：修改top属性单位为rpx
+
+NoticeBar组件的top属性单位之前为px，会出现无法自适应的问题。
+更改为rpx后可对屏幕进行自适应。
+
+BREAKING CHANGE: Notice-Bar组件top属性单位由px改为rpx
+
+Close #745
+</code></pre></div><blockquote><p>推荐 commit 规范信息生成插件</p> <ul><li>WebStorm - <a href="https://plugins.jetbrains.com/plugin/9861-git-commit-template" target="_blank" rel="noopener noreferrer">Git Commit Template<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li>Vs Code - <a href="https://github.com/Mongkii/Commit-Tagger" target="_blank" rel="noopener noreferrer">Commit Tagger<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></blockquote> <h3 id="错误示例"><a href="#错误示例" class="header-anchor">#</a> 错误示例</h3> <ol><li><p><code>subject</code>描述中出现组件名称</p> <div class="language- extra-class"><pre class="language-text"><code>feat(Button): Button 组件新增 size 属性
+</code></pre></div><p><strong>因type（括号中的内容）已经指定了组件，所以 subject 描述信息中无需再指明组件</strong></p></li> <li><p>单词未添加空格</p> <div class="language- extra-class"><pre class="language-text"><code>feat(Button): 新增size属性
+</code></pre></div><p><strong>为了生成的 changelog 的可读性，所有的单词左右都需要添加一个空格</strong></p></li> <li><p>feat、fix 类型需要慎重使用</p> <div class="language- extra-class"><pre class="language-text"><code>feat(Card): 更新 validator 校验器校验规则
+</code></pre></div><p><strong>因为 feat 和 fix 类型的 commit 信息会出现在 changelog 中，所以要保证这条信息是面向用户的。如上例所示，因为 validator 仅是我们自己内部使用，并不面向用户，所以用户并不关心这个校验器的新增功能。建议使用 chore 代替此处的 feat（chore 的意思是琐碎的事务）</strong></p></li></ol> <h2 id="其他事项"><a href="#其他事项" class="header-anchor">#</a> 其他事项</h2> <p>一个 commit 应该是一个有意义的 commit</p> <p><strong>有意义</strong>的定义如下：</p> <ul><li>新增了一个功能或组件</li> <li>修复了一个bug</li> <li>解决了一个issue</li> <li>重构了某个组件或文件</li> <li>改善了现有代码的构建流程或风格</li></ul> <p><strong>无意义</strong>的定义如下：</p> <ul><li>临时工作进度保存</li> <li>误提交的 commit</li> <li>commit 信息不规范或缺失</li> <li>subject 无法准确描述此次 commit</li></ul> <blockquote><p><strong>注意</strong>：一个 commit 的提交应该保证代码的可运行性和完整性。</p> <ul><li>可运行性：commit 提交后，运行代码不能报错</li> <li>完整性：commit 提交后，当前代码中不能包含缺失的功能（如某个功能做了一半就提交）</li></ul></blockquote></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/notes-page/course/vuepress/01-配置说明.html" class="prev">
+        项目配置
+      </a></span> <span class="next"><a href="/notes-page/course/vuepress/03-PR规范.html">
+        Pull Request规范
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/notes-page/assets/js/app.09fb6155.js" defer></script><script src="/notes-page/assets/js/2.947160e8.js" defer></script><script src="/notes-page/assets/js/30.18cbfa47.js" defer></script>
+  </body>
+</html>
