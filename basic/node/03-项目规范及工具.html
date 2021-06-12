@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>项目规范及工具 | 大前端 - 前端高级进阶</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="大前端课程电子书">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+    <link rel="preload" href="/notes-page/assets/css/0.styles.101403b5.css" as="style"><link rel="preload" href="/notes-page/assets/js/app.5ad96270.js" as="script"><link rel="preload" href="/notes-page/assets/js/2.ce34c564.js" as="script"><link rel="preload" href="/notes-page/assets/js/4.50410455.js" as="script"><link rel="prefetch" href="/notes-page/assets/js/10.ce93fb30.js"><link rel="prefetch" href="/notes-page/assets/js/11.5ba5820e.js"><link rel="prefetch" href="/notes-page/assets/js/12.949c47db.js"><link rel="prefetch" href="/notes-page/assets/js/13.ab0b7291.js"><link rel="prefetch" href="/notes-page/assets/js/14.b4b22faa.js"><link rel="prefetch" href="/notes-page/assets/js/15.654bad99.js"><link rel="prefetch" href="/notes-page/assets/js/16.55c156c3.js"><link rel="prefetch" href="/notes-page/assets/js/17.4763efa9.js"><link rel="prefetch" href="/notes-page/assets/js/18.623cd923.js"><link rel="prefetch" href="/notes-page/assets/js/19.bdcf7ee1.js"><link rel="prefetch" href="/notes-page/assets/js/20.69379cdb.js"><link rel="prefetch" href="/notes-page/assets/js/21.334fef41.js"><link rel="prefetch" href="/notes-page/assets/js/22.957f1196.js"><link rel="prefetch" href="/notes-page/assets/js/23.be414619.js"><link rel="prefetch" href="/notes-page/assets/js/24.8334fccf.js"><link rel="prefetch" href="/notes-page/assets/js/25.31855451.js"><link rel="prefetch" href="/notes-page/assets/js/26.e55e9d26.js"><link rel="prefetch" href="/notes-page/assets/js/27.0dcfc24b.js"><link rel="prefetch" href="/notes-page/assets/js/28.e471b725.js"><link rel="prefetch" href="/notes-page/assets/js/29.afb33c90.js"><link rel="prefetch" href="/notes-page/assets/js/3.699b0ac4.js"><link rel="prefetch" href="/notes-page/assets/js/30.765aa1ef.js"><link rel="prefetch" href="/notes-page/assets/js/31.66dda3d2.js"><link rel="prefetch" href="/notes-page/assets/js/32.d45fe9a4.js"><link rel="prefetch" href="/notes-page/assets/js/33.f648220e.js"><link rel="prefetch" href="/notes-page/assets/js/34.a80c3b1c.js"><link rel="prefetch" href="/notes-page/assets/js/35.54985a8c.js"><link rel="prefetch" href="/notes-page/assets/js/36.5670d11f.js"><link rel="prefetch" href="/notes-page/assets/js/37.c2d41e99.js"><link rel="prefetch" href="/notes-page/assets/js/38.655ee13d.js"><link rel="prefetch" href="/notes-page/assets/js/39.82d2d251.js"><link rel="prefetch" href="/notes-page/assets/js/40.6e64edfc.js"><link rel="prefetch" href="/notes-page/assets/js/41.01185268.js"><link rel="prefetch" href="/notes-page/assets/js/42.5bb2e466.js"><link rel="prefetch" href="/notes-page/assets/js/43.43cf09b0.js"><link rel="prefetch" href="/notes-page/assets/js/44.3a21dccf.js"><link rel="prefetch" href="/notes-page/assets/js/45.68ff33e0.js"><link rel="prefetch" href="/notes-page/assets/js/46.affb39e3.js"><link rel="prefetch" href="/notes-page/assets/js/47.835f123b.js"><link rel="prefetch" href="/notes-page/assets/js/48.6a3b1ea6.js"><link rel="prefetch" href="/notes-page/assets/js/49.9676fd97.js"><link rel="prefetch" href="/notes-page/assets/js/5.5391d3ac.js"><link rel="prefetch" href="/notes-page/assets/js/50.14e9ff7b.js"><link rel="prefetch" href="/notes-page/assets/js/51.80f36301.js"><link rel="prefetch" href="/notes-page/assets/js/52.f8e9f714.js"><link rel="prefetch" href="/notes-page/assets/js/53.9b53f84f.js"><link rel="prefetch" href="/notes-page/assets/js/54.ac265337.js"><link rel="prefetch" href="/notes-page/assets/js/55.e19b7481.js"><link rel="prefetch" href="/notes-page/assets/js/56.eb11009b.js"><link rel="prefetch" href="/notes-page/assets/js/57.e1c01699.js"><link rel="prefetch" href="/notes-page/assets/js/58.e401b96a.js"><link rel="prefetch" href="/notes-page/assets/js/59.b86da776.js"><link rel="prefetch" href="/notes-page/assets/js/6.3d2746ca.js"><link rel="prefetch" href="/notes-page/assets/js/60.390ccc80.js"><link rel="prefetch" href="/notes-page/assets/js/61.ab366df2.js"><link rel="prefetch" href="/notes-page/assets/js/62.3bef8759.js"><link rel="prefetch" href="/notes-page/assets/js/63.1504bfce.js"><link rel="prefetch" href="/notes-page/assets/js/64.29bde46e.js"><link rel="prefetch" href="/notes-page/assets/js/65.1753f7e4.js"><link rel="prefetch" href="/notes-page/assets/js/66.e0820f35.js"><link rel="prefetch" href="/notes-page/assets/js/67.eae52940.js"><link rel="prefetch" href="/notes-page/assets/js/68.1b6f663e.js"><link rel="prefetch" href="/notes-page/assets/js/69.73179944.js"><link rel="prefetch" href="/notes-page/assets/js/7.c18a8576.js"><link rel="prefetch" href="/notes-page/assets/js/70.03cf76c8.js"><link rel="prefetch" href="/notes-page/assets/js/71.dcd869db.js"><link rel="prefetch" href="/notes-page/assets/js/8.0ec9e034.js"><link rel="prefetch" href="/notes-page/assets/js/9.01570710.js">
+    <link rel="stylesheet" href="/notes-page/assets/css/0.styles.101403b5.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/notes-page/" class="home-link router-link-active"><!----> <span class="site-name">大前端 - 前端高级进阶</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/notes-page/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="基础强化" class="dropdown-title"><span class="title">基础强化</span> <span class="arrow down"></span></button> <button type="button" aria-label="基础强化" class="mobile-dropdown-title"><span class="title">基础强化</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          环境搭建
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/basic/vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-subitem"><a href="/notes-page/basic/node/" class="nav-link router-link-active">
+  Node.js
+</a></li><li class="dropdown-subitem"><a href="/notes-page/basic/debug/" class="nav-link">
+  调试技巧
+</a></li><li class="dropdown-subitem"><a href="/notes-page/basic/docker/" class="nav-link">
+  Docker
+</a></li></ul></li><li class="dropdown-item"><h4>
+          语言基础
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/basic/ts/" class="nav-link">
+  TypeScript
+</a></li><li class="dropdown-subitem"><a href="/notes-page/basic/dart/" class="nav-link">
+  Dart
+</a></li></ul></li><li class="dropdown-item"><h4>
+          数据库
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/basic/nosql/" class="nav-link">
+  NoSQL
+</a></li><li class="dropdown-subitem"><a href="/notes-page/basic/mongo/" class="nav-link">
+  mongoDB
+</a></li><li class="dropdown-subitem"><a href="/notes-page/basic/redis/" class="nav-link">
+  Redis
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="DevOps" class="dropdown-title"><span class="title">DevOps</span> <span class="arrow down"></span></button> <button type="button" aria-label="DevOps" class="mobile-dropdown-title"><span class="title">DevOps</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          效率工具
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/devops/jenkins/" class="nav-link">
+  Jenkins
+</a></li></ul></li><li class="dropdown-item"><h4>
+          团队协同
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/devops/gitlab/" class="nav-link">
+  gitlab
+</a></li><li class="dropdown-subitem"><a href="/notes-page/devops/showdoc/" class="nav-link">
+  showDoc
+</a></li><li class="dropdown-subitem"><a href="/notes-page/devops/doclever/" class="nav-link">
+  DOClever
+</a></li></ul></li><li class="dropdown-item"><h4>
+          容器化
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/devops/docker-advance/" class="nav-link">
+  Docker进阶
+</a></li><li class="dropdown-subitem"><a href="/notes-page/devops/k8s/" class="nav-link">
+  Kubernetes
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="全端项目" class="dropdown-title"><span class="title">全端项目</span> <span class="arrow down"></span></button> <button type="button" aria-label="全端项目" class="mobile-dropdown-title"><span class="title">全端项目</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          社区项目
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/project/community-pc/" class="nav-link">
+  社区PC
+</a></li><li class="dropdown-subitem"><a href="/notes-page/project/community-admin/" class="nav-link">
+  管理后台
+</a></li><li class="dropdown-subitem"><a href="/notes-page/project/community-webapp/" class="nav-link">
+  WebApp
+</a></li></ul></li><li class="dropdown-item"><h4>
+          多平台+跨端
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/project/community-miniapp/" class="nav-link">
+  微信小程序
+</a></li><li class="dropdown-subitem"><a href="/notes-page/project/community-flutter/" class="nav-link">
+  Flutter 2.0
+</a></li><li class="dropdown-subitem"><a href="/notes-page/project/community-electron/" class="nav-link">
+  Electron桌面端
+</a></li></ul></li><li class="dropdown-item"><h4>
+          React世界
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/project/react/" class="nav-link">
+  React
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端面试" class="dropdown-title"><span class="title">前端面试</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端面试" class="mobile-dropdown-title"><span class="title">前端面试</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          笔试
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/interview/types/" class="nav-link">
+  分类笔试题
+</a></li><li class="dropdown-subitem"><a href="/notes-page/interview/techs/" class="nav-link">
+  笔记技巧
+</a></li></ul></li><li class="dropdown-item"><h4>
+          面试技巧
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/interview/basic/" class="nav-link">
+  技术面
+</a></li><li class="dropdown-subitem"><a href="/notes-page/interview/projects/" class="nav-link">
+  项目面
+</a></li><li class="dropdown-subitem"><a href="/notes-page/interview/boss/" class="nav-link">
+  BOSS面
+</a></li><li class="dropdown-subitem"><a href="/notes-page/interview/hr/" class="nav-link">
+  HR面
+</a></li></ul></li><li class="dropdown-item"><h4>
+          简历
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/interview/writor/" class="nav-link">
+  写好简历
+</a></li><li class="dropdown-subitem"><a href="/notes-page/interview/templates/" class="nav-link">
+  简历模板
+</a></li></ul></li><li class="dropdown-item"><h4>
+          公司行业
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/interview/company/" class="nav-link">
+  选择公司
+</a></li><li class="dropdown-subitem"><a href="/notes-page/interview/industry/" class="nav-link">
+  行业洞悉
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="课程" class="dropdown-title"><span class="title">课程</span> <span class="arrow down"></span></button> <button type="button" aria-label="课程" class="mobile-dropdown-title"><span class="title">课程</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://class.imooc.com/sale/webfullstack2021" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  大前端课程
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://www.imooc.com/learn/1245" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  快速了解新版Vue3.0 + Vite开发
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://www.imooc.com/learn/1091" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  3小时速成 Vue2.x 核心技术
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="关于" class="dropdown-title"><span class="title">关于</span> <span class="arrow down"></span></button> <button type="button" aria-label="关于" class="mobile-dropdown-title"><span class="title">关于</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          日志
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/course/update-logs/" class="nav-link">
+  更新日志
+</a></li><li class="dropdown-subitem"><a href="https://github.com/toimc-team/front-end-notes" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github源码
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://gitee.com/toimc/front-end-notes" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  gitee源码
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>
+          参与贡献
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/course/notes/" class="nav-link">
+  贡献指南
+</a></li><li class="dropdown-subitem"><a href="/notes-page/course/vuepress/" class="nav-link">
+  项目说明
+</a></li></ul></li><li class="dropdown-item"><h4>
+          社交媒介
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://www.toimc.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  官方博客
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://weibo.com/wayearn" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  微博
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="/notes-page/about/" class="nav-link">
+  团队介绍
+</a></li></ul></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/notes-page/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="基础强化" class="dropdown-title"><span class="title">基础强化</span> <span class="arrow down"></span></button> <button type="button" aria-label="基础强化" class="mobile-dropdown-title"><span class="title">基础强化</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          环境搭建
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/basic/vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-subitem"><a href="/notes-page/basic/node/" class="nav-link router-link-active">
+  Node.js
+</a></li><li class="dropdown-subitem"><a href="/notes-page/basic/debug/" class="nav-link">
+  调试技巧
+</a></li><li class="dropdown-subitem"><a href="/notes-page/basic/docker/" class="nav-link">
+  Docker
+</a></li></ul></li><li class="dropdown-item"><h4>
+          语言基础
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/basic/ts/" class="nav-link">
+  TypeScript
+</a></li><li class="dropdown-subitem"><a href="/notes-page/basic/dart/" class="nav-link">
+  Dart
+</a></li></ul></li><li class="dropdown-item"><h4>
+          数据库
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/basic/nosql/" class="nav-link">
+  NoSQL
+</a></li><li class="dropdown-subitem"><a href="/notes-page/basic/mongo/" class="nav-link">
+  mongoDB
+</a></li><li class="dropdown-subitem"><a href="/notes-page/basic/redis/" class="nav-link">
+  Redis
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="DevOps" class="dropdown-title"><span class="title">DevOps</span> <span class="arrow down"></span></button> <button type="button" aria-label="DevOps" class="mobile-dropdown-title"><span class="title">DevOps</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          效率工具
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/devops/jenkins/" class="nav-link">
+  Jenkins
+</a></li></ul></li><li class="dropdown-item"><h4>
+          团队协同
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/devops/gitlab/" class="nav-link">
+  gitlab
+</a></li><li class="dropdown-subitem"><a href="/notes-page/devops/showdoc/" class="nav-link">
+  showDoc
+</a></li><li class="dropdown-subitem"><a href="/notes-page/devops/doclever/" class="nav-link">
+  DOClever
+</a></li></ul></li><li class="dropdown-item"><h4>
+          容器化
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/devops/docker-advance/" class="nav-link">
+  Docker进阶
+</a></li><li class="dropdown-subitem"><a href="/notes-page/devops/k8s/" class="nav-link">
+  Kubernetes
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="全端项目" class="dropdown-title"><span class="title">全端项目</span> <span class="arrow down"></span></button> <button type="button" aria-label="全端项目" class="mobile-dropdown-title"><span class="title">全端项目</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          社区项目
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/project/community-pc/" class="nav-link">
+  社区PC
+</a></li><li class="dropdown-subitem"><a href="/notes-page/project/community-admin/" class="nav-link">
+  管理后台
+</a></li><li class="dropdown-subitem"><a href="/notes-page/project/community-webapp/" class="nav-link">
+  WebApp
+</a></li></ul></li><li class="dropdown-item"><h4>
+          多平台+跨端
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/project/community-miniapp/" class="nav-link">
+  微信小程序
+</a></li><li class="dropdown-subitem"><a href="/notes-page/project/community-flutter/" class="nav-link">
+  Flutter 2.0
+</a></li><li class="dropdown-subitem"><a href="/notes-page/project/community-electron/" class="nav-link">
+  Electron桌面端
+</a></li></ul></li><li class="dropdown-item"><h4>
+          React世界
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/project/react/" class="nav-link">
+  React
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端面试" class="dropdown-title"><span class="title">前端面试</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端面试" class="mobile-dropdown-title"><span class="title">前端面试</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          笔试
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/interview/types/" class="nav-link">
+  分类笔试题
+</a></li><li class="dropdown-subitem"><a href="/notes-page/interview/techs/" class="nav-link">
+  笔记技巧
+</a></li></ul></li><li class="dropdown-item"><h4>
+          面试技巧
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/interview/basic/" class="nav-link">
+  技术面
+</a></li><li class="dropdown-subitem"><a href="/notes-page/interview/projects/" class="nav-link">
+  项目面
+</a></li><li class="dropdown-subitem"><a href="/notes-page/interview/boss/" class="nav-link">
+  BOSS面
+</a></li><li class="dropdown-subitem"><a href="/notes-page/interview/hr/" class="nav-link">
+  HR面
+</a></li></ul></li><li class="dropdown-item"><h4>
+          简历
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/interview/writor/" class="nav-link">
+  写好简历
+</a></li><li class="dropdown-subitem"><a href="/notes-page/interview/templates/" class="nav-link">
+  简历模板
+</a></li></ul></li><li class="dropdown-item"><h4>
+          公司行业
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/interview/company/" class="nav-link">
+  选择公司
+</a></li><li class="dropdown-subitem"><a href="/notes-page/interview/industry/" class="nav-link">
+  行业洞悉
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="课程" class="dropdown-title"><span class="title">课程</span> <span class="arrow down"></span></button> <button type="button" aria-label="课程" class="mobile-dropdown-title"><span class="title">课程</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://class.imooc.com/sale/webfullstack2021" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  大前端课程
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://www.imooc.com/learn/1245" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  快速了解新版Vue3.0 + Vite开发
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://www.imooc.com/learn/1091" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  3小时速成 Vue2.x 核心技术
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="关于" class="dropdown-title"><span class="title">关于</span> <span class="arrow down"></span></button> <button type="button" aria-label="关于" class="mobile-dropdown-title"><span class="title">关于</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          日志
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/course/update-logs/" class="nav-link">
+  更新日志
+</a></li><li class="dropdown-subitem"><a href="https://github.com/toimc-team/front-end-notes" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github源码
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://gitee.com/toimc/front-end-notes" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  gitee源码
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>
+          参与贡献
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/course/notes/" class="nav-link">
+  贡献指南
+</a></li><li class="dropdown-subitem"><a href="/notes-page/course/vuepress/" class="nav-link">
+  项目说明
+</a></li></ul></li><li class="dropdown-item"><h4>
+          社交媒介
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://www.toimc.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  官方博客
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://weibo.com/wayearn" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  微博
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="/notes-page/about/" class="nav-link">
+  团队介绍
+</a></li></ul></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Node.js进阶</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/notes-page/basic/node/" aria-current="page" class="sidebar-link">内容介绍</a></li><li><a href="/notes-page/basic/node/01-koa.html" class="sidebar-link">koa(下一代web框架)</a></li><li><a href="/notes-page/basic/node/02-webpack5构建.html" class="sidebar-link">webpack5构建加持</a></li><li><a href="/notes-page/basic/node/03-项目规范及工具.html" class="active sidebar-link">项目规范及工具</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/notes-page/basic/node/03-项目规范及工具.html#集成-editorconfig" class="sidebar-link">集成 EditorConfig</a></li><li class="sidebar-sub-header"><a href="/notes-page/basic/node/03-项目规范及工具.html#集成-prettier" class="sidebar-link">集成 Prettier</a></li><li class="sidebar-sub-header"><a href="/notes-page/basic/node/03-项目规范及工具.html#集成-eslint" class="sidebar-link">集成 ESLint</a></li><li class="sidebar-sub-header"><a href="/notes-page/basic/node/03-项目规范及工具.html#解决-prettier-和-eslint-的冲突" class="sidebar-link">解决 Prettier 和 ESLint 的冲突</a></li><li class="sidebar-sub-header"><a href="/notes-page/basic/node/03-项目规范及工具.html#集成-husky-和-lint-staged" class="sidebar-link">集成 husky 和 lint-staged</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/notes-page/basic/node/03-项目规范及工具.html#配置-husky" class="sidebar-link">配置 husky</a></li><li class="sidebar-sub-header"><a href="/notes-page/basic/node/03-项目规范及工具.html#配置-lint-staged" class="sidebar-link">配置 lint-staged</a></li></ul></li></ul></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>TypeScript</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/notes-page/basic/ts/" class="sidebar-link">概念</a></li><li><a href="/notes-page/basic/ts/01-环境配置.html" class="sidebar-link">环境配置</a></li><li><a href="/notes-page/basic/ts/02-基础语法.html" class="sidebar-link">基础用法</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>mongoDB</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/notes-page/basic/mongo/" class="sidebar-link">认识 MongoDB</a></li><li><a href="/notes-page/basic/mongo/01-创建用户并分配权限.html" class="sidebar-link">创建用户并分配权限</a></li><li><a href="/notes-page/basic/mongo/01.1连接MongoDB.html" class="sidebar-link">MongoDB交互终端</a></li><li><a href="/notes-page/basic/mongo/02-基础操作.html" class="sidebar-link">基本操作</a></li><li><a href="/notes-page/basic/mongo/03-高级查询.html" class="sidebar-link">高级查询</a></li><li><a href="/notes-page/basic/mongo/04-复制集.html" class="sidebar-link">复制集</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="项目规范及工具"><a href="#项目规范及工具" class="header-anchor">#</a> 项目规范及工具</h1> <h2 id="集成-editorconfig"><a href="#集成-editorconfig" class="header-anchor">#</a> 集成 EditorConfig</h2> <blockquote><p><strong><a href="https://editorconfig.org/" target="_blank" rel="noopener noreferrer">EditorConfig<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></strong> 有助于为不同 IDE 编辑器上处理同一项目的多个开发人员维护一致的编码风格。</p></blockquote> <p>在项目根目录下增加 <code>.editorconfig</code> 文件， 并配置以下内容：</p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token comment"># Editor configuration, see http://editorconfig.org</span>
+
+<span class="token comment"># 表示是最顶层的 EditorConfig 配置文件</span>
+root = true
+
+<span class="token comment"># 表示所有文件适用</span>
+<span class="token punctuation">[</span>*<span class="token punctuation">]</span>
+
+<span class="token comment"># 设置文件字符集为 utf-8</span>
+charset = utf<span class="token punctuation">-</span><span class="token number">8</span>
+
+<span class="token comment"># 缩进风格（tab | space）</span>
+indent_style = space
+
+<span class="token comment"># 缩进大小</span>
+indent_size = 4
+
+<span class="token comment"># 控制换行类型(lf | cr | crlf)</span>
+end_of_line = lf
+
+<span class="token comment"># 去除行首的任意空白字符</span>
+trim_trailing_whitespace = true
+
+<span class="token comment"># 始终在文件末尾插入一个新行</span>
+insert_final_newline = true
+
+<span class="token comment"># md 文件适用以下规则</span>
+<span class="token punctuation">[</span><span class="token important">*.md</span><span class="token punctuation">]</span>
+max_line_length = off
+trim_trailing_whitespace = false
+</code></pre></div><div class="custom-block tip"><p class="custom-block-title">注意</p> <p>VSCode 使用 EditorConfig 需要去插件市场下载插件 <code>EditorConfig for VS Code</code> 。WebStorm 则不需要安装，直接使用 EditorConfig 配置即可。</p> <p><img src="/notes-page/assets/img/image-20210504101228402.5e7543f7.png" alt="image-20210504101228402"></p></div> <h2 id="集成-prettier"><a href="#集成-prettier" class="header-anchor">#</a> 集成 Prettier</h2> <blockquote><p><strong><a href="https://prettier.io/" target="_blank" rel="noopener noreferrer">Prettier<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></strong> 是一款强大的代码格式化工具，支持 <code>JavaScript、TypeScript、CSS、SCSS、Less、JSX、Angular、Vue、GraphQL、JSON、Markdown</code> 等语言，基本上前端能用到的文件格式它都可以搞定，是当下最流行的代码格式化工具。</p></blockquote> <ul><li>安装 Prettier</li></ul> <div class="language-shell extra-class"><pre class="language-shell"><code>$ <span class="token function">npm</span> i prettier -D
+</code></pre></div><ul><li><p>创建 Prettier 配置文件
+Prettier 支持多种格式的配置文件，比如 <code>.json</code>、<code>.yml</code>、<code>.yaml</code>、<code>.js</code> 等。
+在本项目根目录下创建 <code>.prettierrc</code> 文件。</p></li> <li><p>配置 <code>.prettierrc</code>
+在本项目中，我们进行如下简单配置，关于更多配置项信息，请前往官网查看 <a href="https://prettier.io/docs/en/options.html" target="_blank" rel="noopener noreferrer">Prettier-Options<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> 。</p></li></ul> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+  <span class="token property">&quot;useTabs&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;tabWidth&quot;</span><span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;printWidth&quot;</span><span class="token operator">:</span> <span class="token number">100</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;singleQuote&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;trailingComma&quot;</span><span class="token operator">:</span> <span class="token string">&quot;none&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;bracketSpacing&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;semi&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>Prettier 安装且配置好之后，就能使用命令来格式化代码</p> <ul><li>格式化所有文件（. 表示所有文件）</li></ul> <div class="language-shell extra-class"><pre class="language-shell"><code>$ npx prettier --write <span class="token builtin class-name">.</span>
+</code></pre></div><div class="custom-block tip"><p class="custom-block-title">注意</p> <p>VSCode 编辑器使用 <code>Prettier</code> 配置需要下载插件 <code>Prettier - Code formatter</code>； WebStorm 则不需要安装，直接使用 EditorConfig 配置即可。</p> <p><img src="/notes-page/assets/img/image-20210504102416728.3dbda827.png" alt="image-20210504102416728"></p></div> <h2 id="集成-eslint"><a href="#集成-eslint" class="header-anchor">#</a> 集成 ESLint</h2> <p><a href="https://eslint.org/" target="_blank" rel="noopener noreferrer">ESLint<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> 是一款用于查找并报告代码中问题的工具，并且支持部分问题自动修复。其核心是通过对代码解析得到的 <code>AST</code>（Abstract Syntax Tree 抽象语法树）进行模式匹配，来分析代码达到检查代码质量和风格问题的能力。
+使用 <code>ESLint</code> 可以尽可能的避免团队成员之间编程能力和编码习惯不同所造成的代码质量问题，一边写代码一边查找问题，如果发现错误，就给出规则提示，并且自动修复，长期下去，可以促使团队成员往同一种编码风格靠拢。</p> <ul><li>安装 eslint</li></ul> <div class="language-shell extra-class"><pre class="language-shell"><code>$ <span class="token function">npm</span> i -D eslint
+</code></pre></div><ul><li><p>配置 ESLint</p> <blockquote><p>ESLint 安装成功后，执行 <code>npx eslint --init</code>，然后按照终端操作提示完成一系列设置来创建配置文件。</p></blockquote></li></ul> <p><img src="/notes-page/assets/img/image-20210504103213588.d63b5ec3.png" alt="image-20210504103213588"></p> <ul><li><p>How would you like to use ESLint? ...(你想如何使用 ESLint?…)</p> <blockquote><p>我这里选择第三个，检查语法，发现问题，并强制代码样式</p></blockquote></li></ul> <p><img src="/notes-page/assets/img/image-20210504103418834.acabf1c4.png" alt="image-20210504103418834"></p> <ul><li><p>What type of modules does your project use? ... （你的项目使用什么类型的模块?…）</p> <blockquote><p>项目支持 es6+语法，所以这里就直接选用第一项：JavaScript modules (import/export)</p></blockquote></li> <li><p>Which framework does your project use? ... （你的项目使用哪种框架?…）</p> <blockquote><p>这里并未使用 vue 和 react，所以选择 none of these</p></blockquote></li></ul> <p><img src="/notes-page/assets/img/image-20210504104452973.81e4374c.png" alt="image-20210504104452973"></p> <ul><li><p>Does your project use TypeScript? (你的项目使用 TypeScript 吗?)</p> <blockquote><p>项目中并没有使用 Typescript，所以选择 No</p></blockquote></li></ul> <p><img src="/notes-page/assets/img/image-20210504104610444.bc5623d2.png" alt="image-20210504104610444"></p> <ul><li><p>Where does your code run?(你的代码在哪里运行?)</p> <blockquote><p>这是 node 项目，所以不需要选择浏览器环境</p></blockquote></li></ul> <p><img src="/notes-page/assets/img/image-20210504105031201.4dd08695.png" alt="image-20210504105031201"></p> <ul><li><p>How would you like to define a style for your project? ... (你想怎样为你的项目定义风格？)</p> <blockquote><p>我们这里选择 Use a popular style guide（使用一种流行的风格指南）</p></blockquote></li></ul> <p><img src="/notes-page/assets/img/image-20210504105437959.f4a9a07c.png" alt="image-20210504105437959"></p> <ul><li><p>Which style guide do you want to follow? ... (你想遵循哪种风格指南?…)</p> <p><img src="/notes-page/assets/img/image-20210504105647664.46c543a7.png" alt="image-20210504105647664"></p></li> <li><p>What format do you want your config file to be in? ... (您希望配置文件的格式是什么?…)</p> <blockquote><p>我这里选择 JavaScript</p></blockquote></li> <li><p>Would you like to install them now with npm?（你想现在用 npm 安装它们吗?）</p> <blockquote><p>默认 Yes，所以可以直接回车</p></blockquote> <p><img src="/notes-page/assets/img/image-20210504110100677.15a7a58d.png" alt="image-20210504110100677"></p></li> <li><p>所有配置如下</p> <p><img src="/notes-page/assets/img/image-20210504110235680.d03c16f5.png" alt="image-20210504110235680"></p></li></ul> <p>安装成功后，项目的根目录就会多一个<code>.eslintrc.js</code>文件，其中的内容就是我们在终端中选择的相应配置。</p> <div class="custom-block tip"><p class="custom-block-title">注意</p> <p>VSCode 使用 ESLint 配置文件需要去插件市场下载插件 ESLint 。
+<img src="/notes-page/assets/img/image-20210504111438312.727bc6a5.png" alt="image-20210504111438312"></p></div> <h2 id="解决-prettier-和-eslint-的冲突"><a href="#解决-prettier-和-eslint-的冲突" class="header-anchor">#</a> 解决 Prettier 和 ESLint 的冲突</h2> <p>本项目中的 ESLint 配置中使用了 <code>Airbnb JavaScript</code> 风格指南校验，其规则之一是代码结束后面要加分号，而我们在 Prettier 配置文件中加了代码结束后面不加分号的配置项，这样就有冲突了，会出现用 Prettier 格式化后的代码，ESLint 检测到格式有问题的，从而抛出错误提示。
+解决两者冲突问题，需要用到 <code>eslint-plugin-prettier</code> 和 <code>eslint-config-prettier</code>。</p> <blockquote><p><code>eslint-plugin-prettier</code> 将 Prettier 的规则设置到 ESLint 的规则中。</p></blockquote> <blockquote><p><code>eslint-config-prettier</code> 关闭 ESLint 中与 Prettier 中会发生冲突的规则。</p></blockquote> <p>最后形成优先级：Prettier 配置规则 &gt; ESLint 配置规则。</p> <ul><li>安装插件</li></ul> <div class="language-shell extra-class"><pre class="language-shell"><code>$ <span class="token function">npm</span> i eslint-plugin-prettier eslint-config-prettier -D
+</code></pre></div><ul><li>在 <code>.eslintrc.js</code> 添加 prettier 插件</li></ul> <div class="language-javascript extra-class"><pre class="language-javascript"><code>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token operator">...</span>
+    <span class="token keyword">extends</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token string">'airbnb-base'</span><span class="token punctuation">,</span>
+        <span class="token string">'plugin:prettier/recommended'</span> <span class="token comment">// 添加 prettier 插件</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token operator">...</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>这样，我们在执行 <code>eslint --fix</code> 命令时，ESLint 就会按照 Prettier 的配置规则来格式化代码，轻松解决二者冲突问题。</p> <h2 id="集成-husky-和-lint-staged"><a href="#集成-husky-和-lint-staged" class="header-anchor">#</a> 集成 husky 和 lint-staged</h2> <p>我们在项目中已集成 <code>ESLint</code> 和 <code>Prettier</code>，在编码时，这些工具可以对我们写的代码进行实时校验，在一定程度上能有效规范我们写的代码，但团队可能会有些人觉得这些条条框框的限制很麻烦，选择视“提示”而不见，依旧按自己的一套风格来写代码，或者干脆禁用掉这些工具，开发完成就直接把代码提交到了仓库，日积月累，<code>ESLint</code> 也就形同虚设。
+所以，我们还需要做一些限制，让没通过 <code>ESLint</code> 检测和修复的代码禁止提交，从而保证仓库代码都是符合规范的。
+为了解决这个问题，我们需要用到 <code>Git Hook</code>，在本地执行 <code>git commit</code> 的时候，就对所提交的代码进行 <code>ESLint</code> 检测和修复（即执行 <code>eslint --fix</code>），如果这些代码没通过 <code>ESLint</code> 规则校验，则禁止提交。
+实现这一功能，我们借助 <code>husky + lint-staged</code> 。</p> <blockquote><p>husky —— Git Hook 工具，可以设置在 git 各个阶段（pre-commit、commit-msg、pre-push 等）触发我们的命令。
+lint-staged —— 在 git 暂存的文件上运行 linters。</p></blockquote> <h3 id="配置-husky"><a href="#配置-husky" class="header-anchor">#</a> 配置 husky</h3> <div class="custom-block tip"><p class="custom-block-title">TIP</p> <p>使用 <code>husky-init</code> 命令快速在项目初始化一个 <code>husky</code> 配置。在配置 <code>husky</code> 之前必须初始化 <code>git</code>，否则可能会配置不成功</p></div> <div class="language-shell extra-class"><pre class="language-shell"><code>$ npx husky-init <span class="token operator">&amp;&amp;</span> <span class="token function">npm</span> <span class="token function">install</span>
+</code></pre></div><p>命令执行会经历以下四步流程：</p> <ul><li><p>安装<code>husky</code>为开发依赖</p> <p><img src="/notes-page/assets/img/image-20210504120333648.39036f64.png" alt="image-20210504120333648"></p></li> <li><p>创建<code>.husky</code>文件夹</p> <p><img src="/notes-page/assets/img/image-20210504120510820.7751bb3c.png" alt="image-20210504120510820"></p></li> <li><p>在 <code>.husky</code> 目录创建 <code>pre-commit</code> hook，并初始化 <code>pre-commit</code> 命令为 <code>npm test</code></p> <p><img src="/notes-page/assets/img/image-20210504120612932.25edc2fb.png" alt="image-20210504120612932"></p></li> <li><p>修改 <code>package.json</code> 的 <code>scripts</code>，增加 <code>&quot;prepare&quot;: &quot;husky install&quot;</code></p> <p><img src="/notes-page/assets/img/image-20210504120708693.fd343f7b.png" alt="image-20210504120708693"></p></li></ul> <h3 id="配置-lint-staged"><a href="#配置-lint-staged" class="header-anchor">#</a> 配置 lint-staged</h3> <p>lint-staged 这个工具一般结合 husky 来使用，它可以让 husky 的 <code>hook</code> 触发的命令只作用于 <code>git add</code>那些文件（即 git 暂存区的文件），而不会影响到其他文件。</p> <p>接下来，我们使用 lint-staged 继续优化项目。</p> <ul><li><p>安装 lint-staged</p> <div class="language-shell extra-class"><pre class="language-shell"><code>$ <span class="token function">npm</span> i lint-staged -D
+</code></pre></div></li> <li><p>在 <code>package.json</code>里增加 lint-staged 配置项</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token property">&quot;lint-staged&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token property">&quot;*.{vue,js,ts}&quot;</span><span class="token operator">:</span> <span class="token string">&quot;eslint --fix&quot;</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+</code></pre></div><p><img src="/notes-page/assets/img/image-20210504121302298.97f6e65c.png" alt="image-20210504121302298"></p></li> <li><p>修改 <code>.husky/pre-commit hook</code> 的触发命令为：<code>npx lint-staged</code></p> <p><img src="/notes-page/assets/img/image-20210504121450870.40fc550a.png" alt="image-20210504121450870"></p></li></ul> <p>至此，husky 和 lint-staged 组合配置完成。</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/notes-page/basic/node/02-webpack5构建.html" class="prev">
+        webpack5构建加持
+      </a></span> <span class="next"><a href="/notes-page/basic/ts/">
+        概念
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/notes-page/assets/js/app.5ad96270.js" defer></script><script src="/notes-page/assets/js/2.ce34c564.js" defer></script><script src="/notes-page/assets/js/4.50410455.js" defer></script>
+  </body>
+</html>
