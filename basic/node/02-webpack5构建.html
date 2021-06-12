@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>webpack5 构建 | 大前端 - 前端高级进阶</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="大前端课程电子书">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+    <link rel="preload" href="/notes-page/assets/css/0.styles.101403b5.css" as="style"><link rel="preload" href="/notes-page/assets/js/app.ab62a723.js" as="script"><link rel="preload" href="/notes-page/assets/js/2.6963f4c4.js" as="script"><link rel="preload" href="/notes-page/assets/js/5.2ebc69f7.js" as="script"><link rel="prefetch" href="/notes-page/assets/js/10.e3fd83bf.js"><link rel="prefetch" href="/notes-page/assets/js/11.ab28c261.js"><link rel="prefetch" href="/notes-page/assets/js/12.c089c33e.js"><link rel="prefetch" href="/notes-page/assets/js/13.a6e161c0.js"><link rel="prefetch" href="/notes-page/assets/js/14.618e1a5a.js"><link rel="prefetch" href="/notes-page/assets/js/15.3a940a2c.js"><link rel="prefetch" href="/notes-page/assets/js/16.0ef8003d.js"><link rel="prefetch" href="/notes-page/assets/js/17.e702a7ac.js"><link rel="prefetch" href="/notes-page/assets/js/18.47ed9f32.js"><link rel="prefetch" href="/notes-page/assets/js/19.9dc12e33.js"><link rel="prefetch" href="/notes-page/assets/js/20.a9edb0bb.js"><link rel="prefetch" href="/notes-page/assets/js/21.0f82f385.js"><link rel="prefetch" href="/notes-page/assets/js/22.1d103b64.js"><link rel="prefetch" href="/notes-page/assets/js/23.9371b052.js"><link rel="prefetch" href="/notes-page/assets/js/24.51a4b4b0.js"><link rel="prefetch" href="/notes-page/assets/js/25.f05002e7.js"><link rel="prefetch" href="/notes-page/assets/js/26.b4e0123b.js"><link rel="prefetch" href="/notes-page/assets/js/27.abd6d85b.js"><link rel="prefetch" href="/notes-page/assets/js/28.07265c0b.js"><link rel="prefetch" href="/notes-page/assets/js/29.525a2606.js"><link rel="prefetch" href="/notes-page/assets/js/3.c49db130.js"><link rel="prefetch" href="/notes-page/assets/js/30.ac50df30.js"><link rel="prefetch" href="/notes-page/assets/js/31.f7c9f1e4.js"><link rel="prefetch" href="/notes-page/assets/js/32.38667e51.js"><link rel="prefetch" href="/notes-page/assets/js/33.46eb650b.js"><link rel="prefetch" href="/notes-page/assets/js/34.95ca2084.js"><link rel="prefetch" href="/notes-page/assets/js/35.8627c387.js"><link rel="prefetch" href="/notes-page/assets/js/36.f4b5e066.js"><link rel="prefetch" href="/notes-page/assets/js/37.5346f647.js"><link rel="prefetch" href="/notes-page/assets/js/38.86f65992.js"><link rel="prefetch" href="/notes-page/assets/js/39.2574b312.js"><link rel="prefetch" href="/notes-page/assets/js/4.10016dcb.js"><link rel="prefetch" href="/notes-page/assets/js/40.8d9fc7b1.js"><link rel="prefetch" href="/notes-page/assets/js/41.4be1bdc9.js"><link rel="prefetch" href="/notes-page/assets/js/42.4d65c40b.js"><link rel="prefetch" href="/notes-page/assets/js/43.dc98aae0.js"><link rel="prefetch" href="/notes-page/assets/js/44.7d38cf08.js"><link rel="prefetch" href="/notes-page/assets/js/45.0b6956dc.js"><link rel="prefetch" href="/notes-page/assets/js/46.98b184b5.js"><link rel="prefetch" href="/notes-page/assets/js/47.5e08c02f.js"><link rel="prefetch" href="/notes-page/assets/js/48.25924f6b.js"><link rel="prefetch" href="/notes-page/assets/js/49.e47c040b.js"><link rel="prefetch" href="/notes-page/assets/js/50.f1bf850c.js"><link rel="prefetch" href="/notes-page/assets/js/51.96641f0d.js"><link rel="prefetch" href="/notes-page/assets/js/52.c21aa116.js"><link rel="prefetch" href="/notes-page/assets/js/53.ea68d24b.js"><link rel="prefetch" href="/notes-page/assets/js/54.834896dd.js"><link rel="prefetch" href="/notes-page/assets/js/55.96321e8d.js"><link rel="prefetch" href="/notes-page/assets/js/56.00e8a285.js"><link rel="prefetch" href="/notes-page/assets/js/57.d8746fe1.js"><link rel="prefetch" href="/notes-page/assets/js/58.e47017dc.js"><link rel="prefetch" href="/notes-page/assets/js/59.c7b93488.js"><link rel="prefetch" href="/notes-page/assets/js/6.23f2e795.js"><link rel="prefetch" href="/notes-page/assets/js/60.eea663c2.js"><link rel="prefetch" href="/notes-page/assets/js/61.0dd91d69.js"><link rel="prefetch" href="/notes-page/assets/js/62.517fb001.js"><link rel="prefetch" href="/notes-page/assets/js/63.f02e4e46.js"><link rel="prefetch" href="/notes-page/assets/js/64.320d1c9a.js"><link rel="prefetch" href="/notes-page/assets/js/65.dd65787e.js"><link rel="prefetch" href="/notes-page/assets/js/66.3a95bfdb.js"><link rel="prefetch" href="/notes-page/assets/js/7.2822913b.js"><link rel="prefetch" href="/notes-page/assets/js/8.0180cd63.js"><link rel="prefetch" href="/notes-page/assets/js/9.7e04a375.js">
+    <link rel="stylesheet" href="/notes-page/assets/css/0.styles.101403b5.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/notes-page/" class="home-link router-link-active"><!----> <span class="site-name">大前端 - 前端高级进阶</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/notes-page/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="基础强化" class="dropdown-title"><span class="title">基础强化</span> <span class="arrow down"></span></button> <button type="button" aria-label="基础强化" class="mobile-dropdown-title"><span class="title">基础强化</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          环境搭建
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/basic/vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-subitem"><a href="/notes-page/basic/node/" class="nav-link router-link-active">
+  Node.js
+</a></li><li class="dropdown-subitem"><a href="/notes-page/basic/debug/" class="nav-link">
+  调试技巧
+</a></li><li class="dropdown-subitem"><a href="/notes-page/basic/docker/" class="nav-link">
+  Docker
+</a></li></ul></li><li class="dropdown-item"><h4>
+          语言基础
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/basic/ts/" class="nav-link">
+  TypeScript
+</a></li><li class="dropdown-subitem"><a href="/notes-page/basic/dart/" class="nav-link">
+  Dart
+</a></li></ul></li><li class="dropdown-item"><h4>
+          数据库
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/basic/nosql/" class="nav-link">
+  NoSQL
+</a></li><li class="dropdown-subitem"><a href="/notes-page/basic/mongo/" class="nav-link">
+  mongoDB
+</a></li><li class="dropdown-subitem"><a href="/notes-page/basic/redis/" class="nav-link">
+  Redis
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="DevOps" class="dropdown-title"><span class="title">DevOps</span> <span class="arrow down"></span></button> <button type="button" aria-label="DevOps" class="mobile-dropdown-title"><span class="title">DevOps</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          效率工具
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/devops/jenkins/" class="nav-link">
+  Jenkins
+</a></li></ul></li><li class="dropdown-item"><h4>
+          团队协同
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/devops/gitlab/" class="nav-link">
+  gitlab
+</a></li><li class="dropdown-subitem"><a href="/notes-page/devops/showdoc/" class="nav-link">
+  showDoc
+</a></li><li class="dropdown-subitem"><a href="/notes-page/devops/doclever/" class="nav-link">
+  DOClever
+</a></li></ul></li><li class="dropdown-item"><h4>
+          容器化
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/devops/docker-advance/" class="nav-link">
+  Docker进阶
+</a></li><li class="dropdown-subitem"><a href="/notes-page/devops/k8s/" class="nav-link">
+  Kubernetes
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="全端项目" class="dropdown-title"><span class="title">全端项目</span> <span class="arrow down"></span></button> <button type="button" aria-label="全端项目" class="mobile-dropdown-title"><span class="title">全端项目</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          社区项目
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/project/community-pc/" class="nav-link">
+  社区PC
+</a></li><li class="dropdown-subitem"><a href="/notes-page/project/community-admin/" class="nav-link">
+  管理后台
+</a></li><li class="dropdown-subitem"><a href="/notes-page/project/community-webapp/" class="nav-link">
+  WebApp
+</a></li></ul></li><li class="dropdown-item"><h4>
+          多平台+跨端
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/project/community-miniapp/" class="nav-link">
+  微信小程序
+</a></li><li class="dropdown-subitem"><a href="/notes-page/project/community-flutter/" class="nav-link">
+  Flutter 2.0
+</a></li><li class="dropdown-subitem"><a href="/notes-page/project/community-electron/" class="nav-link">
+  Electron桌面端
+</a></li></ul></li><li class="dropdown-item"><h4>
+          React世界
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/project/react/" class="nav-link">
+  React
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端面试" class="dropdown-title"><span class="title">前端面试</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端面试" class="mobile-dropdown-title"><span class="title">前端面试</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          笔试
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/interview/types/" class="nav-link">
+  分类笔试题
+</a></li><li class="dropdown-subitem"><a href="/notes-page/interview/techs/" class="nav-link">
+  笔记技巧
+</a></li></ul></li><li class="dropdown-item"><h4>
+          面试技巧
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/interview/basic/" class="nav-link">
+  技术面
+</a></li><li class="dropdown-subitem"><a href="/notes-page/interview/projects/" class="nav-link">
+  项目面
+</a></li><li class="dropdown-subitem"><a href="/notes-page/interview/boss/" class="nav-link">
+  BOSS面
+</a></li><li class="dropdown-subitem"><a href="/notes-page/interview/hr/" class="nav-link">
+  HR面
+</a></li></ul></li><li class="dropdown-item"><h4>
+          简历
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/interview/writor/" class="nav-link">
+  写好简历
+</a></li><li class="dropdown-subitem"><a href="/notes-page/interview/templates/" class="nav-link">
+  简历模板
+</a></li></ul></li><li class="dropdown-item"><h4>
+          公司行业
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/interview/company/" class="nav-link">
+  选择公司
+</a></li><li class="dropdown-subitem"><a href="/notes-page/interview/industry/" class="nav-link">
+  行业洞悉
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="课程" class="dropdown-title"><span class="title">课程</span> <span class="arrow down"></span></button> <button type="button" aria-label="课程" class="mobile-dropdown-title"><span class="title">课程</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://class.imooc.com/sale/webfullstack2021" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  大前端课程
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://www.imooc.com/learn/1245" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  快速了解新版Vue3.0 + Vite开发
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://www.imooc.com/learn/1091" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  3小时速成 Vue2.x 核心技术
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="关于" class="dropdown-title"><span class="title">关于</span> <span class="arrow down"></span></button> <button type="button" aria-label="关于" class="mobile-dropdown-title"><span class="title">关于</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          日志
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/course/update-logs/" class="nav-link">
+  更新日志
+</a></li><li class="dropdown-subitem"><a href="https://github.com/toimc-team/front-end-notes" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github源码
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://gitee.com/toimc/front-end-notes" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  gitee源码
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>
+          参与贡献
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/course/notes/" class="nav-link">
+  贡献指南
+</a></li><li class="dropdown-subitem"><a href="/notes-page/course/vuepress/" class="nav-link">
+  项目说明
+</a></li></ul></li><li class="dropdown-item"><h4>
+          社交媒介
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://www.toimc.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  官方博客
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://weibo.com/wayearn" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  微博
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="/notes-page/about/" class="nav-link">
+  团队介绍
+</a></li></ul></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/notes-page/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="基础强化" class="dropdown-title"><span class="title">基础强化</span> <span class="arrow down"></span></button> <button type="button" aria-label="基础强化" class="mobile-dropdown-title"><span class="title">基础强化</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          环境搭建
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/basic/vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-subitem"><a href="/notes-page/basic/node/" class="nav-link router-link-active">
+  Node.js
+</a></li><li class="dropdown-subitem"><a href="/notes-page/basic/debug/" class="nav-link">
+  调试技巧
+</a></li><li class="dropdown-subitem"><a href="/notes-page/basic/docker/" class="nav-link">
+  Docker
+</a></li></ul></li><li class="dropdown-item"><h4>
+          语言基础
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/basic/ts/" class="nav-link">
+  TypeScript
+</a></li><li class="dropdown-subitem"><a href="/notes-page/basic/dart/" class="nav-link">
+  Dart
+</a></li></ul></li><li class="dropdown-item"><h4>
+          数据库
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/basic/nosql/" class="nav-link">
+  NoSQL
+</a></li><li class="dropdown-subitem"><a href="/notes-page/basic/mongo/" class="nav-link">
+  mongoDB
+</a></li><li class="dropdown-subitem"><a href="/notes-page/basic/redis/" class="nav-link">
+  Redis
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="DevOps" class="dropdown-title"><span class="title">DevOps</span> <span class="arrow down"></span></button> <button type="button" aria-label="DevOps" class="mobile-dropdown-title"><span class="title">DevOps</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          效率工具
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/devops/jenkins/" class="nav-link">
+  Jenkins
+</a></li></ul></li><li class="dropdown-item"><h4>
+          团队协同
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/devops/gitlab/" class="nav-link">
+  gitlab
+</a></li><li class="dropdown-subitem"><a href="/notes-page/devops/showdoc/" class="nav-link">
+  showDoc
+</a></li><li class="dropdown-subitem"><a href="/notes-page/devops/doclever/" class="nav-link">
+  DOClever
+</a></li></ul></li><li class="dropdown-item"><h4>
+          容器化
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/devops/docker-advance/" class="nav-link">
+  Docker进阶
+</a></li><li class="dropdown-subitem"><a href="/notes-page/devops/k8s/" class="nav-link">
+  Kubernetes
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="全端项目" class="dropdown-title"><span class="title">全端项目</span> <span class="arrow down"></span></button> <button type="button" aria-label="全端项目" class="mobile-dropdown-title"><span class="title">全端项目</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          社区项目
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/project/community-pc/" class="nav-link">
+  社区PC
+</a></li><li class="dropdown-subitem"><a href="/notes-page/project/community-admin/" class="nav-link">
+  管理后台
+</a></li><li class="dropdown-subitem"><a href="/notes-page/project/community-webapp/" class="nav-link">
+  WebApp
+</a></li></ul></li><li class="dropdown-item"><h4>
+          多平台+跨端
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/project/community-miniapp/" class="nav-link">
+  微信小程序
+</a></li><li class="dropdown-subitem"><a href="/notes-page/project/community-flutter/" class="nav-link">
+  Flutter 2.0
+</a></li><li class="dropdown-subitem"><a href="/notes-page/project/community-electron/" class="nav-link">
+  Electron桌面端
+</a></li></ul></li><li class="dropdown-item"><h4>
+          React世界
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/project/react/" class="nav-link">
+  React
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端面试" class="dropdown-title"><span class="title">前端面试</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端面试" class="mobile-dropdown-title"><span class="title">前端面试</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          笔试
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/interview/types/" class="nav-link">
+  分类笔试题
+</a></li><li class="dropdown-subitem"><a href="/notes-page/interview/techs/" class="nav-link">
+  笔记技巧
+</a></li></ul></li><li class="dropdown-item"><h4>
+          面试技巧
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/interview/basic/" class="nav-link">
+  技术面
+</a></li><li class="dropdown-subitem"><a href="/notes-page/interview/projects/" class="nav-link">
+  项目面
+</a></li><li class="dropdown-subitem"><a href="/notes-page/interview/boss/" class="nav-link">
+  BOSS面
+</a></li><li class="dropdown-subitem"><a href="/notes-page/interview/hr/" class="nav-link">
+  HR面
+</a></li></ul></li><li class="dropdown-item"><h4>
+          简历
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/interview/writor/" class="nav-link">
+  写好简历
+</a></li><li class="dropdown-subitem"><a href="/notes-page/interview/templates/" class="nav-link">
+  简历模板
+</a></li></ul></li><li class="dropdown-item"><h4>
+          公司行业
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/interview/company/" class="nav-link">
+  选择公司
+</a></li><li class="dropdown-subitem"><a href="/notes-page/interview/industry/" class="nav-link">
+  行业洞悉
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="课程" class="dropdown-title"><span class="title">课程</span> <span class="arrow down"></span></button> <button type="button" aria-label="课程" class="mobile-dropdown-title"><span class="title">课程</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://class.imooc.com/sale/webfullstack2021" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  大前端课程
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://www.imooc.com/learn/1245" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  快速了解新版Vue3.0 + Vite开发
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://www.imooc.com/learn/1091" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  3小时速成 Vue2.x 核心技术
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="关于" class="dropdown-title"><span class="title">关于</span> <span class="arrow down"></span></button> <button type="button" aria-label="关于" class="mobile-dropdown-title"><span class="title">关于</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          日志
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/course/update-logs/" class="nav-link">
+  更新日志
+</a></li><li class="dropdown-subitem"><a href="https://github.com/toimc-team/front-end-notes" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  github源码
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://gitee.com/toimc/front-end-notes" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  gitee源码
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>
+          参与贡献
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/notes-page/course/notes/" class="nav-link">
+  贡献指南
+</a></li><li class="dropdown-subitem"><a href="/notes-page/course/vuepress/" class="nav-link">
+  项目说明
+</a></li></ul></li><li class="dropdown-item"><h4>
+          社交媒介
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://www.toimc.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  官方博客
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://weibo.com/wayearn" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  微博
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="/notes-page/about/" class="nav-link">
+  团队介绍
+</a></li></ul></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Node.js进阶</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/notes-page/basic/node/" aria-current="page" class="sidebar-link">内容介绍</a></li><li><a href="/notes-page/basic/node/01-koa.html" class="sidebar-link">koa(下一代web框架)</a></li><li><a href="/notes-page/basic/node/02-webpack5构建.html" class="active sidebar-link">webpack5 构建</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/notes-page/basic/node/02-webpack5构建.html#tasking" class="sidebar-link">Tasking</a></li><li class="sidebar-sub-header"><a href="/notes-page/basic/node/02-webpack5构建.html#项目最终目录结构" class="sidebar-link">项目最终目录结构</a></li><li class="sidebar-sub-header"><a href="/notes-page/basic/node/02-webpack5构建.html#搭建项目" class="sidebar-link">搭建项目</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/notes-page/basic/node/02-webpack5构建.html#安装koa、-koa-router" class="sidebar-link">安装koa、@koa/router</a></li><li class="sidebar-sub-header"><a href="/notes-page/basic/node/02-webpack5构建.html#创建入口文件" class="sidebar-link">创建入口文件</a></li><li class="sidebar-sub-header"><a href="/notes-page/basic/node/02-webpack5构建.html#安装构建依赖" class="sidebar-link">安装构建依赖</a></li><li class="sidebar-sub-header"><a href="/notes-page/basic/node/02-webpack5构建.html#在项目根目录添加-babelrc文件" class="sidebar-link">在项目根目录添加.babelrc文件</a></li><li class="sidebar-sub-header"><a href="/notes-page/basic/node/02-webpack5构建.html#添加测试接口" class="sidebar-link">添加测试接口</a></li><li class="sidebar-sub-header"><a href="/notes-page/basic/node/02-webpack5构建.html#启动服务" class="sidebar-link">启动服务</a></li><li class="sidebar-sub-header"><a href="/notes-page/basic/node/02-webpack5构建.html#在-postman-中请求接口" class="sidebar-link">在 postman 中请求接口</a></li><li class="sidebar-sub-header"><a href="/notes-page/basic/node/02-webpack5构建.html#配置-webpack-英文文档-中文文档" class="sidebar-link">配置 webpack 英文文档 中文文档</a></li><li class="sidebar-sub-header"><a href="/notes-page/basic/node/02-webpack5构建.html#测试构建" class="sidebar-link">测试构建</a></li><li class="sidebar-sub-header"><a href="/notes-page/basic/node/02-webpack5构建.html#优化构建配置" class="sidebar-link">优化构建配置</a></li></ul></li><li class="sidebar-sub-header"><a href="/notes-page/basic/node/02-webpack5构建.html#配置项目规范" class="sidebar-link">配置项目规范</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/notes-page/basic/node/02-webpack5构建.html#集成-editorconfig-配置" class="sidebar-link">集成 EditorConfig 配置</a></li><li class="sidebar-sub-header"><a href="/notes-page/basic/node/02-webpack5构建.html#集成-prettier-配置" class="sidebar-link">集成 Prettier 配置</a></li><li class="sidebar-sub-header"><a href="/notes-page/basic/node/02-webpack5构建.html#集成-eslint-配置" class="sidebar-link">集成 ESLint 配置</a></li><li class="sidebar-sub-header"><a href="/notes-page/basic/node/02-webpack5构建.html#解决-prettier-和-eslint-的冲突" class="sidebar-link">解决 Prettier 和 ESLint 的冲突</a></li><li class="sidebar-sub-header"><a href="/notes-page/basic/node/02-webpack5构建.html#集成-husky-和-lint-staged" class="sidebar-link">集成 husky 和 lint-staged</a></li></ul></li><li class="sidebar-sub-header"><a href="/notes-page/basic/node/02-webpack5构建.html#路由自动注册" class="sidebar-link">路由自动注册</a></li><li class="sidebar-sub-header"><a href="/notes-page/basic/node/02-webpack5构建.html#配置别名" class="sidebar-link">配置别名</a></li></ul></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>TypeScript</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/notes-page/basic/ts/" class="sidebar-link">概念</a></li><li><a href="/notes-page/basic/ts/01-环境配置.html" class="sidebar-link">环境配置</a></li><li><a href="/notes-page/basic/ts/02-基础语法.html" class="sidebar-link">基础用法</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>mongoDB</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/notes-page/basic/mongo/" class="sidebar-link">mongo</a></li><li><a href="/notes-page/basic/mongo/01-认识MongoDB.html" class="sidebar-link">认识 MongoDB</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="webpack5-构建"><a href="#webpack5-构建" class="header-anchor">#</a> webpack5 构建</h1> <h2 id="tasking"><a href="#tasking" class="header-anchor">#</a> Tasking</h2> <ul><li>支持 es6+语法</li> <li>开发热更新</li> <li>webpack5 构建</li> <li>接口搭建</li> <li>路由合并，路由自动注册</li> <li>添加项目规范</li> <li>配置自定义别名</li></ul> <h2 id="项目最终目录结构"><a href="#项目最终目录结构" class="header-anchor">#</a> 项目最终目录结构</h2> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">service</span>
+├─ .husky
+│   ├─ _
+│   │   └─ husky.sh
+│   ├─ .gitignore
+│   ├─ pre-commit
+├─ config
+│   ├─ webpack.config.base.js
+│   ├─ webpack.config.dev.js
+│   └─ webpack.config.prod.js
+├─ src
+│   ├─ api
+│   │  └─ v1
+│   │     ├─ demo.js
+│   │     └─ test.js
+│   ├─ config
+│   ├─ controller
+│   │  └─ v1
+│   │     ├─ demo.js
+│   │     └─ test.js
+│   ├─ model
+│   ├─ routes
+│   │   └─ index.js
+│   └─ app.js
+├─ package-lock.json
+├─ package.json
+├─ .prettierrc
+├─ .babelrc
+├─ .editorconfig
+├─ .eslintrc.js
+└─ .gitignore
+
+</code></pre></div><h2 id="搭建项目"><a href="#搭建项目" class="header-anchor">#</a> 搭建项目</h2> <div class="language-shell extra-class"><pre class="language-shell"><code>// 创建项目目录
+$ <span class="token function">mkdir</span> <span class="token function">service</span>
+
+// 进入service文件夹
+$ <span class="token builtin class-name">cd</span> <span class="token function">service</span>
+
+// 初始化package.json
+$ <span class="token function">npm</span> init -y
+
+// 创建源码目录
+<span class="token function">mkdir</span> src
+</code></pre></div><h3 id="安装koa、-koa-router"><a href="#安装koa、-koa-router" class="header-anchor">#</a> 安装<code>koa</code>、<code>@koa/router</code></h3> <div class="language-shell extra-class"><pre class="language-shell"><code>$ <span class="token function">yarn</span> <span class="token function">add</span> koa @koa/router
+</code></pre></div><h3 id="创建入口文件"><a href="#创建入口文件" class="header-anchor">#</a> 创建入口文件</h3> <div class="language-shell extra-class"><pre class="language-shell"><code>$ <span class="token function">touch</span> src/app.js
+</code></pre></div><h3 id="安装构建依赖"><a href="#安装构建依赖" class="header-anchor">#</a> 安装构建依赖</h3> <div class="language-shell extra-class"><pre class="language-shell"><code>$ <span class="token function">yarn</span> <span class="token function">add</span> -D webpack webpack-cli @babel/node @babel/core @babel/preset-env babel-loader clean-webpack-plugin nodemon webpack-node-externals webpack-merge rimraf
+</code></pre></div><h3 id="在项目根目录添加-babelrc文件"><a href="#在项目根目录添加-babelrc文件" class="header-anchor">#</a> 在项目根目录添加<code>.babelrc</code>文件</h3> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+  <span class="token property">&quot;presets&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">[</span>
+      <span class="token string">&quot;@babel/preset-env&quot;</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span>
+        <span class="token property">&quot;targets&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+          <span class="token property">&quot;node&quot;</span><span class="token operator">:</span> <span class="token string">&quot;current&quot;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="添加测试接口"><a href="#添加测试接口" class="header-anchor">#</a> 添加测试接口</h3> <blockquote><p>在<code>app.js</code>中添加测试接口，由于已经配置了<code>babel</code>解析，所以可以直接在<code>app.js</code>中写 es6+语法</p></blockquote> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">import</span> Koa <span class="token keyword">from</span> <span class="token string">'koa'</span>
+<span class="token keyword">import</span> Router <span class="token keyword">from</span> <span class="token string">'@koa/router'</span>
+
+<span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Koa</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> router <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Router</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+router<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">,</span> <span class="token keyword">async</span> <span class="token parameter">ctx</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  ctx<span class="token punctuation">.</span>body <span class="token operator">=</span> <span class="token punctuation">{</span>
+    status<span class="token operator">:</span> <span class="token number">200</span><span class="token punctuation">,</span>
+    message<span class="token operator">:</span> <span class="token string">'success'</span><span class="token punctuation">,</span>
+    data<span class="token operator">:</span> <span class="token punctuation">{</span>
+      nickname<span class="token operator">:</span> <span class="token string">'Forest'</span><span class="token punctuation">,</span>
+      title<span class="token operator">:</span> <span class="token string">'前端工程师'</span><span class="token punctuation">,</span>
+      content<span class="token operator">:</span> <span class="token string">'webpack5构建node应用'</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>router<span class="token punctuation">.</span><span class="token function">routes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>router<span class="token punctuation">.</span><span class="token function">allowedMethods</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword">const</span> port <span class="token operator">=</span> <span class="token number">3002</span>
+app<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span>port<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">服务启动在</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>port<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">端口</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div><h3 id="启动服务"><a href="#启动服务" class="header-anchor">#</a> 启动服务</h3> <div class="language-shell extra-class"><pre class="language-shell"><code>$ npx babel-node src/app.js
+</code></pre></div><h3 id="在-postman-中请求接口"><a href="#在-postman-中请求接口" class="header-anchor">#</a> 在 postman 中请求接口</h3> <p><img src="/notes-page/assets/img/image-20210504072925109.5a1b059f.png" alt="image-20210504072925109"></p> <h3 id="配置-webpack-英文文档-中文文档"><a href="#配置-webpack-英文文档-中文文档" class="header-anchor">#</a> 配置 webpack <a href="https://webpack.js.org/concepts/" target="_blank" rel="noopener noreferrer">英文文档<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> <a href="https://webpack.docschina.org/concepts/" target="_blank" rel="noopener noreferrer">中文文档<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></h3> <div class="custom-block tip"><p class="custom-block-title">核心概念</p> <ul><li><p><strong>entry</strong>：入口；指示 <code>webpack</code> 应该使用哪个模块，默认值是 <code>./src/index.js</code></p></li> <li><p><strong>output</strong>：输出；<code>output</code> 属性告诉 <code>webpack</code> 在哪里输出它所创建的 <em>bundle</em>，默认值是 <code>./dist/main.js</code></p></li> <li><p><strong>loader</strong>：loader 负责完成项目中各种各样资源模块的加载</p></li> <li><p><strong>plugins</strong>：插件；用来解决项目中除了资源模块打包以外的其他自动化工作。包括：打包优化，资源管理，注入环境变量</p></li> <li><p><strong>mode</strong>：模式；通过选择 <code>development</code>, <code>production</code> 或 <code>none</code> 之中的一个，来设置 <code>mode</code> 参数，你可以启用 webpack 内置在相应环境下的优化。其默认值为 <code>production</code>。</p></li></ul></div> <blockquote><p>在项目根目录创建<code>webpack.config.js</code>文件</p></blockquote> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">const</span> <span class="token punctuation">{</span> DefinePlugin <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'webpack'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> nodeExternals <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'webpack-node-externals'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> <span class="token punctuation">{</span> CleanWebpackPlugin <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'clean-webpack-plugin'</span><span class="token punctuation">)</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 打包编译为某一端侧的可使用代码  默认值：web  https://webpack.docschina.org/configuration/target/</span>
+  target<span class="token operator">:</span> <span class="token string">'node'</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// 打包模式，可选择值：development、production</span>
+  mode<span class="token operator">:</span> <span class="token string">'development'</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// 控制是否生成，以及如何生成 source map。 https://webpack.docschina.org/configuration/devtool/#root</span>
+  devtool<span class="token operator">:</span> <span class="token string">'eval-cheap-source-map'</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// 打包模块入口文件</span>
+  entry<span class="token operator">:</span> <span class="token punctuation">{</span>
+    server<span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>process<span class="token punctuation">.</span><span class="token function">cwd</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">/src/app.js</span><span class="token template-punctuation string">`</span></span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// 打包后的输入文件</span>
+  output<span class="token operator">:</span> <span class="token punctuation">{</span>
+    filename<span class="token operator">:</span> <span class="token string">'[name].bundle.js'</span><span class="token punctuation">,</span>
+    path<span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>process<span class="token punctuation">.</span><span class="token function">cwd</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">/dist</span><span class="token template-punctuation string">`</span></span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// 匹配解析规则</span>
+  module<span class="token operator">:</span> <span class="token punctuation">{</span>
+    rules<span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        test<span class="token operator">:</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\.(js|jsx)$</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">,</span>
+        use<span class="token operator">:</span> <span class="token punctuation">{</span>
+          loader<span class="token operator">:</span> <span class="token string">'babel-loader'</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        exclude<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>process<span class="token punctuation">.</span><span class="token function">cwd</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">/node_modules</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// 构建过程中使用的插件</span>
+  plugins<span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token keyword">new</span> <span class="token class-name">CleanWebpackPlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token keyword">new</span> <span class="token class-name">DefinePlugin</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      <span class="token string">'process.env'</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token constant">NODE_ENV</span><span class="token operator">:</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>
+          process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">NODE_ENV</span> <span class="token operator">===</span> <span class="token string">'production'</span> <span class="token operator">||</span>
+            process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">NODE_ENV</span> <span class="token operator">===</span> <span class="token string">'prod'</span>
+            <span class="token operator">?</span> <span class="token string">'production'</span>
+            <span class="token operator">:</span> <span class="token string">'development'</span>
+        <span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// 防止第三方依赖被打包</span>
+  externals<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token function">nodeExternals</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="测试构建"><a href="#测试构建" class="header-anchor">#</a> 测试构建</h3> <div class="language-shell extra-class"><pre class="language-shell"><code>$ npx webpack
+</code></pre></div><p><img src="/notes-page/assets/img/image-20210504083042708.512973a2.png" alt="image-20210504083042708"><img src="data:image/png;base64,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" alt="image-20210504083112577"></p> <blockquote><p>构建成功！</p></blockquote> <div class="custom-block warning"><p class="custom-block-title">思考</p> <p>在实际开发中可能会存在开发环境和生产环境的构建，所以单凭一个配置还不能达到实际的需求，接下来对开发环境和生产环境分别配置。</p></div> <blockquote><p>在项目根目录创建 config 文件，并创建三个文件分别是<code>webpack.config.base.js</code>、<code>webpack.config.dev.js</code>、<code>webpack.config.prod.js</code></p> <ul><li><code>webpack.config.base.js</code> 文件存放开发环境和生产环境都是需要的构建配置</li> <li><code>webpack.config.dev.js</code> 文件存放开发环境的构建配置</li> <li><code>webpack.config.prod.js</code> 存放生产环境的构建配置</li></ul></blockquote> <h3 id="优化构建配置"><a href="#优化构建配置" class="header-anchor">#</a> 优化构建配置</h3> <blockquote><ul><li>mode 独立于构建环境，开发环境为(<code>development</code>)、生产环境为(<code>production</code>)</li> <li>devtool 只有在开发环境下才会存在</li> <li><a href="https://webpack.docschina.org/configuration/stats/" target="_blank" rel="noopener noreferrer">stats<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> 属性让你更精确地控制打包后的信息该怎么显示</li></ul></blockquote> <div class="custom-block tip"><p class="custom-block-title">TIP</p> <p>由于每个开发环境和生产环境都是独立的构建配置，所以要在构建时要合并基础配置；安装<code>webpack-merge</code>合并构建配置</p> <div class="language-shell extra-class"><pre class="language-shell"><code>$ <span class="token function">npm</span> i -D webpack-merge
+</code></pre></div></div> <ul><li>优化 webpack.config.base.js</li></ul> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// config/webpack.config.base.js</span>
+<span class="token keyword">const</span> <span class="token punctuation">{</span> DefinePlugin <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'webpack'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> nodeExternals <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'webpack-node-externals'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> <span class="token punctuation">{</span> CleanWebpackPlugin <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'clean-webpack-plugin'</span><span class="token punctuation">)</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 打包编译为某一端侧的可使用代码  默认值：web  https://webpack.docschina.org/configuration/target/</span>
+  target<span class="token operator">:</span> <span class="token string">'node'</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// 打包模式，可选择值：development、production</span>
+  <span class="token comment">// mode: &quot;development&quot;,</span>
+
+  <span class="token comment">// 控制是否生成，以及如何生成 source map。 https://webpack.docschina.org/configuration/devtool/#root</span>
+  <span class="token comment">// devtool: &quot;eval-cheap-source-map&quot;,</span>
+
+  <span class="token comment">// 打包模块入口文件</span>
+  entry<span class="token operator">:</span> <span class="token punctuation">{</span>
+    server<span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>process<span class="token punctuation">.</span><span class="token function">cwd</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">/src/app.js</span><span class="token template-punctuation string">`</span></span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// 打包后的输入文件</span>
+  output<span class="token operator">:</span> <span class="token punctuation">{</span>
+    filename<span class="token operator">:</span> <span class="token string">'[name].bundle.js'</span><span class="token punctuation">,</span>
+    path<span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>process<span class="token punctuation">.</span><span class="token function">cwd</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">/dist</span><span class="token template-punctuation string">`</span></span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// 匹配解析规则</span>
+  module<span class="token operator">:</span> <span class="token punctuation">{</span>
+    rules<span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        test<span class="token operator">:</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\.(js|jsx)$</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">,</span>
+        use<span class="token operator">:</span> <span class="token punctuation">{</span>
+          loader<span class="token operator">:</span> <span class="token string">'babel-loader'</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        exclude<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>process<span class="token punctuation">.</span><span class="token function">cwd</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">/node_modules</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// 构建过程中使用的插件</span>
+  plugins<span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token keyword">new</span> <span class="token class-name">CleanWebpackPlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token keyword">new</span> <span class="token class-name">DefinePlugin</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      <span class="token string">'process.env'</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 设置环境变量 NODE_ENV</span>
+        <span class="token constant">NODE_ENV</span><span class="token operator">:</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>
+          process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">NODE_ENV</span> <span class="token operator">===</span> <span class="token string">'production'</span> <span class="token operator">||</span>
+            process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">NODE_ENV</span> <span class="token operator">===</span> <span class="token string">'prod'</span>
+            <span class="token operator">?</span> <span class="token string">'production'</span>
+            <span class="token operator">:</span> <span class="token string">'development'</span>
+        <span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// 防止第三方依赖被打包</span>
+  externals<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token function">nodeExternals</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>开发环境的构建配置</li></ul> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// config/webpack.config.dev.js</span>
+<span class="token keyword">const</span> <span class="token punctuation">{</span> merge <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'webpack-merge'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> baseWebpackConfig <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./webpack.config.base'</span><span class="token punctuation">)</span>
+
+<span class="token keyword">const</span> webpackConfig <span class="token operator">=</span> <span class="token function">merge</span><span class="token punctuation">(</span>baseWebpackConfig<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  devtool<span class="token operator">:</span> <span class="token string">'eval-cheap-source-map'</span><span class="token punctuation">,</span>
+  mode<span class="token operator">:</span> <span class="token string">'development'</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// 是否添加关于子模块的信息。</span>
+  stats<span class="token operator">:</span> <span class="token punctuation">{</span> children<span class="token operator">:</span> <span class="token boolean">false</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> webpackConfig
+</code></pre></div><ul><li>生产环境的构建配置</li></ul> <blockquote><p>生产环境构建时要进行代码压缩，安装<code>terser-webpack-plugin</code>， 命令：<code>npm i -D terser-webpack-plugin</code></p></blockquote> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// config/webpack.config.prod.js</span>
+<span class="token keyword">const</span> <span class="token punctuation">{</span> merge <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'webpack-merge'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> TersetWebpackPlugin <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'terser-webpack-plugin'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> baseWebpackConfig <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./webpack.config.base'</span><span class="token punctuation">)</span>
+
+<span class="token keyword">const</span> webpackConfig <span class="token operator">=</span> <span class="token function">merge</span><span class="token punctuation">(</span>baseWebpackConfig<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  devtool<span class="token operator">:</span> <span class="token string">'eval-cheap-source-map'</span><span class="token punctuation">,</span>
+  mode<span class="token operator">:</span> <span class="token string">'production'</span><span class="token punctuation">,</span>
+  stats<span class="token operator">:</span> <span class="token punctuation">{</span> children<span class="token operator">:</span> <span class="token boolean">false</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// 优化配置</span>
+  optimization<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 压缩配置</span>
+    minimize<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    minimizer<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token keyword">new</span> <span class="token class-name">TersetWebpackPlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+
+    <span class="token comment">// 分块策略</span>
+    splitChunks<span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 缓存组 https://webpack.docschina.org/plugins/split-chunks-plugin/#splitchunkscachegroups</span>
+      cacheGroups<span class="token operator">:</span> <span class="token punctuation">{</span>
+        commens<span class="token operator">:</span> <span class="token punctuation">{</span>
+          name<span class="token operator">:</span> <span class="token string">'commons'</span><span class="token punctuation">,</span>
+          chunks<span class="token operator">:</span> <span class="token string">'initial'</span><span class="token punctuation">,</span>
+          minChunks<span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+          enforce<span class="token operator">:</span> <span class="token boolean">true</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> webpackConfig
+</code></pre></div><ul><li><p>添加构建脚本命令</p> <blockquote><p>设置环境变量<code>NODE_ENV</code>，由于各环境配置的差异问题，<code>cross-env</code>可以有效的解决跨平台设置环境变量的问题；它是运行跨平台设置和使用环境变量(Node 中的环境变量)的脚本。安装命令：<code>npm i -D cross-env</code>
+安装成功后配置构建命令:</p> <ul><li>在<code>package.json</code>的<code>scripts</code>中添加如下命令：</li></ul> <div class="language-json extra-class"><pre class="language-json"><code><span class="token property">&quot;build&quot;</span><span class="token operator">:</span> <span class="token string">&quot;cross-env NODE_ENV=prod webpack --config config/webpack.config.prod.js&quot;</span><span class="token punctuation">,</span>
+<span class="token property">&quot;dev&quot;</span><span class="token operator">:</span> <span class="token string">&quot;cross-env NODE_ENV=dev nodemon --exec babel-node --inspect src/app.js&quot;</span><span class="token punctuation">,</span>
+</code></pre></div></blockquote></li> <li><p>启动开发环境服务</p></li></ul> <div class="language-shell extra-class"><pre class="language-shell"><code>$ <span class="token function">npm</span> run dev
+</code></pre></div><p>运行之后的效果图如下：</p> <p><img src="/notes-page/assets/img/image-20210504095318351.4860df63.png" alt="image-20210504095318351"></p> <ul><li>启动编译构建命令</li></ul> <div class="language-shell extra-class"><pre class="language-shell"><code>$ <span class="token function">npm</span> run build
+</code></pre></div><p>运行效果如下图：</p> <p><img src="/notes-page/assets/img/image-20210504095540666.8b5ae3f8.png" alt="image-20210504095540666"></p> <p>查看 dist 文件夹下被编译后的文件：</p> <p><img src="/notes-page/assets/img/image-20210504095736714.e22b4743.png" alt="image-20210504095736714"></p> <blockquote><p>被压缩成了一整行！</p></blockquote> <h2 id="配置项目规范"><a href="#配置项目规范" class="header-anchor">#</a> 配置项目规范</h2> <h3 id="集成-editorconfig-配置"><a href="#集成-editorconfig-配置" class="header-anchor">#</a> 集成 EditorConfig 配置</h3> <blockquote><p><strong><a href="https://editorconfig.org/" target="_blank" rel="noopener noreferrer">EditorConfig<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></strong> 有助于为不同 IDE 编辑器上处理同一项目的多个开发人员维护一致的编码风格。</p></blockquote> <p>在项目根目录下增加 <code>.editorconfig</code> 文件， 并配置以下内容：</p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token comment"># Editor configuration, see http://editorconfig.org</span>
+
+<span class="token comment"># 表示是最顶层的 EditorConfig 配置文件</span>
+root = true
+
+<span class="token comment"># 表示所有文件适用</span>
+<span class="token punctuation">[</span>*<span class="token punctuation">]</span>
+
+<span class="token comment"># 设置文件字符集为 utf-8</span>
+charset = utf<span class="token punctuation">-</span><span class="token number">8</span>
+
+<span class="token comment"># 缩进风格（tab | space）</span>
+indent_style = space
+
+<span class="token comment"># 缩进大小</span>
+indent_size = 4
+
+<span class="token comment"># 控制换行类型(lf | cr | crlf)</span>
+end_of_line = lf
+
+<span class="token comment"># 去除行首的任意空白字符</span>
+trim_trailing_whitespace = true
+
+<span class="token comment"># 始终在文件末尾插入一个新行</span>
+insert_final_newline = true
+
+<span class="token comment"># md 文件适用以下规则</span>
+<span class="token punctuation">[</span><span class="token important">*.md</span><span class="token punctuation">]</span>
+max_line_length = off
+trim_trailing_whitespace = false
+</code></pre></div><div class="custom-block tip"><p class="custom-block-title">注意</p> <p>VSCode 使用 EditorConfig 需要去插件市场下载插件 <code>EditorConfig for VS Code</code> 。WebStorm 则不需要安装，直接使用 EditorConfig 配置即可。</p> <p><img src="/notes-page/assets/img/image-20210504101228402.5e7543f7.png" alt="image-20210504101228402"></p></div> <h3 id="集成-prettier-配置"><a href="#集成-prettier-配置" class="header-anchor">#</a> 集成 Prettier 配置</h3> <blockquote><p><strong><a href="https://prettier.io/" target="_blank" rel="noopener noreferrer">Prettier<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></strong> 是一款强大的代码格式化工具，支持 <code>JavaScript、TypeScript、CSS、SCSS、Less、JSX、Angular、Vue、GraphQL、JSON、Markdown</code> 等语言，基本上前端能用到的文件格式它都可以搞定，是当下最流行的代码格式化工具。</p></blockquote> <ul><li>安装 Prettier</li></ul> <div class="language-shell extra-class"><pre class="language-shell"><code>$ <span class="token function">npm</span> i prettier -D
+</code></pre></div><ul><li><p>创建 Prettier 配置文件
+Prettier 支持多种格式的配置文件，比如 <code>.json</code>、<code>.yml</code>、<code>.yaml</code>、<code>.js</code> 等。
+在本项目根目录下创建 <code>.prettierrc</code> 文件。</p></li> <li><p>配置 <code>.prettierrc</code>
+在本项目中，我们进行如下简单配置，关于更多配置项信息，请前往官网查看 <a href="https://prettier.io/docs/en/options.html" target="_blank" rel="noopener noreferrer">Prettier-Options<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> 。</p></li></ul> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+  <span class="token property">&quot;useTabs&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;tabWidth&quot;</span><span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;printWidth&quot;</span><span class="token operator">:</span> <span class="token number">100</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;singleQuote&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;trailingComma&quot;</span><span class="token operator">:</span> <span class="token string">&quot;none&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;bracketSpacing&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;semi&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>Prettier 安装且配置好之后，就能使用命令来格式化代码</p> <ul><li>格式化所有文件（. 表示所有文件）</li></ul> <div class="language-shell extra-class"><pre class="language-shell"><code>$ npx prettier --write <span class="token builtin class-name">.</span>
+</code></pre></div><div class="custom-block tip"><p class="custom-block-title">注意</p> <p>VSCode 编辑器使用 <code>Prettier</code> 配置需要下载插件 <code>Prettier - Code formatter</code>； WebStorm 则不需要安装，直接使用 EditorConfig 配置即可。</p> <p><img src="/notes-page/assets/img/image-20210504102416728.3dbda827.png" alt="image-20210504102416728"></p></div> <h3 id="集成-eslint-配置"><a href="#集成-eslint-配置" class="header-anchor">#</a> 集成 ESLint 配置</h3> <p><a href="https://eslint.org/" target="_blank" rel="noopener noreferrer">ESLint<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> 是一款用于查找并报告代码中问题的工具，并且支持部分问题自动修复。其核心是通过对代码解析得到的 <code>AST</code>（Abstract Syntax Tree 抽象语法树）进行模式匹配，来分析代码达到检查代码质量和风格问题的能力。
+使用 <code>ESLint</code> 可以尽可能的避免团队成员之间编程能力和编码习惯不同所造成的代码质量问题，一边写代码一边查找问题，如果发现错误，就给出规则提示，并且自动修复，长期下去，可以促使团队成员往同一种编码风格靠拢。</p> <ul><li>安装 eslint</li></ul> <div class="language-shell extra-class"><pre class="language-shell"><code>$ <span class="token function">npm</span> i -D eslint
+</code></pre></div><ul><li><p>配置 ESLint</p> <blockquote><p>ESLint 安装成功后，执行 <code>npx eslint --init</code>，然后按照终端操作提示完成一系列设置来创建配置文件。</p></blockquote></li></ul> <p><img src="/notes-page/assets/img/image-20210504103213588.d63b5ec3.png" alt="image-20210504103213588"></p> <ul><li><p>How would you like to use ESLint? ...(你想如何使用 ESLint?…)</p> <blockquote><p>我这里选择第三个，检查语法，发现问题，并强制代码样式</p></blockquote></li></ul> <p><img src="/notes-page/assets/img/image-20210504103418834.acabf1c4.png" alt="image-20210504103418834"></p> <ul><li><p>What type of modules does your project use? ... （你的项目使用什么类型的模块?…）</p> <blockquote><p>项目支持 es6+语法，所以这里就直接选用第一项：JavaScript modules (import/export)</p></blockquote></li> <li><p>Which framework does your project use? ... （你的项目使用哪种框架?…）</p> <blockquote><p>这里并未使用 vue 和 react，所以选择 none of these</p></blockquote></li></ul> <p><img src="/notes-page/assets/img/image-20210504104452973.81e4374c.png" alt="image-20210504104452973"></p> <ul><li><p>Does your project use TypeScript? (你的项目使用 TypeScript 吗?)</p> <blockquote><p>项目中并没有使用 Typescript，所以选择 No</p></blockquote></li></ul> <p><img src="/notes-page/assets/img/image-20210504104610444.bc5623d2.png" alt="image-20210504104610444"></p> <ul><li><p>Where does your code run?(你的代码在哪里运行?)</p> <blockquote><p>这是 node 项目，所以不需要选择浏览器环境</p></blockquote></li></ul> <p><img src="/notes-page/assets/img/image-20210504105031201.4dd08695.png" alt="image-20210504105031201"></p> <ul><li><p>How would you like to define a style for your project? ... (你想怎样为你的项目定义风格？)</p> <blockquote><p>我们这里选择 Use a popular style guide（使用一种流行的风格指南）</p></blockquote></li></ul> <p><img src="/notes-page/assets/img/image-20210504105437959.f4a9a07c.png" alt="image-20210504105437959"></p> <ul><li><p>Which style guide do you want to follow? ... (你想遵循哪种风格指南?…)</p> <p><img src="/notes-page/assets/img/image-20210504105647664.46c543a7.png" alt="image-20210504105647664"></p></li> <li><p>What format do you want your config file to be in? ... (您希望配置文件的格式是什么?…)</p> <blockquote><p>我这里选择 JavaScript</p></blockquote></li> <li><p>Would you like to install them now with npm?（你想现在用 npm 安装它们吗?）</p> <blockquote><p>默认 Yes，所以可以直接回车</p></blockquote> <p><img src="/notes-page/assets/img/image-20210504110100677.15a7a58d.png" alt="image-20210504110100677"></p></li> <li><p>所有配置如下</p> <p><img src="/notes-page/assets/img/image-20210504110235680.d03c16f5.png" alt="image-20210504110235680"></p></li></ul> <p>安装成功后，项目的根目录就会多一个<code>.eslintrc.js</code>文件，其中的内容就是我们在终端中选择的相应配置。</p> <div class="custom-block tip"><p class="custom-block-title">注意</p> <p>VSCode 使用 ESLint 配置文件需要去插件市场下载插件 ESLint 。
+<img src="/notes-page/assets/img/image-20210504111438312.727bc6a5.png" alt="image-20210504111438312"></p></div> <h3 id="解决-prettier-和-eslint-的冲突"><a href="#解决-prettier-和-eslint-的冲突" class="header-anchor">#</a> 解决 Prettier 和 ESLint 的冲突</h3> <p>本项目中的 ESLint 配置中使用了 <code>Airbnb JavaScript</code> 风格指南校验，其规则之一是代码结束后面要加分号，而我们在 Prettier 配置文件中加了代码结束后面不加分号的配置项，这样就有冲突了，会出现用 Prettier 格式化后的代码，ESLint 检测到格式有问题的，从而抛出错误提示。
+解决两者冲突问题，需要用到 <code>eslint-plugin-prettier</code> 和 <code>eslint-config-prettier</code>。</p> <blockquote><p><code>eslint-plugin-prettier</code> 将 Prettier 的规则设置到 ESLint 的规则中。</p></blockquote> <blockquote><p><code>eslint-config-prettier</code> 关闭 ESLint 中与 Prettier 中会发生冲突的规则。</p></blockquote> <p>最后形成优先级：Prettier 配置规则 &gt; ESLint 配置规则。</p> <ul><li>安装插件</li></ul> <div class="language-shell extra-class"><pre class="language-shell"><code>$ <span class="token function">npm</span> i eslint-plugin-prettier eslint-config-prettier -D
+</code></pre></div><ul><li>在 <code>.eslintrc.js</code> 添加 prettier 插件</li></ul> <div class="language-javascript extra-class"><pre class="language-javascript"><code>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token operator">...</span>
+    <span class="token keyword">extends</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token string">'airbnb-base'</span><span class="token punctuation">,</span>
+        <span class="token string">'plugin:prettier/recommended'</span> <span class="token comment">// 添加 prettier 插件</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token operator">...</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>这样，我们在执行 <code>eslint --fix</code> 命令时，ESLint 就会按照 Prettier 的配置规则来格式化代码，轻松解决二者冲突问题。</p> <h3 id="集成-husky-和-lint-staged"><a href="#集成-husky-和-lint-staged" class="header-anchor">#</a> 集成 husky 和 lint-staged</h3> <p>我们在项目中已集成 <code>ESLint</code> 和 <code>Prettier</code>，在编码时，这些工具可以对我们写的代码进行实时校验，在一定程度上能有效规范我们写的代码，但团队可能会有些人觉得这些条条框框的限制很麻烦，选择视“提示”而不见，依旧按自己的一套风格来写代码，或者干脆禁用掉这些工具，开发完成就直接把代码提交到了仓库，日积月累，<code>ESLint</code> 也就形同虚设。
+所以，我们还需要做一些限制，让没通过 <code>ESLint</code> 检测和修复的代码禁止提交，从而保证仓库代码都是符合规范的。
+为了解决这个问题，我们需要用到 <code>Git Hook</code>，在本地执行 <code>git commit</code> 的时候，就对所提交的代码进行 <code>ESLint</code> 检测和修复（即执行 <code>eslint --fix</code>），如果这些代码没通过 <code>ESLint</code> 规则校验，则禁止提交。
+实现这一功能，我们借助 <code>husky + lint-staged</code> 。</p> <blockquote><p>husky —— Git Hook 工具，可以设置在 git 各个阶段（pre-commit、commit-msg、pre-push 等）触发我们的命令。
+lint-staged —— 在 git 暂存的文件上运行 linters。</p></blockquote> <h4 id="配置-husky"><a href="#配置-husky" class="header-anchor">#</a> 配置 husky</h4> <div class="custom-block tip"><p class="custom-block-title">TIP</p> <p>使用 <code>husky-init</code> 命令快速在项目初始化一个 <code>husky</code> 配置。在配置 <code>husky</code> 之前必须初始化 <code>git</code>，否则可能会配置不成功</p></div> <div class="language-shell extra-class"><pre class="language-shell"><code>$ npx husky-init <span class="token operator">&amp;&amp;</span> <span class="token function">npm</span> <span class="token function">install</span>
+</code></pre></div><p>命令执行会经历以下四步流程：</p> <ul><li><p>安装<code>husky</code>为开发依赖</p> <p><img src="/notes-page/assets/img/image-20210504120333648.39036f64.png" alt="image-20210504120333648"></p></li> <li><p>创建<code>.husky</code>文件夹</p> <p><img src="/notes-page/assets/img/image-20210504120510820.7751bb3c.png" alt="image-20210504120510820"></p></li> <li><p>在 <code>.husky</code> 目录创建 <code>pre-commit</code> hook，并初始化 <code>pre-commit</code> 命令为 <code>npm test</code></p> <p><img src="/notes-page/assets/img/image-20210504120612932.25edc2fb.png" alt="image-20210504120612932"></p></li> <li><p>修改 <code>package.json</code> 的 <code>scripts</code>，增加 <code>&quot;prepare&quot;: &quot;husky install&quot;</code></p> <p><img src="/notes-page/assets/img/image-20210504120708693.fd343f7b.png" alt="image-20210504120708693"></p></li></ul> <h4 id="配置-lint-staged"><a href="#配置-lint-staged" class="header-anchor">#</a> 配置 lint-staged</h4> <p>lint-staged 这个工具一般结合 husky 来使用，它可以让 husky 的 <code>hook</code> 触发的命令只作用于 <code>git add</code>那些文件（即 git 暂存区的文件），而不会影响到其他文件。</p> <p>接下来，我们使用 lint-staged 继续优化项目。</p> <ul><li><p>安装 lint-staged</p> <div class="language-shell extra-class"><pre class="language-shell"><code>$ <span class="token function">npm</span> i lint-staged -D
+</code></pre></div></li> <li><p>在 <code>package.json</code>里增加 lint-staged 配置项</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token property">&quot;lint-staged&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token property">&quot;*.{vue,js,ts}&quot;</span><span class="token operator">:</span> <span class="token string">&quot;eslint --fix&quot;</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+</code></pre></div><p><img src="/notes-page/assets/img/image-20210504121302298.97f6e65c.png" alt="image-20210504121302298"></p></li> <li><p>修改 <code>.husky/pre-commit hook</code> 的触发命令为：<code>npx lint-staged</code></p> <p><img src="/notes-page/assets/img/image-20210504121450870.40fc550a.png" alt="image-20210504121450870"></p></li></ul> <p>至此，husky 和 lint-staged 组合配置完成。</p> <h2 id="路由自动注册"><a href="#路由自动注册" class="header-anchor">#</a> 路由自动注册</h2> <blockquote><p>在 src 文件夹下新建 routes 和 api 两文件夹；routes 是集成当前项目的所有路由，api 文件是存放项目的所有接口文件。</p></blockquote> <ul><li><p>安装 <a href="https://github.com/troygoode/node-require-directory/" target="_blank" rel="noopener noreferrer"><code>require-dirctory</code><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>，这个包的作用可以将一个目录下的所有模块文件</p> <div class="language-shell extra-class"><pre class="language-shell"><code>$ <span class="token function">npm</span> i require-dirctory
+</code></pre></div></li> <li><p>创建<code>src/api/v1</code>下创建<code>demo.js</code>和<code>test.js</code>文件</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// src/api/v1/demo.js</span>
+<span class="token keyword">import</span> Router <span class="token keyword">from</span> <span class="token string">'@koa/router'</span>
+
+<span class="token keyword">const</span> router <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Router</span><span class="token punctuation">(</span><span class="token punctuation">{</span> prefix<span class="token operator">:</span> <span class="token string">'/api/v1'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+router<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'/demo'</span><span class="token punctuation">,</span> <span class="token keyword">async</span> <span class="token parameter">ctx</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  ctx<span class="token punctuation">.</span>body <span class="token operator">=</span> <span class="token punctuation">{</span>
+    status<span class="token operator">:</span> <span class="token number">200</span><span class="token punctuation">,</span>
+    message<span class="token operator">:</span> <span class="token string">'message'</span><span class="token punctuation">,</span>
+    data<span class="token operator">:</span> <span class="token punctuation">{</span>
+      file<span class="token operator">:</span> <span class="token string">'demo.js'</span><span class="token punctuation">,</span>
+      title<span class="token operator">:</span> <span class="token string">'webpack 5 构建node应用'</span><span class="token punctuation">,</span>
+      content<span class="token operator">:</span> <span class="token string">'koa + @koa/router + require-dirctory'</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> router
+</code></pre></div><div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">//  src/api/v1/test.js</span>
+<span class="token keyword">import</span> Router <span class="token keyword">from</span> <span class="token string">'@koa/router'</span>
+
+<span class="token keyword">const</span> router <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Router</span><span class="token punctuation">(</span><span class="token punctuation">{</span> prefix<span class="token operator">:</span> <span class="token string">'/api/v1'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+router<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'/test'</span><span class="token punctuation">,</span> <span class="token keyword">async</span> <span class="token parameter">ctx</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  ctx<span class="token punctuation">.</span>body <span class="token operator">=</span> <span class="token punctuation">{</span>
+    status<span class="token operator">:</span> <span class="token number">200</span><span class="token punctuation">,</span>
+    message<span class="token operator">:</span> <span class="token string">'message'</span><span class="token punctuation">,</span>
+    data<span class="token operator">:</span> <span class="token punctuation">{</span>
+      file<span class="token operator">:</span> <span class="token string">'test.js'</span><span class="token punctuation">,</span>
+      title<span class="token operator">:</span> <span class="token string">'webpack 5 构建node应用'</span><span class="token punctuation">,</span>
+      content<span class="token operator">:</span> <span class="token string">'koa + @koa/router + require-dirctory'</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> router
+</code></pre></div></li> <li><p>配置<code>src/routes/index.js</code></p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">import</span> Router <span class="token keyword">from</span> <span class="token string">'@koa/router'</span>
+<span class="token keyword">import</span> requireDirectory <span class="token keyword">from</span> <span class="token string">'require-directory'</span>
+
+<span class="token comment">// 接口存放目录路径</span>
+<span class="token keyword">const</span> apiDirectory <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>process<span class="token punctuation">.</span><span class="token function">cwd</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">/src/api</span><span class="token template-punctuation string">`</span></span>
+
+<span class="token keyword">function</span> <span class="token function">initLoadRoutes</span><span class="token punctuation">(</span><span class="token parameter">app</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">requireDirectory</span><span class="token punctuation">(</span>module<span class="token punctuation">,</span> apiDirectory<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    <span class="token function">visit</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> <span class="token keyword">default</span><span class="token operator">:</span> router <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>router <span class="token keyword">instanceof</span> <span class="token class-name">Router</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>router<span class="token punctuation">.</span><span class="token function">routes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> initLoadRoutes
+</code></pre></div></li> <li><p>修改<code>src/app.js</code>文件</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">import</span> Koa <span class="token keyword">from</span> <span class="token string">'koa'</span>
+<span class="token keyword">import</span> initLoadRoutes <span class="token keyword">from</span> <span class="token string">'./routes/index'</span>
+
+<span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Koa</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 在入口文件中执行</span>
+<span class="token function">initLoadRoutes</span><span class="token punctuation">(</span>app<span class="token punctuation">)</span>
+
+<span class="token keyword">const</span> port <span class="token operator">=</span> <span class="token number">3002</span>
+app<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span>port<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">服务启动在</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>port<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">端口</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div></li> <li><p>在 postman 中测试请求如下图</p> <p><img src="/notes-page/assets/img/image-20210504125524850.b5fb774a.png" alt="image-20210504125524850"></p> <p><img src="/notes-page/assets/img/image-20210504125437662.75866bf7.png" alt="image-20210504125437662"></p> <p>到此自动注册路由就大功告成了，后面我们定义接口的时候就用手动一个一个的引入，只管往 api 文件夹里写接口就好了。</p></li></ul> <h2 id="配置别名"><a href="#配置别名" class="header-anchor">#</a> 配置别名</h2> <p>在日常开发中我们引入一些封装好的方法或者模块总是写很长很长的文件路径；比如：<code>require('../../../../some/very/deep/module')</code>、<code>import format from '../../../../utils/format'</code>，为了告别这种又臭又长的路径我们就可以使用一些解放生产力的方法了（哈哈哈哈，不会偷懒的程序员不是好程序员 🤭）</p> <p>配置别名有两种方式，一种是 webpack，另一种是通过<a href="https://www.npmjs.com/package/module-alias" target="_blank" rel="noopener noreferrer"><code>module-alias</code><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>包，我这里就使用第二种方法</p> <ul><li><p>安装依赖</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">npm</span> i module-alias
+</code></pre></div></li> <li><p>在<code>package.json</code>中添加自定义别名</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token property">&quot;_moduleAliases&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;@&quot;</span><span class="token operator">:</span> <span class="token string">&quot;./src&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;@controller&quot;</span><span class="token operator">:</span> <span class="token string">&quot;./src/controller&quot;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><img src="/notes-page/assets/img/image-20210504141154503.7e1ea32c.png" alt="image-20210504141154503"></p></li> <li><p>在入口文件的顶部引入<code>module-alias/register</code>，也就是在<code>app.js</code>的顶部引入</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'module-alias/register'</span><span class="token punctuation">)</span>
+</code></pre></div><p><img src="/notes-page/assets/img/image-20210504142411612.3ddee265.png" alt="image-20210504142411612"></p></li></ul> <blockquote><p>配置成功后，将<code>/src/api/v1</code>内的逻辑全部提到<code>src/controller</code>中，使用别名引入<code>controller</code>中文件，修改后如下：</p></blockquote> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// src/api/v1/demo.js</span>
+<span class="token keyword">import</span> Router <span class="token keyword">from</span> <span class="token string">'@koa/router'</span>
+<span class="token keyword">import</span> DemoController <span class="token keyword">from</span> <span class="token string">'@controller/demo/'</span>
+
+<span class="token keyword">const</span> router <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Router</span><span class="token punctuation">(</span><span class="token punctuation">{</span> prefix<span class="token operator">:</span> <span class="token string">'/api/v1'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+router<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'/demo'</span><span class="token punctuation">,</span> DemoController<span class="token punctuation">.</span>demo<span class="token punctuation">)</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> router
+</code></pre></div><div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// src/api/v1/test.js</span>
+<span class="token keyword">import</span> Router <span class="token keyword">from</span> <span class="token string">'@koa/router'</span>
+<span class="token keyword">import</span> TestController <span class="token keyword">from</span> <span class="token string">'@controller/test'</span>
+
+<span class="token keyword">const</span> router <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Router</span><span class="token punctuation">(</span><span class="token punctuation">{</span> prefix<span class="token operator">:</span> <span class="token string">'/api/v1'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+router<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'/test'</span><span class="token punctuation">,</span> TestController<span class="token punctuation">.</span>test<span class="token punctuation">)</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> router
+</code></pre></div><div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// src/controller/v1/demo.js</span>
+<span class="token keyword">class</span> <span class="token class-name">DemoController</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+  <span class="token keyword">async</span> <span class="token function">demo</span><span class="token punctuation">(</span><span class="token parameter">ctx</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    ctx<span class="token punctuation">.</span>body <span class="token operator">=</span> <span class="token punctuation">{</span>
+      status<span class="token operator">:</span> <span class="token number">200</span><span class="token punctuation">,</span>
+      message<span class="token operator">:</span> <span class="token string">'message'</span><span class="token punctuation">,</span>
+      data<span class="token operator">:</span> <span class="token punctuation">{</span>
+        file<span class="token operator">:</span> <span class="token string">'test.js'</span><span class="token punctuation">,</span>
+        title<span class="token operator">:</span> <span class="token string">'webpack 5 构建node应用'</span><span class="token punctuation">,</span>
+        content<span class="token operator">:</span> <span class="token string">'koa + @koa/router + require-dirctory'</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">new</span> <span class="token class-name">DemoController</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// src/controller/v1/test.js</span>
+<span class="token keyword">class</span> <span class="token class-name">TestController</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+  <span class="token keyword">async</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token parameter">ctx</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    ctx<span class="token punctuation">.</span>body <span class="token operator">=</span> <span class="token punctuation">{</span>
+      status<span class="token operator">:</span> <span class="token number">200</span><span class="token punctuation">,</span>
+      message<span class="token operator">:</span> <span class="token string">'message'</span><span class="token punctuation">,</span>
+      data<span class="token operator">:</span> <span class="token punctuation">{</span>
+        file<span class="token operator">:</span> <span class="token string">'test.js'</span><span class="token punctuation">,</span>
+        title<span class="token operator">:</span> <span class="token string">'webpack 5 构建node应用'</span><span class="token punctuation">,</span>
+        content<span class="token operator">:</span> <span class="token string">'koa + @koa/router + require-dirctory'</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">new</span> <span class="token class-name">TestController</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><ul><li><p>postman 中测试接口</p> <p><img src="/notes-page/assets/img/image-20210504143159248.375ecc14.png" alt="image-20210504143159248"></p> <p><img src="/notes-page/assets/img/image-20210504143225351.f93228ef.png" alt="image-20210504143225351"></p></li></ul> <p>commit 时 lint-staged 没有通过：</p> <p><img src="/notes-page/assets/img/image-20210504152231237.333b1077.png" alt="image-20210504152231237"></p> <blockquote><p>上述问题是 eslint 发现<code>@controller/*</code>开头的在 node_modules 中没有找到，所以配置 eslint 就好了：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// src/eslintrc.js</span>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">//...</span>
+  rules<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token string">'import/no-unresolved'</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> ignore<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'^@/'</span><span class="token punctuation">,</span> <span class="token string">'@controller'</span><span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">]</span> <span class="token comment">// @和@controller 是设置的路径别名</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div></blockquote> <p><img src="data:image/png;base64,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" alt="image-20210504154049823"></p> <blockquote><p>这个问题是由于<code>constructor</code>构造函数为空引起的，在<code>eslintrc.js</code>添加配置即可：'no-empty-function': ['error', { allow: ['constructors'] }]</p></blockquote> <p>完整代码见：<a href="https://github.com/big-front-end/webpack5-node" target="_blank" rel="noopener noreferrer">GitHub<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/notes-page/basic/node/01-koa.html" class="prev">
+        koa(下一代web框架)
+      </a></span> <span class="next"><a href="/notes-page/basic/ts/">
+        概念
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/notes-page/assets/js/app.ab62a723.js" defer></script><script src="/notes-page/assets/js/2.6963f4c4.js" defer></script><script src="/notes-page/assets/js/5.2ebc69f7.js" defer></script>
+  </body>
+</html>
