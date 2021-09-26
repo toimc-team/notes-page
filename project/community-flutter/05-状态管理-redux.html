@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>状态管理方案-Redux | 大前端 - 前端高级进阶</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="大前端课程电子书">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+    <link rel="preload" href="/notes-page/assets/css/0.styles.e2a3d81d.css" as="style"><link rel="preload" href="/notes-page/assets/js/app.1371add3.js" as="script"><link rel="preload" href="/notes-page/assets/js/8.81a428d2.js" as="script"><link rel="preload" href="/notes-page/assets/js/72.fd997da5.js" as="script"><link rel="prefetch" href="/notes-page/assets/js/1.83af599a.js"><link rel="prefetch" href="/notes-page/assets/js/10.dc408fea.js"><link rel="prefetch" href="/notes-page/assets/js/100.a03acd0e.js"><link rel="prefetch" href="/notes-page/assets/js/101.07258503.js"><link rel="prefetch" href="/notes-page/assets/js/102.4569cb0f.js"><link rel="prefetch" href="/notes-page/assets/js/103.8224b145.js"><link rel="prefetch" href="/notes-page/assets/js/104.32b84006.js"><link rel="prefetch" href="/notes-page/assets/js/105.fcb04965.js"><link rel="prefetch" href="/notes-page/assets/js/106.3fc7255f.js"><link rel="prefetch" href="/notes-page/assets/js/107.95a54d87.js"><link rel="prefetch" href="/notes-page/assets/js/108.e76bf97e.js"><link rel="prefetch" href="/notes-page/assets/js/109.4e504d48.js"><link rel="prefetch" href="/notes-page/assets/js/11.386acbf7.js"><link rel="prefetch" href="/notes-page/assets/js/110.54878299.js"><link rel="prefetch" href="/notes-page/assets/js/111.97a073cb.js"><link rel="prefetch" href="/notes-page/assets/js/112.81a2dedd.js"><link rel="prefetch" href="/notes-page/assets/js/113.43824821.js"><link rel="prefetch" href="/notes-page/assets/js/114.a389fff5.js"><link rel="prefetch" href="/notes-page/assets/js/115.7cb56591.js"><link rel="prefetch" href="/notes-page/assets/js/116.eb84d792.js"><link rel="prefetch" href="/notes-page/assets/js/117.1fd829f2.js"><link rel="prefetch" href="/notes-page/assets/js/118.673c5485.js"><link rel="prefetch" href="/notes-page/assets/js/119.b972fcd1.js"><link rel="prefetch" href="/notes-page/assets/js/12.24fd28e0.js"><link rel="prefetch" href="/notes-page/assets/js/120.d5c97086.js"><link rel="prefetch" href="/notes-page/assets/js/121.1c393436.js"><link rel="prefetch" href="/notes-page/assets/js/122.ec2989f5.js"><link rel="prefetch" href="/notes-page/assets/js/123.9b0db16a.js"><link rel="prefetch" href="/notes-page/assets/js/124.7cd30827.js"><link rel="prefetch" href="/notes-page/assets/js/125.794348f7.js"><link rel="prefetch" href="/notes-page/assets/js/126.7f1959a0.js"><link rel="prefetch" href="/notes-page/assets/js/127.bfa7258b.js"><link rel="prefetch" href="/notes-page/assets/js/128.d3ef8582.js"><link rel="prefetch" href="/notes-page/assets/js/129.84c16708.js"><link rel="prefetch" href="/notes-page/assets/js/13.e15d6f77.js"><link rel="prefetch" href="/notes-page/assets/js/130.694d6109.js"><link rel="prefetch" href="/notes-page/assets/js/131.bb55a9a1.js"><link rel="prefetch" href="/notes-page/assets/js/132.134634d4.js"><link rel="prefetch" href="/notes-page/assets/js/133.d60a53af.js"><link rel="prefetch" href="/notes-page/assets/js/134.ac68cbb0.js"><link rel="prefetch" href="/notes-page/assets/js/135.70697e4b.js"><link rel="prefetch" href="/notes-page/assets/js/136.26679adc.js"><link rel="prefetch" href="/notes-page/assets/js/137.235f9fbd.js"><link rel="prefetch" href="/notes-page/assets/js/138.a400db77.js"><link rel="prefetch" href="/notes-page/assets/js/139.ca75f3c3.js"><link rel="prefetch" href="/notes-page/assets/js/14.1fca5f67.js"><link rel="prefetch" href="/notes-page/assets/js/140.938c2dd6.js"><link rel="prefetch" href="/notes-page/assets/js/141.3f1473d5.js"><link rel="prefetch" href="/notes-page/assets/js/15.e9014963.js"><link rel="prefetch" href="/notes-page/assets/js/16.5e058172.js"><link rel="prefetch" href="/notes-page/assets/js/17.286b6195.js"><link rel="prefetch" href="/notes-page/assets/js/18.6db445df.js"><link rel="prefetch" href="/notes-page/assets/js/19.52e7a5f7.js"><link rel="prefetch" href="/notes-page/assets/js/20.443a533e.js"><link rel="prefetch" href="/notes-page/assets/js/21.b5f74309.js"><link rel="prefetch" href="/notes-page/assets/js/22.9f6efa57.js"><link rel="prefetch" href="/notes-page/assets/js/23.f8b0d892.js"><link rel="prefetch" href="/notes-page/assets/js/24.c1886d70.js"><link rel="prefetch" href="/notes-page/assets/js/25.7cdf017a.js"><link rel="prefetch" href="/notes-page/assets/js/26.57e7fe7e.js"><link rel="prefetch" href="/notes-page/assets/js/27.09b33b41.js"><link rel="prefetch" href="/notes-page/assets/js/28.9d642038.js"><link rel="prefetch" href="/notes-page/assets/js/29.5a19854f.js"><link rel="prefetch" href="/notes-page/assets/js/30.a189d200.js"><link rel="prefetch" href="/notes-page/assets/js/31.1e3c69af.js"><link rel="prefetch" href="/notes-page/assets/js/32.32a71bae.js"><link rel="prefetch" href="/notes-page/assets/js/33.28a062a3.js"><link rel="prefetch" href="/notes-page/assets/js/34.9ec061b8.js"><link rel="prefetch" href="/notes-page/assets/js/35.138e1657.js"><link rel="prefetch" href="/notes-page/assets/js/36.90d29259.js"><link rel="prefetch" href="/notes-page/assets/js/37.80c1e82a.js"><link rel="prefetch" href="/notes-page/assets/js/38.f53326b3.js"><link rel="prefetch" href="/notes-page/assets/js/39.7e94601a.js"><link rel="prefetch" href="/notes-page/assets/js/40.84792f65.js"><link rel="prefetch" href="/notes-page/assets/js/41.c585f08a.js"><link rel="prefetch" href="/notes-page/assets/js/42.82c14706.js"><link rel="prefetch" href="/notes-page/assets/js/43.601b519c.js"><link rel="prefetch" href="/notes-page/assets/js/44.d63df1ae.js"><link rel="prefetch" href="/notes-page/assets/js/45.1fb00017.js"><link rel="prefetch" href="/notes-page/assets/js/46.5f486a9c.js"><link rel="prefetch" href="/notes-page/assets/js/47.c416cbb5.js"><link rel="prefetch" href="/notes-page/assets/js/48.098925f4.js"><link rel="prefetch" href="/notes-page/assets/js/49.15b31c0c.js"><link rel="prefetch" href="/notes-page/assets/js/50.4bb2a1a7.js"><link rel="prefetch" href="/notes-page/assets/js/51.fac256b0.js"><link rel="prefetch" href="/notes-page/assets/js/52.92f4621d.js"><link rel="prefetch" href="/notes-page/assets/js/53.d9828734.js"><link rel="prefetch" href="/notes-page/assets/js/54.63856b95.js"><link rel="prefetch" href="/notes-page/assets/js/55.7de48b8f.js"><link rel="prefetch" href="/notes-page/assets/js/56.ddadb42a.js"><link rel="prefetch" href="/notes-page/assets/js/57.7868768e.js"><link rel="prefetch" href="/notes-page/assets/js/58.372e12b7.js"><link rel="prefetch" href="/notes-page/assets/js/59.86812551.js"><link rel="prefetch" href="/notes-page/assets/js/6.4baaf575.js"><link rel="prefetch" href="/notes-page/assets/js/60.cbf986b6.js"><link rel="prefetch" href="/notes-page/assets/js/61.e1325d55.js"><link rel="prefetch" href="/notes-page/assets/js/62.10276dc7.js"><link rel="prefetch" href="/notes-page/assets/js/63.e6d0d74e.js"><link rel="prefetch" href="/notes-page/assets/js/64.09560f42.js"><link rel="prefetch" href="/notes-page/assets/js/65.884f979f.js"><link rel="prefetch" href="/notes-page/assets/js/66.59b93380.js"><link rel="prefetch" href="/notes-page/assets/js/67.57dc0f1e.js"><link rel="prefetch" href="/notes-page/assets/js/68.2ef957ad.js"><link rel="prefetch" href="/notes-page/assets/js/69.ad529cc7.js"><link rel="prefetch" href="/notes-page/assets/js/7.ff1bda0e.js"><link rel="prefetch" href="/notes-page/assets/js/70.84a4838c.js"><link rel="prefetch" href="/notes-page/assets/js/71.2a7e5b79.js"><link rel="prefetch" href="/notes-page/assets/js/73.563e7bbb.js"><link rel="prefetch" href="/notes-page/assets/js/74.ac058a2c.js"><link rel="prefetch" href="/notes-page/assets/js/75.22e91916.js"><link rel="prefetch" href="/notes-page/assets/js/76.e6413efa.js"><link rel="prefetch" href="/notes-page/assets/js/77.b68f114a.js"><link rel="prefetch" href="/notes-page/assets/js/78.e692b223.js"><link rel="prefetch" href="/notes-page/assets/js/79.6dda63bf.js"><link rel="prefetch" href="/notes-page/assets/js/80.6e277352.js"><link rel="prefetch" href="/notes-page/assets/js/81.75c5bcbe.js"><link rel="prefetch" href="/notes-page/assets/js/82.51c56f2d.js"><link rel="prefetch" href="/notes-page/assets/js/83.d8138a95.js"><link rel="prefetch" href="/notes-page/assets/js/84.02fe855d.js"><link rel="prefetch" href="/notes-page/assets/js/85.0e2432e5.js"><link rel="prefetch" href="/notes-page/assets/js/86.25d69fde.js"><link rel="prefetch" href="/notes-page/assets/js/87.12a41d73.js"><link rel="prefetch" href="/notes-page/assets/js/88.7612a2a9.js"><link rel="prefetch" href="/notes-page/assets/js/89.63b2c83c.js"><link rel="prefetch" href="/notes-page/assets/js/9.4d9781d6.js"><link rel="prefetch" href="/notes-page/assets/js/90.11efeacc.js"><link rel="prefetch" href="/notes-page/assets/js/91.073e7db3.js"><link rel="prefetch" href="/notes-page/assets/js/92.47a25ad6.js"><link rel="prefetch" href="/notes-page/assets/js/93.a721cdcb.js"><link rel="prefetch" href="/notes-page/assets/js/94.297aeb85.js"><link rel="prefetch" href="/notes-page/assets/js/95.8eddf25c.js"><link rel="prefetch" href="/notes-page/assets/js/96.1d244a56.js"><link rel="prefetch" href="/notes-page/assets/js/97.a5ba5518.js"><link rel="prefetch" href="/notes-page/assets/js/98.1a60fb30.js"><link rel="prefetch" href="/notes-page/assets/js/99.11f6c789.js"><link rel="prefetch" href="/notes-page/assets/js/vendors~docsearch.3701f587.js"><link rel="prefetch" href="/notes-page/assets/js/vendors~photo-swipe.5f3edbcc.js"><link rel="prefetch" href="/notes-page/assets/js/vendors~search-page.8eee0174.js">
+    <link rel="stylesheet" href="/notes-page/assets/css/0.styles.e2a3d81d.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/notes-page/" class="home-link router-link-active"><!----> <span class="site-name">大前端 - 前端高级进阶</span></a> <div class="links"><div id="docsearch"></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>社区PC</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/notes-page/project/community-pc/" class="sidebar-link">PC</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>社区管理后台</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/notes-page/project/community-admin/" class="sidebar-link">管理后台</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>社区WebApp</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/notes-page/project/community-webapp/" class="sidebar-link">webapp</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>小程序</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/notes-page/project/community-miniapp/" class="sidebar-link">uniapp介绍</a></li><li><a href="/notes-page/project/community-miniapp/01-搭建开发环境.html" class="sidebar-link">搭建开发环境</a></li><li><a href="/notes-page/project/community-miniapp/02-首页模块.html" class="sidebar-link">首页模块</a></li><li><a href="/notes-page/project/community-miniapp/03-登录鉴权.html" class="sidebar-link">小程序鉴权登录</a></li><li><a href="/notes-page/project/community-miniapp/04-消息&amp;热门&amp;个人中心.html" class="sidebar-link">消息&amp;热门&amp;个人中心</a></li><li><a href="/notes-page/project/community-miniapp/05-RefreshToken机制.html" class="sidebar-link">RefreshToken机制</a></li><li><a href="/notes-page/project/community-miniapp/06-文章详情.html" class="sidebar-link">文章详情</a></li><li><a href="/notes-page/project/community-miniapp/07-安全域名相关.html" class="sidebar-link">安全域名相关</a></li><li><a href="/notes-page/project/community-miniapp/08-订阅消息.html" class="sidebar-link">订阅消息</a></li><li><a href="/notes-page/project/community-miniapp/09-内容安全.html" class="sidebar-link">内容安全</a></li><li><a href="/notes-page/project/community-miniapp/10-发贴&amp;评论功能.html" class="sidebar-link">发贴评论功能</a></li><li><a href="/notes-page/project/community-miniapp/11-发布上线.html" class="sidebar-link">发布上线</a></li><li><a href="/notes-page/project/community-miniapp/12-支付专题.html" class="sidebar-link">支付专题</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Flutter 2.0</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/notes-page/project/community-flutter/" aria-current="page" class="sidebar-link">Flutter</a></li><li><a href="/notes-page/project/community-flutter/01-风格指南.html" class="sidebar-link">风格指南</a></li><li><a href="/notes-page/project/community-flutter/02-Flutter入门.html" class="sidebar-link">Flutter入门案例</a></li><li><a href="/notes-page/project/community-flutter/03-异步编程思想.html" class="sidebar-link">异步编程思想</a></li><li><a href="/notes-page/project/community-flutter/04-状态管理.html" class="sidebar-link">状态管理概览</a></li><li><a href="/notes-page/project/community-flutter/05-状态管理-redux.html" class="active sidebar-link">状态管理方案-Redux</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/notes-page/project/community-flutter/05-状态管理-redux.html#工作原理" class="sidebar-link">工作原理</a></li><li class="sidebar-sub-header"><a href="/notes-page/project/community-flutter/05-状态管理-redux.html#安装依赖" class="sidebar-link">安装依赖</a></li><li class="sidebar-sub-header"><a href="/notes-page/project/community-flutter/05-状态管理-redux.html#redux案例-计数器" class="sidebar-link">Redux案例 - 计数器</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/notes-page/project/community-flutter/05-状态管理-redux.html#核心概念" class="sidebar-link">核心概念</a></li><li class="sidebar-sub-header"><a href="/notes-page/project/community-flutter/05-状态管理-redux.html#优化案例-拆分逻辑" class="sidebar-link">优化案例&amp;拆分逻辑</a></li></ul></li><li class="sidebar-sub-header"><a href="/notes-page/project/community-flutter/05-状态管理-redux.html#redux案例-todolist" class="sidebar-link">Redux案例 - TodoList</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/notes-page/project/community-flutter/05-状态管理-redux.html#创建actions-reducers-state" class="sidebar-link">创建actions,reducers,state</a></li><li class="sidebar-sub-header"><a href="/notes-page/project/community-flutter/05-状态管理-redux.html#封装viewmodel" class="sidebar-link">封装ViewModel</a></li><li class="sidebar-sub-header"><a href="/notes-page/project/community-flutter/05-状态管理-redux.html#待办清单应用" class="sidebar-link">待办清单应用</a></li></ul></li><li class="sidebar-sub-header"><a href="/notes-page/project/community-flutter/05-状态管理-redux.html#作业-删除与清空功能" class="sidebar-link">作业：删除与清空功能</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/notes-page/project/community-flutter/05-状态管理-redux.html#修改actions-state-reducers" class="sidebar-link">修改actions,state,reducers</a></li><li class="sidebar-sub-header"><a href="/notes-page/project/community-flutter/05-状态管理-redux.html#调整viewmodel" class="sidebar-link">调整ViewModel</a></li><li class="sidebar-sub-header"><a href="/notes-page/project/community-flutter/05-状态管理-redux.html#添加页面按钮与回调" class="sidebar-link">添加页面按钮与回调</a></li></ul></li></ul></li><li><a href="/notes-page/project/community-flutter/06-状态管理-scoped_model.html" class="sidebar-link">状态管理方案-ScopedModel</a></li><li><a href="/notes-page/project/community-flutter/07-状态管理-bloc.html" class="sidebar-link">状态管理方案-Bloc</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Electron桌面端</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/notes-page/project/community-electron/" class="sidebar-link">electron</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>React世界</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/notes-page/project/react/" class="sidebar-link">React项目</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="状态管理方案-redux"><a href="#状态管理方案-redux" class="header-anchor">#</a> 状态管理方案-Redux</h1> <h2 id="工作原理"><a href="#工作原理" class="header-anchor">#</a> 工作原理</h2> <p>Redux是一个应用状态管理框架。换句话说，它的主要目标是管理一个状态。</p> <p>Redux围绕以下原则构建：</p> <ul><li><p>单向数据流</p></li> <li><p><strong>Store</strong></p> <ul><li>只存储一个状态</li> <li>暴露了一个入口点，称为dispatch，它只接受参数中的Action。</li> <li>暴露了一个getters来获取当前状态。</li> <li>允许(不)注册，以便(通过StreamSubscription)通知State的任何变化。</li> <li>将动作和存储分配给第一个 MiddleWare 的</li> <li>将动作和当前状态分配给一个Reducer（可能是多个Redducers的门面）。
+行动</li></ul></li> <li><p><strong>Actions</strong></p> <p>Actions是Store访问点接受的唯一输入类型。MiddleWare和Reducer使用Action和当前状态来处理某些功能，这可能导致修改状态。</p> <p>Actions只描述发生了什么。</p></li> <li><p><strong>MiddleWare</strong></p> <p>中间件是一种功能，通常以异步运行（但不一定）为目的，基于一个Action。中间件只是简单地使用一个状态（或一个Action作为触发器），但不改变状态。</p></li> <li><p><strong>Reducers</strong></p> <p>Reducer通常是一个同步函数，它根据Action-State的组合进行一些处理。处理的结果可能导致一个新的State。
+Reducer是唯一一个被允许改变状态的函数。</p></li></ul> <blockquote><p>需要注意的是，根据Redux的建议和良好实践，每个应用程序只有一个单一的Store。为了拆分数据处理逻辑，建议使用 &quot;reducer composition &quot;而不是许多Store。</p></blockquote> <p><img src="/notes-page/assets/img/models_redux_animation.a06b6390.gif" alt="models_redux_animation"></p> <p>解析：</p> <ul><li>当UI层发生某些事情时（但实际上不限于UI），会创建一个Action并发送给Store（通过store.dispatch(action)）。</li> <li>如果配置了一个或多个中间件，它们会被依次调用，并将Action和对Store的引用传递给它们（因此，也间接地传递给State）。</li> <li>Middlewares本身也可以在处理过程中向Store发送一个Action。</li> <li>然后，Action和当前状态也会被发送到Reducer。</li> <li>Reducer是唯一一个有可能改变State的东西</li> <li>当状态发生变化时，Store会通知所有注册的监听者以告知他们。</li> <li>然后，UI(但不限于UI)可以采取与状态变化相关联的适当操作。</li></ul> <h2 id="安装依赖"><a href="#安装依赖" class="header-anchor">#</a> 安装依赖</h2> <p>Redux最初是为Javascript开发的，并作为一个包移植到Dart。</p> <p>一个Flutter专用包(<a href="https://pub.dev/packages/flutter_redux" target="_blank" rel="noopener noreferrer">flutter_redux<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>)提供了一些Widgets，比如。</p> <ul><li><strong>StoreProvider</strong>将Store传递给所有的子代Widgets。</li> <li><strong>StoreBuilder</strong>从StoreProvider获取Store，并将其传递给Widget builder函数。</li> <li><strong>StoreConnector</strong>从最近的StoreProvider祖先中获取Store，将其转换为ViewModel并传递给构建函数。</li></ul> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">dependencies</span><span class="token punctuation">:</span>
+  <span class="token key atrule">flutter</span><span class="token punctuation">:</span>
+    <span class="token key atrule">sdk</span><span class="token punctuation">:</span> flutter
+
+  <span class="token comment"># The following adds the Cupertino Icons font to your application.</span>
+  <span class="token comment"># Use with the CupertinoIcons class for iOS style icons.</span>
+  <span class="token key atrule">cupertino_icons</span><span class="token punctuation">:</span> ^1.0.2
+  <span class="token key atrule">redux</span><span class="token punctuation">:</span> ^5.0.0
+  <span class="token key atrule">flutter_redux</span><span class="token punctuation">:</span> ^0.8.2
+</code></pre></div><p>然后使用<code>flutter pub get</code>安装依赖。</p> <h2 id="redux案例-计数器"><a href="#redux案例-计数器" class="header-anchor">#</a> Redux案例 - 计数器</h2> <h3 id="核心概念"><a href="#核心概念" class="header-anchor">#</a> 核心概念</h3> <div class="language-dart extra-class"><pre class="language-dart"><code><span class="token keyword">import</span> <span class="token string">'package:flutter/material.dart'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">'package:flutter_redux/flutter_redux.dart'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">'package:redux/redux.dart'</span><span class="token punctuation">;</span>
+<span class="token comment">// 1.删除无用的文件，删除注释</span>
+
+<span class="token keyword">enum</span> <span class="token class-name">Actions</span> <span class="token punctuation">{</span> increment <span class="token punctuation">}</span>
+<span class="token comment">// 传递进来一个state + action</span>
+<span class="token comment">// 返回去一个新的state</span>
+int <span class="token function">counterReducer</span><span class="token punctuation">(</span>int state<span class="token punctuation">,</span> action<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>action <span class="token operator">==</span> <span class="token class-name">Actions</span><span class="token punctuation">.</span>increment<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// action -&gt; enum</span>
+    <span class="token keyword">return</span> state <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> state<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">runApp</span><span class="token punctuation">(</span><span class="token class-name">MyApp</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">MyApp</span> <span class="token keyword">extends</span> <span class="token class-name">StatelessWidget</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 2.创建Store -&gt; state</span>
+  <span class="token keyword">final</span> store <span class="token operator">=</span> <span class="token class-name">Store</span><span class="token punctuation">(</span>counterReducer<span class="token punctuation">,</span> initialState<span class="token punctuation">:</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token class-name">MyApp</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token class-name">Key</span><span class="token operator">?</span> key<span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">:</span> <span class="token keyword">super</span><span class="token punctuation">(</span>key<span class="token punctuation">:</span> key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token metadata symbol">@override</span>
+  <span class="token class-name">Widget</span> <span class="token function">build</span><span class="token punctuation">(</span><span class="token class-name">BuildContext</span> context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 3.使用StoreProvider</span>
+    <span class="token keyword">return</span> <span class="token class-name">StoreProvider</span><span class="token punctuation">(</span>
+      store<span class="token punctuation">:</span> store<span class="token punctuation">,</span>
+      child<span class="token punctuation">:</span> <span class="token class-name">MaterialApp</span><span class="token punctuation">(</span>
+        title<span class="token punctuation">:</span> <span class="token string">'Flutter Demo'</span><span class="token punctuation">,</span>
+        theme<span class="token punctuation">:</span> <span class="token class-name">ThemeData</span><span class="token punctuation">(</span>
+          primarySwatch<span class="token punctuation">:</span> <span class="token class-name">Colors</span><span class="token punctuation">.</span>blue<span class="token punctuation">,</span>
+        <span class="token punctuation">)</span><span class="token punctuation">,</span>
+        home<span class="token punctuation">:</span> <span class="token keyword">const</span> <span class="token class-name">MyHome</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">MyHome</span> <span class="token keyword">extends</span> <span class="token class-name">StatelessWidget</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> <span class="token class-name">MyHome</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token class-name">Key</span><span class="token operator">?</span> key<span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">:</span> <span class="token keyword">super</span><span class="token punctuation">(</span>key<span class="token punctuation">:</span> key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token metadata symbol">@override</span>
+  <span class="token class-name">Widget</span> <span class="token function">build</span><span class="token punctuation">(</span><span class="token class-name">BuildContext</span> context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token class-name">Scaffold</span><span class="token punctuation">(</span>
+      appBar<span class="token punctuation">:</span> <span class="token class-name">AppBar</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      body<span class="token punctuation">:</span> <span class="token class-name">Center</span><span class="token punctuation">(</span>
+        child<span class="token punctuation">:</span> <span class="token class-name">Column</span><span class="token punctuation">(</span>
+          children<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+            <span class="token class-name">Text</span><span class="token punctuation">(</span><span class="token string">'计数器的状态：'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token comment">// 4.添加按钮 -&gt; dispatch -&gt; action -&gt; reducer -&gt; 更新state</span>
+            <span class="token comment">// builder -&gt; 最终返回的widgets</span>
+            <span class="token comment">// StoreConnector -&gt; &lt;初始的state类型， 最终输出到builder的类型&gt;</span>
+            <span class="token comment">// converter -&gt; 取用最近的Provider -&gt; store -&gt; 转化成我们需要的类型数据</span>
+            <span class="token comment">// builder -&gt; 返回一个Widget -&gt; 使用state -&gt; viewModel</span>
+            <span class="token class-name">StoreConnector</span><span class="token generics"><span class="token punctuation">&lt;</span>int<span class="token punctuation">,</span> <span class="token class-name">String</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span>
+              builder<span class="token punctuation">:</span> <span class="token punctuation">(</span>context<span class="token punctuation">,</span> countStr<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">return</span> <span class="token class-name">Text</span><span class="token punctuation">(</span>
+                  countStr<span class="token punctuation">,</span>
+                  style<span class="token punctuation">:</span> <span class="token keyword">const</span> <span class="token class-name">TextStyle</span><span class="token punctuation">(</span>
+                    fontSize<span class="token punctuation">:</span> <span class="token number">24.0</span><span class="token punctuation">,</span>
+                  <span class="token punctuation">)</span><span class="token punctuation">,</span>
+                <span class="token punctuation">)</span><span class="token punctuation">;</span>
+              <span class="token punctuation">}</span><span class="token punctuation">,</span>
+              converter<span class="token punctuation">:</span> <span class="token punctuation">(</span>store<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> store<span class="token punctuation">.</span>state<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token punctuation">)</span><span class="token punctuation">,</span>
+          <span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token punctuation">)</span><span class="token punctuation">,</span>
+      floatingActionButton<span class="token punctuation">:</span> <span class="token class-name">StoreConnector</span><span class="token generics"><span class="token punctuation">&lt;</span>int<span class="token punctuation">,</span> <span class="token class-name">VoidCallback</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span>
+        builder<span class="token punctuation">:</span> <span class="token punctuation">(</span>context<span class="token punctuation">,</span> callback<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token class-name">FloatingActionButton</span><span class="token punctuation">(</span>
+          child<span class="token punctuation">:</span> <span class="token keyword">const</span> <span class="token class-name">Icon</span><span class="token punctuation">(</span><span class="token class-name">Icons</span><span class="token punctuation">.</span>add<span class="token punctuation">)</span><span class="token punctuation">,</span>
+          onPressed<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment">// 触发dispatch方法 -&gt; action -&gt; Actions.increment</span>
+            <span class="token function">callback</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">)</span><span class="token punctuation">,</span>
+        converter<span class="token punctuation">:</span> <span class="token punctuation">(</span>store<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token comment">// 返回store.dispatch -&gt; Funciton -&gt; builder的第二个参数</span>
+          <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> store<span class="token punctuation">.</span><span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token class-name">Actions</span><span class="token punctuation">.</span>increment<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="优化案例-拆分逻辑"><a href="#优化案例-拆分逻辑" class="header-anchor">#</a> 优化案例&amp;拆分逻辑</h3> <p>新建文件：<code>lib/store/state.dart</code></p> <div class="language-dart extra-class"><pre class="language-dart"><code><span class="token keyword">class</span> <span class="token class-name">AppState</span> <span class="token punctuation">{</span>
+  <span class="token keyword">final</span> int count<span class="token punctuation">;</span>
+
+  <span class="token class-name">AppState</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>count <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token class-name">AppState</span><span class="token punctuation">.</span><span class="token function">initState</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token punctuation">:</span> count <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>新建文件：<code>lib/store/actions.dart</code></p> <div class="language-dart extra-class"><pre class="language-dart"><code><span class="token keyword">enum</span> <span class="token class-name">CountActions</span> <span class="token punctuation">{</span>
+  increment<span class="token punctuation">,</span>
+  decrement<span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>新建文件：<code>lib/store/reducers.dart</code></p> <div class="language-dart extra-class"><pre class="language-dart"><code><span class="token keyword">import</span> <span class="token string">'actions.dart'</span><span class="token punctuation">;</span>
+
+int <span class="token function">counterReducer</span><span class="token punctuation">(</span>int state<span class="token punctuation">,</span> action<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>action <span class="token operator">==</span> <span class="token class-name">CountActions</span><span class="token punctuation">.</span>increment<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// action -&gt; enum</span>
+    <span class="token keyword">return</span> state <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>action <span class="token operator">==</span> <span class="token class-name">CountActions</span><span class="token punctuation">.</span>decrement<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> state <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> state<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>优化<code>main.dart</code></p> <div class="language-dart extra-class"><pre class="language-dart"><code><span class="token keyword">import</span> <span class="token string">'package:flutter/material.dart'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">'package:flutter_redux/flutter_redux.dart'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">'package:redux/redux.dart'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">'package:redux_example/store/actions.dart'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">'package:redux_example/store/reducers.dart'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">'package:redux_example/store/state.dart'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">runApp</span><span class="token punctuation">(</span><span class="token class-name">MyApp</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">MyApp</span> <span class="token keyword">extends</span> <span class="token class-name">StatelessWidget</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 2.创建Store -&gt; state</span>
+  <span class="token keyword">final</span> store <span class="token operator">=</span> <span class="token class-name">Store</span><span class="token punctuation">(</span>appStateReducer<span class="token punctuation">,</span> initialState<span class="token punctuation">:</span> <span class="token class-name">AppState</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token class-name">MyApp</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token class-name">Key</span><span class="token operator">?</span> key<span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">:</span> <span class="token keyword">super</span><span class="token punctuation">(</span>key<span class="token punctuation">:</span> key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token metadata symbol">@override</span>
+  <span class="token class-name">Widget</span> <span class="token function">build</span><span class="token punctuation">(</span><span class="token class-name">BuildContext</span> context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 3.使用StoreProvider</span>
+    <span class="token keyword">return</span> <span class="token class-name">StoreProvider</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">AppState</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span>
+      store<span class="token punctuation">:</span> store<span class="token punctuation">,</span>
+      child<span class="token punctuation">:</span> <span class="token class-name">MaterialApp</span><span class="token punctuation">(</span>
+        title<span class="token punctuation">:</span> <span class="token string">'Flutter Demo'</span><span class="token punctuation">,</span>
+        theme<span class="token punctuation">:</span> <span class="token class-name">ThemeData</span><span class="token punctuation">(</span>
+          primarySwatch<span class="token punctuation">:</span> <span class="token class-name">Colors</span><span class="token punctuation">.</span>blue<span class="token punctuation">,</span>
+        <span class="token punctuation">)</span><span class="token punctuation">,</span>
+        home<span class="token punctuation">:</span> <span class="token keyword">const</span> <span class="token class-name">MyHome</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">MyHome</span> <span class="token keyword">extends</span> <span class="token class-name">StatelessWidget</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> <span class="token class-name">MyHome</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token class-name">Key</span><span class="token operator">?</span> key<span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">:</span> <span class="token keyword">super</span><span class="token punctuation">(</span>key<span class="token punctuation">:</span> key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token metadata symbol">@override</span>
+  <span class="token class-name">Widget</span> <span class="token function">build</span><span class="token punctuation">(</span><span class="token class-name">BuildContext</span> context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token class-name">Scaffold</span><span class="token punctuation">(</span>
+      appBar<span class="token punctuation">:</span> <span class="token class-name">AppBar</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      body<span class="token punctuation">:</span> <span class="token class-name">Center</span><span class="token punctuation">(</span>
+        child<span class="token punctuation">:</span> <span class="token class-name">Column</span><span class="token punctuation">(</span>
+          children<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+            <span class="token class-name">Text</span><span class="token punctuation">(</span><span class="token string">'计数器的状态：'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token comment">// 4.添加按钮 -&gt; dispatch -&gt; action -&gt; reducer -&gt; 更新state</span>
+            <span class="token comment">// builder -&gt; 最终返回的widgets</span>
+            <span class="token comment">// StoreConnector -&gt; &lt;初始的state类型， 最终输出到builder的类型&gt;</span>
+            <span class="token comment">// converter -&gt; 取用最近的Provider -&gt; store -&gt; 转化成我们需要的类型数据</span>
+            <span class="token comment">// builder -&gt; 返回一个Widget -&gt; 使用state -&gt; viewModel</span>
+            <span class="token class-name">StoreConnector</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">AppState</span><span class="token punctuation">,</span> <span class="token class-name">String</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span>
+              builder<span class="token punctuation">:</span> <span class="token punctuation">(</span>context<span class="token punctuation">,</span> countStr<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">return</span> <span class="token class-name">Text</span><span class="token punctuation">(</span>
+                  countStr<span class="token punctuation">,</span>
+                  style<span class="token punctuation">:</span> <span class="token keyword">const</span> <span class="token class-name">TextStyle</span><span class="token punctuation">(</span>
+                    fontSize<span class="token punctuation">:</span> <span class="token number">24.0</span><span class="token punctuation">,</span>
+                  <span class="token punctuation">)</span><span class="token punctuation">,</span>
+                <span class="token punctuation">)</span><span class="token punctuation">;</span>
+              <span class="token punctuation">}</span><span class="token punctuation">,</span>
+              converter<span class="token punctuation">:</span> <span class="token punctuation">(</span>store<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> store<span class="token punctuation">.</span>state<span class="token punctuation">.</span>count<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token punctuation">)</span><span class="token punctuation">,</span>
+          <span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token comment">// 1. 需要添加一个按钮 -&gt; onPress -&gt; new Action</span>
+      <span class="token comment">// 2. 需要添加action -&gt; decrement</span>
+      <span class="token comment">// 3. 需要配置reducer -&gt; dispatch -&gt; new state</span>
+      floatingActionButton<span class="token punctuation">:</span>
+          <span class="token class-name">StoreConnector</span><span class="token operator">&lt;</span><span class="token class-name">AppState</span><span class="token punctuation">,</span> <span class="token class-name">Function</span><span class="token punctuation">(</span><span class="token class-name">CountActions</span> action<span class="token punctuation">)</span><span class="token operator">&gt;</span><span class="token punctuation">(</span>
+        builder<span class="token punctuation">:</span> <span class="token punctuation">(</span>context<span class="token punctuation">,</span> callback<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token class-name">Column</span><span class="token punctuation">(</span>
+          mainAxisAlignment<span class="token punctuation">:</span> <span class="token class-name">MainAxisAlignment</span><span class="token punctuation">.</span>end<span class="token punctuation">,</span>
+          children<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+            <span class="token class-name">FloatingActionButton</span><span class="token punctuation">(</span>
+              child<span class="token punctuation">:</span> <span class="token keyword">const</span> <span class="token class-name">Icon</span><span class="token punctuation">(</span><span class="token class-name">Icons</span><span class="token punctuation">.</span>add<span class="token punctuation">)</span><span class="token punctuation">,</span>
+              onPressed<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token comment">// 触发dispatch方法 -&gt; action -&gt; Actions.increment</span>
+                <span class="token function">callback</span><span class="token punctuation">(</span><span class="token class-name">CountActions</span><span class="token punctuation">.</span>increment<span class="token punctuation">)</span><span class="token punctuation">;</span>
+              <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token keyword">const</span> <span class="token class-name">Padding</span><span class="token punctuation">(</span>
+              padding<span class="token punctuation">:</span> <span class="token class-name">EdgeInsets</span><span class="token punctuation">.</span><span class="token function">only</span><span class="token punctuation">(</span>top<span class="token punctuation">:</span> <span class="token number">10.0</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token class-name">FloatingActionButton</span><span class="token punctuation">(</span>
+              child<span class="token punctuation">:</span> <span class="token keyword">const</span> <span class="token class-name">Icon</span><span class="token punctuation">(</span><span class="token class-name">Icons</span><span class="token punctuation">.</span>remove<span class="token punctuation">)</span><span class="token punctuation">,</span>
+              onPressed<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token comment">// 触发dispatch方法 -&gt; action -&gt; Actions.increment</span>
+                <span class="token function">callback</span><span class="token punctuation">(</span><span class="token class-name">CountActions</span><span class="token punctuation">.</span>decrement<span class="token punctuation">)</span><span class="token punctuation">;</span>
+              <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">)</span><span class="token punctuation">,</span>
+          <span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">)</span><span class="token punctuation">,</span>
+        converter<span class="token punctuation">:</span> <span class="token punctuation">(</span>store<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token comment">// 返回store.dispatch -&gt; Funciton -&gt; builder的第二个参数</span>
+          <span class="token keyword">return</span> <span class="token punctuation">(</span>action<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> store<span class="token punctuation">.</span><span class="token function">dispatch</span><span class="token punctuation">(</span>action<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="redux案例-todolist"><a href="#redux案例-todolist" class="header-anchor">#</a> Redux案例 - TodoList</h2> <h3 id="创建actions-reducers-state"><a href="#创建actions-reducers-state" class="header-anchor">#</a> 创建actions,reducers,state</h3> <p>修改文件：<code>lib/store/state.dart</code></p> <div class="language-dart extra-class"><pre class="language-dart"><code><span class="token comment">// 定义全局的state</span>
+<span class="token comment">// int count;</span>
+<span class="token comment">// List&lt;Item&gt; lists;</span>
+<span class="token comment">// Item {int id, String value}</span>
+<span class="token keyword">class</span> <span class="token class-name">Item</span> <span class="token punctuation">{</span>
+  <span class="token keyword">final</span> int<span class="token operator">?</span> id<span class="token punctuation">;</span>
+  <span class="token keyword">final</span> <span class="token class-name">String</span> value<span class="token punctuation">;</span>
+
+  <span class="token class-name">Item</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>id<span class="token punctuation">,</span> required <span class="token keyword">this</span><span class="token punctuation">.</span>value<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">AppState</span> <span class="token punctuation">{</span>
+  <span class="token keyword">final</span> int count<span class="token punctuation">;</span>
+  <span class="token keyword">final</span> <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Item</span><span class="token punctuation">&gt;</span></span> lists<span class="token punctuation">;</span>
+
+  <span class="token class-name">AppState</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>count <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>lists <span class="token operator">=</span> <span class="token keyword">const</span> <span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Item</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token class-name">AppState</span><span class="token punctuation">.</span><span class="token function">initState</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token punctuation">:</span> count <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span>
+        lists <span class="token operator">=</span> <span class="token keyword">const</span> <span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Item</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><blockquote><p>Tips：这里要巧用vscode的快捷菜单来创建constructors。</p></blockquote> <p>修改文件：<code>lib/store/actions.dart</code></p> <div class="language-dart extra-class"><pre class="language-dart"><code><span class="token comment">// 1.删除无用的文件，删除注释</span>
+<span class="token keyword">enum</span> <span class="token class-name">CountActions</span> <span class="token punctuation">{</span>
+  increment<span class="token punctuation">,</span>
+  decrement<span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// TodoAddAction, TodoRemoveAction, TodoClearAction</span>
+<span class="token keyword">class</span> <span class="token class-name">TodoAddAction</span> <span class="token punctuation">{</span>
+  <span class="token comment">// Item -&gt; int id, String text</span>
+  <span class="token keyword">static</span> int _id <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token keyword">final</span> <span class="token class-name">String</span><span class="token operator">?</span> text<span class="token punctuation">;</span>
+
+  <span class="token class-name">TodoAddAction</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>text<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    _id<span class="token operator">++</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  int <span class="token keyword">get</span> id <span class="token operator">=</span><span class="token operator">&gt;</span> _id<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><p>修改文件：<code>lib/store/reducers.dart</code></p> <div class="language-dart extra-class"><pre class="language-dart"><code><span class="token comment">// 传递进来一个state + action</span>
+<span class="token comment">// 返回去一个新的state</span>
+<span class="token keyword">import</span> <span class="token string">'package:redux_example/store/state.dart'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token string">'actions.dart'</span><span class="token punctuation">;</span>
+
+int <span class="token function">counterReducer</span><span class="token punctuation">(</span>int state<span class="token punctuation">,</span> action<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>action <span class="token operator">==</span> <span class="token class-name">CountActions</span><span class="token punctuation">.</span>increment<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// action -&gt; enum</span>
+    <span class="token keyword">return</span> state <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>action <span class="token operator">==</span> <span class="token class-name">CountActions</span><span class="token punctuation">.</span>decrement<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> state <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> state<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Item</span><span class="token punctuation">&gt;</span></span> <span class="token function">todoReducer</span><span class="token punctuation">(</span><span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Item</span><span class="token punctuation">&gt;</span></span> state<span class="token punctuation">,</span> action<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>action <span class="token operator">is</span> <span class="token class-name">TodoAddAction</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 添加item -&gt; lists</span>
+    <span class="token comment">// 新item -&gt; 从传入action来</span>
+    <span class="token comment">// 新lists -&gt; 新item -&gt; 添加到旧的lists后面， add &amp; 扩展运算符 ...</span>
+    <span class="token keyword">return</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>state<span class="token punctuation">,</span>
+      <span class="token class-name">Item</span><span class="token punctuation">(</span>id<span class="token punctuation">:</span> action<span class="token punctuation">.</span>id<span class="token punctuation">,</span> value<span class="token punctuation">:</span> action<span class="token punctuation">.</span>text <span class="token operator">?</span><span class="token operator">?</span> <span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> state<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token class-name">AppState</span> <span class="token function">appStateReducer</span><span class="token punctuation">(</span><span class="token class-name">AppState</span> state<span class="token punctuation">,</span> <span class="token keyword">dynamic</span> action<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token class-name">AppState</span><span class="token punctuation">(</span>
+    count<span class="token punctuation">:</span> <span class="token function">counterReducer</span><span class="token punctuation">(</span>state<span class="token punctuation">.</span>count<span class="token punctuation">,</span> action<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    lists<span class="token punctuation">:</span> <span class="token function">todoReducer</span><span class="token punctuation">(</span>state<span class="token punctuation">.</span>lists<span class="token punctuation">,</span> action<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token comment">// ...</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 1.创建state -&gt; actions -&gt; reducers</span>
+<span class="token comment">// 2.初始化store -&gt; StoreProvider</span>
+<span class="token comment">// 3.添加input -&gt; add button</span>
+<span class="token comment">// 4.分发actions -&gt; store.dispatch -&gt; new state</span>
+</code></pre></div><h3 id="封装viewmodel"><a href="#封装viewmodel" class="header-anchor">#</a> 封装ViewModel</h3> <p>目标：</p> <ul><li>管理所有的state与state相关的actions；</li> <li>作为一个统一的入口组件；</li> <li>清晰的逻辑关系，封装StoreConnecter，redux的commit操作；</li></ul> <p>创建<code>lib/widgets/view_model.dart</code>文件：</p> <div class="language-dart extra-class"><pre class="language-dart"><code><span class="token comment">// 1.定义所有的reducer方法</span>
+<span class="token comment">// 2.定义工厂函数，返回所有的state状态 -&gt; appState</span>
+<span class="token keyword">import</span> <span class="token string">'package:redux/redux.dart'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">'package:redux_example/store/actions.dart'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">'package:redux_example/store/state.dart'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">ViewModel</span> <span class="token punctuation">{</span>
+  <span class="token keyword">final</span> <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Item</span><span class="token punctuation">&gt;</span></span> lists<span class="token punctuation">;</span>
+  <span class="token keyword">final</span> <span class="token class-name">Function</span> addItem<span class="token punctuation">;</span>
+  <span class="token comment">// count计数器</span>
+  <span class="token keyword">final</span> int count<span class="token punctuation">;</span>
+  <span class="token keyword">final</span> <span class="token class-name">Function</span> onIncrement<span class="token punctuation">;</span>
+  <span class="token keyword">final</span> <span class="token class-name">Function</span> onDecrement<span class="token punctuation">;</span>
+
+  <span class="token class-name">ViewModel</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    required <span class="token keyword">this</span><span class="token punctuation">.</span>lists<span class="token punctuation">,</span>
+    required <span class="token keyword">this</span><span class="token punctuation">.</span>addItem<span class="token punctuation">,</span>
+    required <span class="token keyword">this</span><span class="token punctuation">.</span>count<span class="token punctuation">,</span>
+    required <span class="token keyword">this</span><span class="token punctuation">.</span>onIncrement<span class="token punctuation">,</span>
+    required <span class="token keyword">this</span><span class="token punctuation">.</span>onDecrement<span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">factory</span> <span class="token class-name">ViewModel</span><span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token class-name">Store</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">AppState</span><span class="token punctuation">&gt;</span></span> store<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">_onIncrement</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      store<span class="token punctuation">.</span><span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token class-name">CountActions</span><span class="token punctuation">.</span>increment<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token function">_onDecrement</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      store<span class="token punctuation">.</span><span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token class-name">CountActions</span><span class="token punctuation">.</span>decrement<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token function">_onAddItem</span><span class="token punctuation">(</span><span class="token class-name">String</span> value<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      store<span class="token punctuation">.</span><span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token class-name">TodoAddAction</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> <span class="token class-name">ViewModel</span><span class="token punctuation">(</span>
+      lists<span class="token punctuation">:</span> store<span class="token punctuation">.</span>state<span class="token punctuation">.</span>lists<span class="token punctuation">,</span>
+      addItem<span class="token punctuation">:</span> _onAddItem<span class="token punctuation">,</span>
+      count<span class="token punctuation">:</span> store<span class="token punctuation">.</span>state<span class="token punctuation">.</span>count<span class="token punctuation">,</span>
+      onIncrement<span class="token punctuation">:</span> _onIncrement<span class="token punctuation">,</span>
+      onDecrement<span class="token punctuation">:</span> _onDecrement<span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="待办清单应用"><a href="#待办清单应用" class="header-anchor">#</a> 待办清单应用</h3> <p>学习目标：</p> <ul><li>学会如何封装组件、组件传参；</li> <li>学会redux的综合应用：state,actions,reducers的作用，传参；</li> <li>有（无）状态组件如何取用参数；</li> <li>学习vscode的快捷菜单的使用；</li></ul> <h4 id="封装add组件"><a href="#封装add组件" class="header-anchor">#</a> 封装add<code>组件</code></h4> <p>创建<code>lib/widgets/add.dart</code></p> <div class="language-dart extra-class"><pre class="language-dart"><code><span class="token keyword">import</span> <span class="token string">'package:flutter/material.dart'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">'package:flutter_redux/flutter_redux.dart'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">'package:redux_example/store/actions.dart'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">'package:redux_example/store/state.dart'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">'package:redux_example/widgets/view_model.dart'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Add</span> <span class="token keyword">extends</span> <span class="token class-name">StatefulWidget</span> <span class="token punctuation">{</span>
+  <span class="token keyword">final</span> <span class="token class-name">ViewModel</span> viewModel<span class="token punctuation">;</span>
+  <span class="token keyword">const</span> <span class="token class-name">Add</span><span class="token punctuation">(</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>viewModel<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    <span class="token class-name">Key</span><span class="token operator">?</span> key<span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">:</span> <span class="token keyword">super</span><span class="token punctuation">(</span>key<span class="token punctuation">:</span> key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token metadata symbol">@override</span>
+  <span class="token class-name">State</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Add</span><span class="token punctuation">&gt;</span></span> <span class="token function">createState</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">_AddState</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> _AddState <span class="token keyword">extends</span> <span class="token class-name">State</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Add</span><span class="token punctuation">&gt;</span></span> <span class="token punctuation">{</span>
+  <span class="token class-name">TextEditingController</span> controller <span class="token operator">=</span> <span class="token class-name">TextEditingController</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token metadata symbol">@override</span>
+  <span class="token class-name">Widget</span> <span class="token function">build</span><span class="token punctuation">(</span><span class="token class-name">BuildContext</span> context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token class-name">TextField</span><span class="token punctuation">(</span>
+      controller<span class="token punctuation">:</span> controller<span class="token punctuation">,</span>
+      decoration<span class="token punctuation">:</span> <span class="token keyword">const</span> <span class="token class-name">InputDecoration</span><span class="token punctuation">(</span>hintText<span class="token punctuation">:</span> <span class="token string">'请输入待办事项'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      onSubmitted<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token class-name">String</span> s<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">'用户输入了$s'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">'用户输入了${controller.text}'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// callback();</span>
+        widget<span class="token punctuation">.</span>viewModel<span class="token punctuation">.</span><span class="token function">addItem</span><span class="token punctuation">(</span>controller<span class="token punctuation">.</span>text<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        controller<span class="token punctuation">.</span>text <span class="token operator">=</span> <span class="token string">''</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h4 id="列表组件"><a href="#列表组件" class="header-anchor">#</a> 列表组件</h4> <p>添加列表组件<code>lib/widgets/lists_item_view.dart</code></p> <div class="language-dart extra-class"><pre class="language-dart"><code><span class="token keyword">import</span> <span class="token string">'package:flutter/material.dart'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">'package:flutter_redux/flutter_redux.dart'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">'package:redux_example/store/state.dart'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">'package:redux_example/widgets/view_model.dart'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">ListsItemView</span> <span class="token keyword">extends</span> <span class="token class-name">StatelessWidget</span> <span class="token punctuation">{</span>
+  <span class="token keyword">final</span> <span class="token class-name">ViewModel</span> viewModel<span class="token punctuation">;</span>
+  <span class="token keyword">const</span> <span class="token class-name">ListsItemView</span><span class="token punctuation">(</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>viewModel<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    <span class="token class-name">Key</span><span class="token operator">?</span> key<span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">:</span> <span class="token keyword">super</span><span class="token punctuation">(</span>key<span class="token punctuation">:</span> key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token metadata symbol">@override</span>
+  <span class="token class-name">Widget</span> <span class="token function">build</span><span class="token punctuation">(</span><span class="token class-name">BuildContext</span> context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token class-name">ListView</span><span class="token punctuation">(</span>
+      children<span class="token punctuation">:</span> viewModel<span class="token punctuation">.</span>lists
+          <span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token class-name">Item</span> item<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token class-name">ListTile</span><span class="token punctuation">(</span>
+                title<span class="token punctuation">:</span> <span class="token class-name">Text</span><span class="token punctuation">(</span><span class="token string">'${item.id}-${item.value}'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+              <span class="token punctuation">)</span><span class="token punctuation">)</span>
+          <span class="token punctuation">.</span><span class="token function">toList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h4 id="计数器显示组件"><a href="#计数器显示组件" class="header-anchor">#</a> 计数器显示组件</h4> <p>添加计数器显示组件<code>lib/widgets/count_view.dart</code></p> <div class="language-dart extra-class"><pre class="language-dart"><code><span class="token keyword">import</span> <span class="token string">'package:flutter/material.dart'</span><span class="token punctuation">;</span>
+<span class="token comment">// import 'package:flutter_redux/flutter_redux.dart';</span>
+<span class="token comment">// import 'package:redux_example/store/state.dart';</span>
+<span class="token keyword">import</span> <span class="token string">'package:redux_example/widgets/view_model.dart'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">CountView</span> <span class="token keyword">extends</span> <span class="token class-name">StatelessWidget</span> <span class="token punctuation">{</span>
+  <span class="token keyword">final</span> <span class="token class-name">ViewModel</span> viewModel<span class="token punctuation">;</span>
+  <span class="token keyword">const</span> <span class="token class-name">CountView</span><span class="token punctuation">(</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>viewModel<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    <span class="token class-name">Key</span><span class="token operator">?</span> key<span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">:</span> <span class="token keyword">super</span><span class="token punctuation">(</span>key<span class="token punctuation">:</span> key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token metadata symbol">@override</span>
+  <span class="token class-name">Widget</span> <span class="token function">build</span><span class="token punctuation">(</span><span class="token class-name">BuildContext</span> context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token class-name">Text</span><span class="token punctuation">(</span>
+      viewModel<span class="token punctuation">.</span>count<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      style<span class="token punctuation">:</span> <span class="token keyword">const</span> <span class="token class-name">TextStyle</span><span class="token punctuation">(</span>
+        fontSize<span class="token punctuation">:</span> <span class="token number">24.0</span><span class="token punctuation">,</span>
+      <span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h4 id="添加功能"><a href="#添加功能" class="header-anchor">#</a> 添加功能</h4> <p>修改<code>main.dart</code></p> <div class="language-dart extra-class"><pre class="language-dart"><code><span class="token keyword">import</span> <span class="token string">'package:flutter/material.dart'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">'package:flutter_redux/flutter_redux.dart'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">'package:redux/redux.dart'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">'package:redux_example/store/actions.dart'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">'package:redux_example/store/reducers.dart'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">'package:redux_example/store/state.dart'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">'package:redux_example/widgets/add.dart'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">'package:redux_example/widgets/count_view.dart'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">'package:redux_example/widgets/lists_item_view.dart'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">'package:redux_example/widgets/view_model.dart'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">runApp</span><span class="token punctuation">(</span><span class="token class-name">MyApp</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">MyApp</span> <span class="token keyword">extends</span> <span class="token class-name">StatelessWidget</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 2.创建Store -&gt; state</span>
+  <span class="token keyword">final</span> store <span class="token operator">=</span> <span class="token class-name">Store</span><span class="token punctuation">(</span>appStateReducer<span class="token punctuation">,</span> initialState<span class="token punctuation">:</span> <span class="token class-name">AppState</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token class-name">MyApp</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token class-name">Key</span><span class="token operator">?</span> key<span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">:</span> <span class="token keyword">super</span><span class="token punctuation">(</span>key<span class="token punctuation">:</span> key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token metadata symbol">@override</span>
+  <span class="token class-name">Widget</span> <span class="token function">build</span><span class="token punctuation">(</span><span class="token class-name">BuildContext</span> context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 3.使用StoreProvider</span>
+    <span class="token keyword">return</span> <span class="token class-name">StoreProvider</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">AppState</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span>
+      store<span class="token punctuation">:</span> store<span class="token punctuation">,</span>
+      child<span class="token punctuation">:</span> <span class="token class-name">MaterialApp</span><span class="token punctuation">(</span>
+        title<span class="token punctuation">:</span> <span class="token string">'Flutter Demo'</span><span class="token punctuation">,</span>
+        theme<span class="token punctuation">:</span> <span class="token class-name">ThemeData</span><span class="token punctuation">(</span>
+          primarySwatch<span class="token punctuation">:</span> <span class="token class-name">Colors</span><span class="token punctuation">.</span>blue<span class="token punctuation">,</span>
+        <span class="token punctuation">)</span><span class="token punctuation">,</span>
+        home<span class="token punctuation">:</span> <span class="token keyword">const</span> <span class="token class-name">MyHome</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">MyHome</span> <span class="token keyword">extends</span> <span class="token class-name">StatefulWidget</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> <span class="token class-name">MyHome</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token class-name">Key</span><span class="token operator">?</span> key<span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">:</span> <span class="token keyword">super</span><span class="token punctuation">(</span>key<span class="token punctuation">:</span> key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token metadata symbol">@override</span>
+  <span class="token class-name">State</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">MyHome</span><span class="token punctuation">&gt;</span></span> <span class="token function">createState</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">_MyHomeState</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> _MyHomeState <span class="token keyword">extends</span> <span class="token class-name">State</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">MyHome</span><span class="token punctuation">&gt;</span></span> <span class="token punctuation">{</span>
+  <span class="token metadata symbol">@override</span>
+  <span class="token class-name">Widget</span> <span class="token function">build</span><span class="token punctuation">(</span><span class="token class-name">BuildContext</span> context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token class-name">StoreConnector</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">AppState</span><span class="token punctuation">,</span> <span class="token class-name">ViewModel</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span>
+      builder<span class="token punctuation">:</span> <span class="token punctuation">(</span>context<span class="token punctuation">,</span> viewModel<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token class-name">Scaffold</span><span class="token punctuation">(</span>
+        appBar<span class="token punctuation">:</span> <span class="token class-name">AppBar</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        body<span class="token punctuation">:</span> <span class="token class-name">SizedBox</span><span class="token punctuation">(</span>
+          height<span class="token punctuation">:</span> <span class="token class-name">MediaQuery</span><span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span>context<span class="token punctuation">)</span><span class="token punctuation">.</span>size<span class="token punctuation">.</span>height<span class="token punctuation">,</span>
+          child<span class="token punctuation">:</span> <span class="token class-name">Column</span><span class="token punctuation">(</span>
+            children<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+              <span class="token keyword">const</span> <span class="token class-name">Text</span><span class="token punctuation">(</span><span class="token string">'计数器的状态：'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+              <span class="token comment">// 4.添加按钮 -&gt; dispatch -&gt; action -&gt; reducer -&gt; 更新state</span>
+              <span class="token comment">// builder -&gt; 最终返回的widgets</span>
+              <span class="token comment">// StoreConnector -&gt; &lt;初始的state类型， 最终输出到builder的类型&gt;</span>
+              <span class="token comment">// converter -&gt; 取用最近的Provider -&gt; store -&gt; 转化成我们需要的类型数据</span>
+              <span class="token comment">// builder -&gt; 返回一个Widget -&gt; 使用state -&gt; viewModel</span>
+              <span class="token class-name">CountView</span><span class="token punctuation">(</span>viewModel<span class="token punctuation">)</span><span class="token punctuation">,</span>
+              <span class="token class-name">Add</span><span class="token punctuation">(</span>viewModel<span class="token punctuation">)</span><span class="token punctuation">,</span>
+              <span class="token class-name">Expanded</span><span class="token punctuation">(</span>
+                child<span class="token punctuation">:</span> <span class="token class-name">ListsItemView</span><span class="token punctuation">(</span>viewModel<span class="token punctuation">)</span><span class="token punctuation">,</span>
+              <span class="token punctuation">)</span>
+            <span class="token punctuation">]</span><span class="token punctuation">,</span>
+          <span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token comment">// 1. 需要添加一个按钮 -&gt; onPress -&gt; new Action</span>
+        <span class="token comment">// 2. 需要添加action -&gt; decrement</span>
+        <span class="token comment">// 3. 需要配置reducer -&gt; dispatch -&gt; new state</span>
+        floatingActionButton<span class="token punctuation">:</span> <span class="token class-name">Column</span><span class="token punctuation">(</span>
+          mainAxisAlignment<span class="token punctuation">:</span> <span class="token class-name">MainAxisAlignment</span><span class="token punctuation">.</span>end<span class="token punctuation">,</span>
+          children<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+            <span class="token class-name">FloatingActionButton</span><span class="token punctuation">(</span>
+              child<span class="token punctuation">:</span> <span class="token keyword">const</span> <span class="token class-name">Icon</span><span class="token punctuation">(</span><span class="token class-name">Icons</span><span class="token punctuation">.</span>add<span class="token punctuation">)</span><span class="token punctuation">,</span>
+              onPressed<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token comment">// 触发dispatch方法 -&gt; action -&gt; Actions.increment</span>
+                viewModel<span class="token punctuation">.</span><span class="token function">onIncrement</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+              <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token keyword">const</span> <span class="token class-name">Padding</span><span class="token punctuation">(</span>
+              padding<span class="token punctuation">:</span> <span class="token class-name">EdgeInsets</span><span class="token punctuation">.</span><span class="token function">only</span><span class="token punctuation">(</span>top<span class="token punctuation">:</span> <span class="token number">10.0</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token class-name">FloatingActionButton</span><span class="token punctuation">(</span>
+              child<span class="token punctuation">:</span> <span class="token keyword">const</span> <span class="token class-name">Icon</span><span class="token punctuation">(</span><span class="token class-name">Icons</span><span class="token punctuation">.</span>remove<span class="token punctuation">)</span><span class="token punctuation">,</span>
+              onPressed<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token comment">// 触发dispatch方法 -&gt; action -&gt; Actions.increment</span>
+                viewModel<span class="token punctuation">.</span><span class="token function">onDecrement</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+              <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">)</span><span class="token punctuation">,</span>
+          <span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token punctuation">)</span><span class="token punctuation">,</span>
+      converter<span class="token punctuation">:</span> <span class="token punctuation">(</span>store<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token class-name">ViewModel</span><span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span>store<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="作业-删除与清空功能"><a href="#作业-删除与清空功能" class="header-anchor">#</a> 作业：删除与清空功能</h2> <p>目标：</p> <ul><li>点击删除，可以删除某个待办清单项；</li> <li>点击清空，可以清空所有的清单列表</li></ul> <p>步骤：</p> <ul><li>添加actions,state,reducers；</li> <li>添加view_model.dart中的对应的方法；</li> <li>添加页面上的元素（按钮）与点击回调的事件；</li> <li>回调viewModel中的方法，同时需要传参的进行参数的传递；</li></ul> <h3 id="修改actions-state-reducers"><a href="#修改actions-state-reducers" class="header-anchor">#</a> 修改actions,state,reducers</h3> <p>首先是actions，这里要注意<code>TodoClearAction</code>这个类，没有参数，所以也不需要加构造函数。</p> <div class="language-dart extra-class"><pre class="language-dart"><code><span class="token comment">// 1.删除无用的文件，删除注释</span>
+<span class="token keyword">enum</span> <span class="token class-name">CountActions</span> <span class="token punctuation">{</span>
+  increment<span class="token punctuation">,</span>
+  decrement<span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">TodoAddAction</span> <span class="token punctuation">{</span>
+  <span class="token comment">// Item -&gt; int id, String text</span>
+  <span class="token keyword">static</span> int _id <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token keyword">final</span> <span class="token class-name">String</span><span class="token operator">?</span> text<span class="token punctuation">;</span>
+
+  <span class="token class-name">TodoAddAction</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>text<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    _id<span class="token operator">++</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  int <span class="token keyword">get</span> id <span class="token operator">=</span><span class="token operator">&gt;</span> _id<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">TodoRemoveAction</span> <span class="token punctuation">{</span>
+  <span class="token keyword">final</span> int id<span class="token punctuation">;</span>
+
+  <span class="token class-name">TodoRemoveAction</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">TodoClearAction</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+</code></pre></div><p>然后state可以不变，最后是reducers：</p> <blockquote><p>扩展：这里使用flutter_redux中的TypedReducer去减少对于类型的判断。</p></blockquote> <div class="language-dart extra-class"><pre class="language-dart"><code><span class="token comment">// 传递进来一个state + action</span>
+<span class="token comment">// 返回去一个新的state</span>
+<span class="token keyword">import</span> <span class="token string">'package:redux/redux.dart'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">'package:redux_example/store/state.dart'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token string">'actions.dart'</span><span class="token punctuation">;</span>
+
+int <span class="token function">counterReducer</span><span class="token punctuation">(</span>int state<span class="token punctuation">,</span> action<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>action <span class="token operator">==</span> <span class="token class-name">CountActions</span><span class="token punctuation">.</span>increment<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// action -&gt; enum</span>
+    <span class="token keyword">return</span> state <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>action <span class="token operator">==</span> <span class="token class-name">CountActions</span><span class="token punctuation">.</span>decrement<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> state <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> state<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">final</span> todoReducer <span class="token operator">=</span> combineReducers<span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">List</span><span class="token punctuation">&lt;</span><span class="token class-name">Item</span><span class="token punctuation">&gt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+  <span class="token comment">// TypedReducer&lt;state的类型, 判断Action的类型&gt;(真正的store state的处理逻辑)</span>
+  <span class="token class-name">TypedReducer</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">List</span><span class="token punctuation">&lt;</span><span class="token class-name">Item</span><span class="token punctuation">&gt;</span><span class="token punctuation">,</span> <span class="token class-name">TodoAddAction</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">(</span>state<span class="token punctuation">,</span> action<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span>
+      <span class="token punctuation">[</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>state<span class="token punctuation">,</span> <span class="token class-name">Item</span><span class="token punctuation">(</span>id<span class="token punctuation">:</span> action<span class="token punctuation">.</span>id<span class="token punctuation">,</span> value<span class="token punctuation">:</span> action<span class="token punctuation">.</span>text <span class="token operator">?</span><span class="token operator">?</span> <span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token class-name">TypedReducer</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">List</span><span class="token punctuation">&lt;</span><span class="token class-name">Item</span><span class="token punctuation">&gt;</span><span class="token punctuation">,</span> <span class="token class-name">TodoRemoveAction</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">(</span>state<span class="token punctuation">,</span> action<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span>
+      state<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token function">removeWhere</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token class-name">Item</span> item<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> item<span class="token punctuation">.</span>id <span class="token operator">==</span> action<span class="token punctuation">.</span>id<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token class-name">TypedReducer</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">List</span><span class="token punctuation">&lt;</span><span class="token class-name">Item</span><span class="token punctuation">&gt;</span><span class="token punctuation">,</span> <span class="token class-name">TodoClearAction</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">(</span>state<span class="token punctuation">,</span> action<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token keyword">const</span> <span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Item</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// List&lt;Item&gt; todoReducer(List&lt;Item&gt; state, action) {</span>
+<span class="token comment">//   if (action is TodoAddAction) {</span>
+<span class="token comment">//     // 添加item -&gt; lists</span>
+<span class="token comment">//     // 新item -&gt; 从传入action来</span>
+<span class="token comment">//     // 新lists -&gt; 新item -&gt; 添加到旧的lists后面， add &amp; 扩展运算符 ...</span>
+<span class="token comment">// return [</span>
+<span class="token comment">//   ...state,</span>
+<span class="token comment">//   Item(id: action.id, value: action.text ?? ''),</span>
+<span class="token comment">// ];</span>
+<span class="token comment">//   }</span>
+<span class="token comment">//   if (action is TodoRemoveAction) {</span>
+<span class="token comment">//     return state..removeWhere((Item item) =&gt; item.id == action.id);</span>
+<span class="token comment">//   }</span>
+<span class="token comment">//   if (action is TodoClearAction) {</span>
+<span class="token comment">//     return const &lt;Item&gt;[];</span>
+<span class="token comment">//   }</span>
+<span class="token comment">//   return state;</span>
+<span class="token comment">// }</span>
+
+<span class="token class-name">AppState</span> <span class="token function">appStateReducer</span><span class="token punctuation">(</span><span class="token class-name">AppState</span> state<span class="token punctuation">,</span> <span class="token keyword">dynamic</span> action<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token class-name">AppState</span><span class="token punctuation">(</span>
+    count<span class="token punctuation">:</span> <span class="token function">counterReducer</span><span class="token punctuation">(</span>state<span class="token punctuation">.</span>count<span class="token punctuation">,</span> action<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    lists<span class="token punctuation">:</span> <span class="token function">todoReducer</span><span class="token punctuation">(</span>state<span class="token punctuation">.</span>lists<span class="token punctuation">,</span> action<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token comment">// ...</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 1.创建state -&gt; actions -&gt; reducers</span>
+<span class="token comment">// 2.初始化store -&gt; StoreProvider</span>
+<span class="token comment">// 3.添加input -&gt; add button</span>
+<span class="token comment">// 4.分发actions -&gt; store.dispatch -&gt; new state</span>
+</code></pre></div><h3 id="调整viewmodel"><a href="#调整viewmodel" class="header-anchor">#</a> 调整ViewModel</h3> <div class="language-dart extra-class"><pre class="language-dart"><code><span class="token comment">// 1.定义所有的reducer方法</span>
+<span class="token comment">// 2.定义工厂函数，返回所有的state状态 -&gt; appState</span>
+<span class="token keyword">import</span> <span class="token string">'package:redux/redux.dart'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">'package:redux_example/store/actions.dart'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">'package:redux_example/store/state.dart'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">ViewModel</span> <span class="token punctuation">{</span>
+  <span class="token keyword">final</span> <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Item</span><span class="token punctuation">&gt;</span></span> lists<span class="token punctuation">;</span>
+  <span class="token keyword">final</span> <span class="token class-name">Function</span> addItem<span class="token punctuation">;</span>
+  <span class="token comment">// 新增的属性</span>
+  <span class="token keyword">final</span> <span class="token class-name">Function</span> removeItem<span class="token punctuation">;</span>
+  <span class="token keyword">final</span> <span class="token class-name">Function</span> clearItems<span class="token punctuation">;</span>
+  <span class="token keyword">final</span> int count<span class="token punctuation">;</span>
+  <span class="token keyword">final</span> <span class="token class-name">Function</span> onIncrement<span class="token punctuation">;</span>
+  <span class="token keyword">final</span> <span class="token class-name">Function</span> onDecrement<span class="token punctuation">;</span>
+
+  <span class="token class-name">ViewModel</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    required <span class="token keyword">this</span><span class="token punctuation">.</span>lists<span class="token punctuation">,</span>
+    required <span class="token keyword">this</span><span class="token punctuation">.</span>addItem<span class="token punctuation">,</span>
+    <span class="token comment">// 新增的属性</span>
+    required <span class="token keyword">this</span><span class="token punctuation">.</span>removeItem<span class="token punctuation">,</span>
+    required <span class="token keyword">this</span><span class="token punctuation">.</span>clearItems<span class="token punctuation">,</span>
+    required <span class="token keyword">this</span><span class="token punctuation">.</span>count<span class="token punctuation">,</span>
+    required <span class="token keyword">this</span><span class="token punctuation">.</span>onIncrement<span class="token punctuation">,</span>
+    required <span class="token keyword">this</span><span class="token punctuation">.</span>onDecrement<span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">factory</span> <span class="token class-name">ViewModel</span><span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token class-name">Store</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">AppState</span><span class="token punctuation">&gt;</span></span> store<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">_onIncrement</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      store<span class="token punctuation">.</span><span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token class-name">CountActions</span><span class="token punctuation">.</span>increment<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token function">_onDecrement</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      store<span class="token punctuation">.</span><span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token class-name">CountActions</span><span class="token punctuation">.</span>decrement<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token function">_onAddItem</span><span class="token punctuation">(</span><span class="token class-name">String</span> value<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      store<span class="token punctuation">.</span><span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token class-name">TodoAddAction</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    
+		<span class="token comment">// 新增的逻辑</span>
+    <span class="token function">_onRemoveItem</span><span class="token punctuation">(</span>int id<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      store<span class="token punctuation">.</span><span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token class-name">TodoRemoveAction</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    
+		<span class="token comment">// 新增的逻辑</span>
+    <span class="token function">_onClearItems</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      store<span class="token punctuation">.</span><span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token class-name">TodoClearAction</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> <span class="token class-name">ViewModel</span><span class="token punctuation">(</span>
+      lists<span class="token punctuation">:</span> store<span class="token punctuation">.</span>state<span class="token punctuation">.</span>lists<span class="token punctuation">,</span>
+      addItem<span class="token punctuation">:</span> _onAddItem<span class="token punctuation">,</span>
+      <span class="token comment">// 新增</span>
+      removeItem<span class="token punctuation">:</span> _onRemoveItem<span class="token punctuation">,</span>
+      clearItems<span class="token punctuation">:</span> _onClearItems<span class="token punctuation">,</span>
+      count<span class="token punctuation">:</span> store<span class="token punctuation">.</span>state<span class="token punctuation">.</span>count<span class="token punctuation">,</span>
+      onIncrement<span class="token punctuation">:</span> _onIncrement<span class="token punctuation">,</span>
+      onDecrement<span class="token punctuation">:</span> _onDecrement<span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="添加页面按钮与回调"><a href="#添加页面按钮与回调" class="header-anchor">#</a> 添加页面按钮与回调</h3> <p>修改<code>main.dart</code></p> <div class="language-dart extra-class"><pre class="language-dart"><code><span class="token keyword">import</span> <span class="token string">'package:flutter/material.dart'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">'package:flutter_redux/flutter_redux.dart'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">'package:redux/redux.dart'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">'package:redux_example/store/actions.dart'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">'package:redux_example/store/reducers.dart'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">'package:redux_example/store/state.dart'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">'package:redux_example/widgets/add.dart'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">'package:redux_example/widgets/count_view.dart'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">'package:redux_example/widgets/lists_item_view.dart'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">'package:redux_example/widgets/view_model.dart'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">runApp</span><span class="token punctuation">(</span><span class="token class-name">MyApp</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">MyApp</span> <span class="token keyword">extends</span> <span class="token class-name">StatelessWidget</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 2.创建Store -&gt; state</span>
+  <span class="token keyword">final</span> store <span class="token operator">=</span> <span class="token class-name">Store</span><span class="token punctuation">(</span>appStateReducer<span class="token punctuation">,</span> initialState<span class="token punctuation">:</span> <span class="token class-name">AppState</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token class-name">MyApp</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token class-name">Key</span><span class="token operator">?</span> key<span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">:</span> <span class="token keyword">super</span><span class="token punctuation">(</span>key<span class="token punctuation">:</span> key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token metadata symbol">@override</span>
+  <span class="token class-name">Widget</span> <span class="token function">build</span><span class="token punctuation">(</span><span class="token class-name">BuildContext</span> context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 3.使用StoreProvider</span>
+    <span class="token keyword">return</span> <span class="token class-name">StoreProvider</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">AppState</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span>
+      store<span class="token punctuation">:</span> store<span class="token punctuation">,</span>
+      child<span class="token punctuation">:</span> <span class="token class-name">MaterialApp</span><span class="token punctuation">(</span>
+        title<span class="token punctuation">:</span> <span class="token string">'Flutter Demo'</span><span class="token punctuation">,</span>
+        theme<span class="token punctuation">:</span> <span class="token class-name">ThemeData</span><span class="token punctuation">(</span>
+          primarySwatch<span class="token punctuation">:</span> <span class="token class-name">Colors</span><span class="token punctuation">.</span>blue<span class="token punctuation">,</span>
+        <span class="token punctuation">)</span><span class="token punctuation">,</span>
+        home<span class="token punctuation">:</span> <span class="token keyword">const</span> <span class="token class-name">MyHome</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">MyHome</span> <span class="token keyword">extends</span> <span class="token class-name">StatefulWidget</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> <span class="token class-name">MyHome</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token class-name">Key</span><span class="token operator">?</span> key<span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">:</span> <span class="token keyword">super</span><span class="token punctuation">(</span>key<span class="token punctuation">:</span> key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token metadata symbol">@override</span>
+  <span class="token class-name">State</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">MyHome</span><span class="token punctuation">&gt;</span></span> <span class="token function">createState</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">_MyHomeState</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> _MyHomeState <span class="token keyword">extends</span> <span class="token class-name">State</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">MyHome</span><span class="token punctuation">&gt;</span></span> <span class="token punctuation">{</span>
+  <span class="token metadata symbol">@override</span>
+  <span class="token class-name">Widget</span> <span class="token function">build</span><span class="token punctuation">(</span><span class="token class-name">BuildContext</span> context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token class-name">StoreConnector</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">AppState</span><span class="token punctuation">,</span> <span class="token class-name">ViewModel</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span>
+      builder<span class="token punctuation">:</span> <span class="token punctuation">(</span>context<span class="token punctuation">,</span> viewModel<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token class-name">Scaffold</span><span class="token punctuation">(</span>
+        appBar<span class="token punctuation">:</span> <span class="token class-name">AppBar</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        body<span class="token punctuation">:</span> <span class="token class-name">SizedBox</span><span class="token punctuation">(</span>
+          height<span class="token punctuation">:</span> <span class="token class-name">MediaQuery</span><span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span>context<span class="token punctuation">)</span><span class="token punctuation">.</span>size<span class="token punctuation">.</span>height<span class="token punctuation">,</span>
+          child<span class="token punctuation">:</span> <span class="token class-name">Column</span><span class="token punctuation">(</span>
+            children<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+              <span class="token keyword">const</span> <span class="token class-name">Text</span><span class="token punctuation">(</span><span class="token string">'计数器的状态：'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+              <span class="token comment">// 4.添加按钮 -&gt; dispatch -&gt; action -&gt; reducer -&gt; 更新state</span>
+              <span class="token comment">// builder -&gt; 最终返回的widgets</span>
+              <span class="token comment">// StoreConnector -&gt; &lt;初始的state类型， 最终输出到builder的类型&gt;</span>
+              <span class="token comment">// converter -&gt; 取用最近的Provider -&gt; store -&gt; 转化成我们需要的类型数据</span>
+              <span class="token comment">// builder -&gt; 返回一个Widget -&gt; 使用state -&gt; viewModel</span>
+              <span class="token class-name">CountView</span><span class="token punctuation">(</span>viewModel<span class="token punctuation">)</span><span class="token punctuation">,</span>
+              <span class="token class-name">Add</span><span class="token punctuation">(</span>viewModel<span class="token punctuation">)</span><span class="token punctuation">,</span>
+              <span class="token class-name">Expanded</span><span class="token punctuation">(</span>
+                child<span class="token punctuation">:</span> <span class="token class-name">ListsItemView</span><span class="token punctuation">(</span>viewModel<span class="token punctuation">)</span><span class="token punctuation">,</span>
+              <span class="token punctuation">)</span><span class="token punctuation">,</span>
+              <span class="token class-name">ElevatedButton</span><span class="token punctuation">(</span>
+                onPressed<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                  viewModel<span class="token punctuation">.</span><span class="token function">clearItems</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                child<span class="token punctuation">:</span> <span class="token keyword">const</span> <span class="token class-name">Text</span><span class="token punctuation">(</span><span class="token string">'删除所有的Item项'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+              <span class="token punctuation">)</span>
+            <span class="token punctuation">]</span><span class="token punctuation">,</span>
+          <span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token comment">// 1. 需要添加一个按钮 -&gt; onPress -&gt; new Action</span>
+        <span class="token comment">// 2. 需要添加action -&gt; decrement</span>
+        <span class="token comment">// 3. 需要配置reducer -&gt; dispatch -&gt; new state</span>
+        floatingActionButton<span class="token punctuation">:</span> <span class="token class-name">Column</span><span class="token punctuation">(</span>
+          mainAxisAlignment<span class="token punctuation">:</span> <span class="token class-name">MainAxisAlignment</span><span class="token punctuation">.</span>end<span class="token punctuation">,</span>
+          children<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+            <span class="token class-name">FloatingActionButton</span><span class="token punctuation">(</span>
+              child<span class="token punctuation">:</span> <span class="token keyword">const</span> <span class="token class-name">Icon</span><span class="token punctuation">(</span><span class="token class-name">Icons</span><span class="token punctuation">.</span>add<span class="token punctuation">)</span><span class="token punctuation">,</span>
+              onPressed<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token comment">// 触发dispatch方法 -&gt; action -&gt; Actions.increment</span>
+                viewModel<span class="token punctuation">.</span><span class="token function">onIncrement</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+              <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token keyword">const</span> <span class="token class-name">Padding</span><span class="token punctuation">(</span>
+              padding<span class="token punctuation">:</span> <span class="token class-name">EdgeInsets</span><span class="token punctuation">.</span><span class="token function">only</span><span class="token punctuation">(</span>top<span class="token punctuation">:</span> <span class="token number">10.0</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token class-name">FloatingActionButton</span><span class="token punctuation">(</span>
+              child<span class="token punctuation">:</span> <span class="token keyword">const</span> <span class="token class-name">Icon</span><span class="token punctuation">(</span><span class="token class-name">Icons</span><span class="token punctuation">.</span>remove<span class="token punctuation">)</span><span class="token punctuation">,</span>
+              onPressed<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token comment">// 触发dispatch方法 -&gt; action -&gt; Actions.increment</span>
+                viewModel<span class="token punctuation">.</span><span class="token function">onDecrement</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+              <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">)</span><span class="token punctuation">,</span>
+          <span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token punctuation">)</span><span class="token punctuation">,</span>
+      converter<span class="token punctuation">:</span> <span class="token punctuation">(</span>store<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token class-name">ViewModel</span><span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span>store<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>修改<code>lists_item_view.dart</code>:</p> <div class="language-dart extra-class"><pre class="language-dart"><code><span class="token keyword">import</span> <span class="token string">'package:flutter/material.dart'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">'package:flutter_redux/flutter_redux.dart'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">'package:redux_example/store/state.dart'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">'package:redux_example/widgets/view_model.dart'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">ListsItemView</span> <span class="token keyword">extends</span> <span class="token class-name">StatelessWidget</span> <span class="token punctuation">{</span>
+  <span class="token keyword">final</span> <span class="token class-name">ViewModel</span> viewModel<span class="token punctuation">;</span>
+  <span class="token keyword">const</span> <span class="token class-name">ListsItemView</span><span class="token punctuation">(</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>viewModel<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    <span class="token class-name">Key</span><span class="token operator">?</span> key<span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">:</span> <span class="token keyword">super</span><span class="token punctuation">(</span>key<span class="token punctuation">:</span> key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token metadata symbol">@override</span>
+  <span class="token class-name">Widget</span> <span class="token function">build</span><span class="token punctuation">(</span><span class="token class-name">BuildContext</span> context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token class-name">ListView</span><span class="token punctuation">(</span>
+      children<span class="token punctuation">:</span> viewModel<span class="token punctuation">.</span>lists
+          <span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token class-name">Item</span> item<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token class-name">ListTile</span><span class="token punctuation">(</span>
+                title<span class="token punctuation">:</span> <span class="token class-name">Text</span><span class="token punctuation">(</span><span class="token string">'${item.id}-${item.value}'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            		<span class="token comment">// 添加一个按钮，添加对应的viewModel中的事件</span>
+                trailing<span class="token punctuation">:</span> <span class="token class-name">IconButton</span><span class="token punctuation">(</span>
+                  icon<span class="token punctuation">:</span> <span class="token keyword">const</span> <span class="token class-name">Icon</span><span class="token punctuation">(</span><span class="token class-name">Icons</span><span class="token punctuation">.</span>delete<span class="token punctuation">)</span><span class="token punctuation">,</span>
+                  onPressed<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    viewModel<span class="token punctuation">.</span><span class="token function">removeItem</span><span class="token punctuation">(</span>item<span class="token punctuation">.</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                <span class="token punctuation">)</span><span class="token punctuation">,</span>
+              <span class="token punctuation">)</span><span class="token punctuation">)</span>
+          <span class="token punctuation">.</span><span class="token function">toList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div> <!----> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/notes-page/project/community-flutter/04-状态管理.html" class="prev">
+        状态管理概览
+      </a></span> <span class="next"><a href="/notes-page/project/community-flutter/06-状态管理-scoped_model.html">
+        状态管理方案-ScopedModel
+      </a>
+      →
+    </span></p></div>  <div class="el-dialog__wrapper" style="display:none;"><div role="dialog" aria-modal="true" aria-label="dialog" class="el-dialog" style="margin-top:15vh;width:420px;"><div class="el-dialog__header"><span class="el-dialog__title"></span><button type="button" aria-label="Close" class="el-dialog__headerbtn"><i class="el-dialog__close el-icon el-icon-close"></i></button></div><!----><div class="el-dialog__footer"><span class="dialog-footer"><button type="button" class="el-button el-button--default"><!----><!----><span>取 消</span></button> <button type="button" class="el-button el-button--primary"><!----><!----><span>确 定</span></button></span></div></div></div></main> <!----></div><div class="global-ui"><!----><div tabindex="-1" role="dialog" aria-hidden="true" class="pswp"><div class="pswp__bg"></div> <div class="pswp__scroll-wrap"><div class="pswp__container"><div class="pswp__item"></div> <div class="pswp__item"></div> <div class="pswp__item"></div></div> <div class="pswp__ui pswp__ui--hidden"><div class="pswp__top-bar"><div class="pswp__counter"></div> <button class="pswp__button pswp__button--close"></button> <button class="pswp__button pswp__button--share"></button> <button class="pswp__button pswp__button--fs"></button> <button class="pswp__button pswp__button--zoom"></button> <div class="pswp__preloader"><div class="pswp__preloader__icn"><div class="pswp__preloader__cut"><div class="pswp__preloader__donut"></div></div></div></div></div> <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class="pswp__share-tooltip"></div></div> <button class="pswp__button pswp__button--arrow--left"></button> <button class="pswp__button pswp__button--arrow--right"></button> <div class="pswp__caption"><div class="pswp__caption__center"></div></div></div></div></div></div></div>
+    <script src="/notes-page/assets/js/app.1371add3.js" defer></script><script src="/notes-page/assets/js/8.81a428d2.js" defer></script><script src="/notes-page/assets/js/72.fd997da5.js" defer></script>
+  </body>
+</html>
